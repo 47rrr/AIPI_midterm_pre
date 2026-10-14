@@ -12,7 +12,7 @@ Since our idea pitch, we have moved from the product concept to a clickable web 
 
 ## MVP walkthrough (90–120 seconds)
 
-Open `#mvp`. Click “Launch live frontend”. Use the app navigation, or close the overlay and use the slide shortcuts to jump to a screen. Shortcuts retain existing demo data.
+Open `#mvp`. The frontend is embedded directly on the MVP slide. Use its navigation or the always-visible page shortcuts above it. Shortcuts retain existing demo data.
 
 **Today:** Let me show you our current web MVP. We will follow one example: returning a pair of wireless headphones. On the Today page, the user can immediately see the next action and the approaching deadline.
 
@@ -29,4 +29,4 @@ Open `#mvp`. Click “Launch live frontend”. Use the app navigation, or close 
 ## 中文操作提示
 
 Progress overview：右键三次，依次讲流程、前端、下一步。入口 `#progress`。
-MVP：入口 `#mvp`，点击 Launch live frontend 进入现有前端。右键一次显示四个直达按钮；关闭演示后可直接切换到购买确认、任务、计划、追踪。演示中不需要输入真实个人数据。
+MVP：入口 `#mvp`，页面直接嵌入现有前端。顶部按钮可切换到购买确认、任务、计划、追踪。演示中不需要输入真实个人数据。

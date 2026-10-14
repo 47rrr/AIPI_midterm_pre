@@ -78,7 +78,7 @@
             <span class="progress-number">03</span><div class="progress-content"><h3>Next: connect and evaluate</h3><p>Integrate purchase extraction and official policy retrieval. Evaluate planning approaches.</p><span class="progress-detail">OCR and email processing · Rules / LLM / hybrid comparison · Real reminders</span></div><span class="progress-status planned">Planned</span>
           </article>
         </div>
-        <p class="progress-boundary">Current MVP: frontend prototype with sample data and manual updates.</p>
+        <p class="progress-boundary">Current MVP: frontend prototype with sample data and manual updates. <a href="#mvp">View the MVP ↗</a></p>
       </section>
       <!-- Customer persona ideas: illustrative feedback, not interview findings. -->
       <section id="persona-emma" class="scene-copy persona-scene" aria-label="Emma: clear next actions" aria-hidden="true" inert>
@@ -196,12 +196,8 @@
       <section id="mvp" class="scene-copy mvp-scene" aria-label="MVP demonstration" aria-hidden="true" inert>
         <h2 class="persona-title">Our web MVP</h2>
         <p class="persona-subtitle">One purchase, from review to a clear next action.</p>
-        <div class="mvp-outline"><span class="context-label">Demo walkthrough</span><h3>Wireless<br><span class="accent">Headphones</span></h3><p>A return deadline is approaching.<br>What should the shopper do next?</p>
-          <ol class="mvp-steps"><li>Review the purchase</li><li>Check the return task</li><li>Prepare a return plan</li><li>Update the progress</li></ol>
-          <button class="mvp-launch" data-demo-route="today">Launch live frontend <span>↗</span></button>
-        </div>
-        <figure class="mvp-preview"><img src="assets/images/prototype-today.png" alt="Return Pilot frontend Today dashboard with next actions and return plan"><figcaption>Existing frontend prototype · Sample workspace</figcaption></figure>
-        <div class="mvp-shortcuts" aria-label="Open a demo screen"><span>Jump to</span><button data-demo-route="review">Purchase review</button><button data-demo-route="detail">Return task</button><button data-demo-route="plan">Plan</button><button data-demo-route="tracking">Tracking</button></div>
+        <nav class="mvp-inline-nav" aria-label="MVP demo pages"><button data-inline-route="today">Today</button><button data-inline-route="review">Purchase review</button><button data-inline-route="detail">Return task</button><button data-inline-route="plan">Plan</button><button data-inline-route="tracking">Tracking</button></nav>
+        <iframe id="inline-mvp" class="mvp-inline-frame" src="demo/index.html#today" title="Interactive Return Pilot frontend prototype"></iframe>
         <p class="mvp-disclosure">Sample policies and locations. Manual tracking. No live retailer or AI integrations.</p>
       </section>
       <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Presentation 02</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 4</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>

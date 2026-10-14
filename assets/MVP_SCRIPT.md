@@ -14,6 +14,8 @@ Since our idea pitch, we have moved from the product concept to a clickable web 
 
 Open `#mvp`. The frontend is embedded directly on the MVP slide. Use its navigation or the always-visible page shortcuts above it. Shortcuts retain existing demo data.
 
+**Login:** We start with the login page. The user can enter an email to continue into account setup and the workspace. Authentication is simulated in this prototype, and sign-in providers are not connected.
+
 **Today:** Let me show you our current web MVP. We will follow one example: returning a pair of wireless headphones. On the Today page, the user can immediately see the next action and the approaching deadline.
 
 **Purchase review:** Before saving a task, the user can review and edit the purchase information. This gives them an opportunity to correct the item, amount, or dates. The prototype demonstrates this review experience. Automated extraction is a planned integration.

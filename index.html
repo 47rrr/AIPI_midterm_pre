@@ -8,6 +8,7 @@
   <title>Return Pilot · AIPI 590 · Presentation 2</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23D94F7D'/%3E%3Ctext x='8' y='24' font-size='24' fill='white' font-family='sans-serif'%3ER%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/presentation.css">
+  <link rel="stylesheet" href="assets/personas.css">
 </head>
 <body>
   <svg class="svg-definitions" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -19,11 +20,12 @@
     <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4M11 19h2"/></symbol>
     <symbol id="i-page" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 8h18M7 12h10M7 16h7"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
     <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5v9l-9 5-9-5V8l9-5Zm-9 5 9 5 9-5M12 13v9M7.5 5.5l9 5"/></symbol>
   </defs></svg>
   <main class="viewport" aria-label="AIPI 590 presentation">
     <div id="deck" class="deck" data-scene="0" data-step="0" data-phase="0" tabindex="-1">
-      <header class="topline"><p id="chapter" class="eyebrow">Project overview</p><span id="page-number">01 / 03</span></header>
+      <header class="topline"><p id="chapter" class="eyebrow">Project overview</p><span id="page-number">01 / 06</span></header>
       <section id="problem" class="scene-copy" aria-label="Scattered return information">
         <div class="question-core"><span class="context-label">A student. Several purchases. Different retailers.</span><h1>What do I need<br>to return<span class="accent">—and<br>what do I do next?</span></h1></div>
         <div id="question-cloud" aria-label="Questions the shopper must answer"><span class="question-chip q-due">When is it due?</span><span class="question-chip q-where">Where can I return it?</span><span class="question-chip q-need">What do I need?</span></div>
@@ -81,6 +83,119 @@
           </article>
         </div>
       </section>
+      <!-- Customer persona ideas: illustrative feedback, not interview findings. -->
+      <section id="persona-emma" class="scene-copy persona-scene" aria-label="Emma: clear next actions" aria-hidden="true" inert>
+        <h2 class="persona-title">Less searching. <span class="accent">A clearer next step.</span></h2>
+        <p class="persona-subtitle">The pain: each return starts with another search through receipts, emails, and retailer rules.</p>
+        <article class="persona-profile">
+          <div class="persona-identity"><span class="persona-avatar" aria-hidden="true">E</span><div><h3>Emma</h3><p>Graduate student</p></div></div>
+          <p class="persona-context">Shops across several retailers.</p>
+          <blockquote class="persona-quote">“I’m really happy with this. I finally know what to return first, without searching all my emails and store policies.”</blockquote>
+          <span class="persona-sentiment">Expected response · Satisfied</span>
+        </article>
+        <div class="persona-board">
+          <p class="persona-board-label">The same purchases. A different experience.</p>
+          <span class="persona-board-state"><span class="persona-board-before">Information → Action</span></span>
+          <h3 class="persona-source-list-label">Your next actions</h3>
+          <article class="persona-source s-email">
+            <div class="persona-document"><svg class="icon"><use href="#i-mail"/></svg><span>Order email</span></div>
+            <h4>Wireless Headphones</h4>
+            <div class="persona-source-detail">Retailer A<br>Delivered <b>September 15</b><br>Which deadline applies?</div>
+            <span class="persona-priority">1</span>
+            <div class="persona-task-action"><strong>Start your return</strong><span>Request by October 15 · Based on delivery date</span></div>
+          </article>
+          <article class="persona-source s-receipt">
+            <div class="persona-document"><svg class="icon"><use href="#i-receipt"/></svg><span>Paper receipt</span></div>
+            <h4>Everyday Hoodie</h4>
+            <div class="persona-source-detail">Retailer B<br>Purchased <b>September 20</b><br><span class="missing-date">Delivery date is missing</span></div>
+            <span class="persona-priority">2</span>
+            <div class="persona-task-action"><strong>Confirm the delivery date</strong><span>Deadline stays unverified until the date is confirmed</span></div>
+          </article>
+          <article class="persona-source s-screenshot">
+            <div class="persona-document"><svg class="icon"><use href="#i-image"/></svg><span>Screenshot</span></div>
+            <h4>Phone Case</h4>
+            <div class="persona-source-detail">Retailer A<br>Still deciding<br>When should I decide?</div>
+            <span class="persona-priority">3</span>
+            <div class="persona-task-action"><strong>Decide whether to keep it</strong><span>The choice stays with you · No return started</span></div>
+          </article>
+          <p class="persona-before-caption">Different policies. Different dates. No obvious priority.</p>
+        </div>
+        <div class="persona-caption">
+          <p class="persona-initial-caption">The burden is <strong>rebuilding the same information</strong> before every return.</p>
+          <p class="persona-step-one">Gather the evidence, match the policy, and <strong>give each item a next action.</strong></p>
+          <p class="persona-answer">Design value: <strong>one structured task list</strong>, with priorities and uncertainty visible.</p>
+        </div>
+        <span class="persona-evidence">Illustrative persona · Expected feedback to validate</span>
+      </section>
+      <section id="persona-ryan" class="scene-copy persona-scene" aria-label="Ryan: selective sharing and privacy" aria-hidden="true" inert>
+        <h2 class="persona-title">Useful—if I control <span class="accent">what I share.</span></h2>
+        <p class="persona-subtitle">The concern: managing a few returns should not require access to an entire inbox.</p>
+        <article class="persona-profile">
+          <div class="persona-identity"><span class="persona-avatar" aria-hidden="true">R</span><div><h3>Ryan</h3><p>Software engineer</p></div></div>
+          <p class="persona-context">Careful about sharing personal data.</p>
+          <blockquote class="persona-quote">“I’d use it, but I don’t want an app reading my entire inbox just to manage a few returns.”</blockquote>
+          <span class="persona-sentiment cautious">Expected response · Cautious</span>
+        </article>
+        <div class="persona-board">
+          <p class="persona-board-label">Privacy concern → A narrower input boundary</p>
+          <span class="persona-board-state">Proposed architecture</span>
+          <div class="privacy-inbox">
+            <h3 class="privacy-inbox-title"><svg class="icon"><use href="#i-mail"/></svg>My inbox</h3>
+            <div class="privacy-mail"><svg class="icon"><use href="#i-mail"/></svg>Personal messages</div>
+            <div class="privacy-mail"><svg class="icon"><use href="#i-mail"/></svg>Work conversations</div>
+            <div class="privacy-mail selected"><svg class="icon"><use href="#i-receipt"/></svg>Order confirmation</div>
+            <div class="privacy-mail"><svg class="icon"><use href="#i-mail"/></svg>Travel plans</div>
+            <div class="privacy-mail"><svg class="icon"><use href="#i-mail"/></svg>Subscriptions</div>
+          </div>
+          <div class="privacy-question"><h4>Does it need<br><span class="accent">everything?</span></h4><p>Only a few of these messages are relevant to a return.</p></div>
+          <div class="privacy-options">
+            <h4>Only the purchases you choose</h4>
+            <div class="privacy-option"><svg class="icon"><use href="#i-mail"/></svg>Forward one order email</div>
+            <div class="privacy-option"><svg class="icon"><use href="#i-receipt"/></svg>Upload a receipt</div>
+            <div class="privacy-option"><svg class="icon"><use href="#i-page"/></svg>Enter details manually</div>
+            <p class="privacy-scope">Selected evidence → Purchase understanding → Return tasks</p>
+          </div>
+          <div class="privacy-no-access"><svg class="icon"><use href="#i-check"/></svg>No full-inbox permission required.</div>
+        </div>
+        <div class="persona-caption">
+          <p class="persona-initial-caption">Concern: <strong>the scope of access</strong>, not just whether the app is useful.</p>
+          <p class="persona-step-one">Users decide which order email, receipt, or fields <strong>enter the system.</strong></p>
+          <p class="persona-answer">Architecture response: <strong>selective purchase input</strong>. Wider security controls still need implementation.</p>
+        </div>
+        <span class="persona-evidence">Illustrative persona · Input boundary is a planned design, not a security certification</span>
+      </section>
+      <section id="persona-maya" class="scene-copy persona-scene" aria-label="Maya: a future mobile experience" aria-hidden="true" inert>
+        <h2 class="persona-title">Plan on the web. <span class="accent">Follow through on the go.</span></h2>
+        <p class="persona-subtitle">The request: make the next step accessible where returns actually happen.</p>
+        <article class="persona-profile">
+          <div class="persona-identity"><span class="persona-avatar" aria-hidden="true">M</span><div><h3>Maya</h3><p>Working professional</p></div></div>
+          <p class="persona-context">Fits errands around work and commuting.</p>
+          <blockquote class="persona-quote">“I’d love this on my phone—especially when I’m at the drop-off point and need the instructions.”</blockquote>
+          <span class="persona-sentiment future">Expected request · Mobile access</span>
+        </article>
+        <div class="persona-board">
+          <p class="persona-board-label">From planning at home to action outside</p>
+          <span class="persona-board-state">Future opportunity</span>
+          <div class="mobile-desktop">
+            <div class="mobile-window-bar"><i></i><i></i><i></i><span>Return Pilot · Web workspace</span></div>
+            <div class="mobile-desktop-body"><h4>One trip. Three returns.</h4><p>Organize the tasks before leaving home.</p><div class="mobile-task-row"><strong>Wireless Headphones</strong><small>Next action</small><span class="mobile-task-status">Request return</span></div><div class="mobile-task-row"><strong>Everyday Hoodie</strong><small>Next action</small><span class="mobile-task-status">Confirm date</span></div></div>
+          </div>
+          <span class="mobile-desktop-label">Current focus · Web MVP</span>
+          <div class="mobile-connection" aria-hidden="true"><span>→</span><small>Same tasks<br>and progress</small><span>←</span></div>
+          <div class="mobile-phone" aria-label="Illustrative future mobile interface">
+            <span class="mobile-phone-label">Mobile concept</span><h4>At the drop-off?</h4><p>Keep the next step within reach.</p>
+            <div class="mobile-phone-action"><svg class="icon"><use href="#i-page"/></svg>Open return instructions</div>
+            <div class="mobile-phone-action"><svg class="icon"><use href="#i-image"/></svg>Photograph the receipt</div>
+            <div class="mobile-phone-action primary"><svg class="icon"><use href="#i-check"/></svg>Update progress</div>
+          </div>
+        </div>
+        <div class="persona-caption">
+          <p class="persona-initial-caption">The Web MVP supports planning. <strong>The drop-off happens away from the desk.</strong></p>
+          <p class="persona-step-one">Future mobile scope: <strong>receipt capture, quick instructions, and progress updates.</strong></p>
+          <div class="persona-answer persona-summary"><span><b>Value</b> · Clear next actions</span><span><b>Trust</b> · Selective input</span><span><b>Next</b> · Mobile access</span></div>
+        </div>
+        <span class="persona-evidence">Illustrative persona · Mobile is a future extension, not a delivered feature</span>
+      </section>
       <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Presentation 02</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 4</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>
       <p id="status" class="sr-only" role="status" aria-live="polite"></p>
     </div>
@@ -91,7 +206,11 @@
     <section data-scene="1"><h2>画面一 · 约20秒</h2><p>我们关注的是需要处理多个商家退货的网购用户。比如一个学生，购买信息在邮件、小票和截图里，政策与操作步骤又在不同商家页面上。用户需要自己把这些信息拼起来，再决定先做什么。</p></section>
     <section data-scene="2"><h2>画面二 · 约25–30秒</h2><p>Return Pilot 希望将这些购买信息整理成跨商家的退货任务，结合政策和用户的选择，告诉用户现在该做什么，并持续跟进。缺少收货日期时，我们保留未确认状态，先请用户补充。我们的目标是减少查找、记忆和安排退货的负担，帮助用户及时完成必要步骤。这是体验概念，详细操作会在后面的 Web demo 展示。</p></section>
     <section data-scene="3"><h2>画面三 · 约35–40秒</h2><p>从第一次 idea pitch 到现在，我们围绕三条线推进。第一，产品范围。当前原型已把购买确认、退货任务、计划与跟进串成流程，具体商家和支持条件还需要用本阶段范围文档确认。第二，产品体验。我们已经有可点击的 Web 原型，这里是它的真实截图；示例数据与手动更新让核心交互可以演示。第三，AI 评估。我们计划比较规则、LLM 和混合方案，研究各自适合承担什么。当前展示材料中尚未提供实验设计或结果，补充并核实后再报告进展。</p></section>
+    <section data-scene="4"><h2>Customer persona · Emma · 约30秒</h2><p>这三个人物是我们拟定的用户与反馈假设，还不是访谈结果。Emma 是经常跨商家购物的研究生。她的痛点不只是忘记截止时间，而是每次退货都要重新翻邮件、小票和政策，才能拼出商品、到货时间和操作要求。第一次点击，把同一批购买凭证变成有顺序的任务；第二次点击强调临近期限的行动，同时保留缺少日期的未确认状态。她预期会满意，因为产品减少了重复查找和自己记忆的负担。</p></section>
+    <section data-scene="5"><h2>Customer persona · Ryan · 约30秒</h2><p>Ryan 是重视隐私的软件工程师。他认为产品有用，但担心为了几件退货就授权整个邮箱。第一次点击只突出订单邮件，并显示转发单封订单、上传小票和手动输入三种选择；第二次点击说明这种输入设计不要求全邮箱授权。这是后面 architecture 可以回应的具体访问范围问题，但不是已经完成的安全认证，也不代表加密、删除或数据保留机制已经实现。</p></section>
+    <section data-scene="6"><h2>Customer persona · Maya · 约30秒</h2><p>Maya 是在工作与通勤之间办理退货的上班族。网页方便在家规划，但投递和查看凭证发生在外面。第一次点击出现手机端概念，用于查看步骤、拍摄凭证和更新进度；第二次点击把桌面与手机的同一批任务关联起来，作为未来扩展。最后用价值、信任、下一步三个词总结，并衔接后面的 architecture 或 future work。手机端尚未交付，图中是概念。</p></section>
   </aside>
+  <script src="assets/personas.js"></script>
   <script src="assets/presentation.js"></script>
 </body>
 </html>

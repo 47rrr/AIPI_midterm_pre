@@ -2,9 +2,11 @@
   'use strict';
   const $ = selector => document.querySelector(selector);
   const deck = $('#deck');
-  const scenes = [$('#problem'), $('#solution'), $('#progress')];
-  const steps = [4, 2, 3];
-  const names = ['Project overview', 'Project overview', 'Progress overview'];
+  const extensions = window.ReturnPilotPresentationSections || [];
+  const scenes = [$('#problem'), $('#solution'), $('#progress'), ...extensions.map(section => document.getElementById(section.id))];
+  const steps = [4, 2, 3, ...extensions.map(section => section.steps)];
+  const names = ['Project overview', 'Project overview', 'Progress overview', ...extensions.map(section => section.name)];
+  const stepLabels = ['AIPI 590 · Presentation 02', 'Purchase information → Next actions', 'Idea → Scope · Experience · Evaluation', ...extensions.map(section => section.label)];
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const sources = [...document.querySelectorAll('.material')];
   const panels = [...document.querySelectorAll('.progress-panel')];
@@ -40,6 +42,11 @@
     deck.dataset.scene = scene;
     deck.dataset.step = step;
     deck.dataset.phase = phase;
+    deck.classList.toggle('personas-active', scene >= 3);
+    extensions.forEach((section, index) => {
+      const element = scenes[index + 3];
+      element.dataset.personaStep = index + 3 === scene ? String(step) : '0';
+    });
     const planned = scene === 2 || (scene === 1 && phase >= 4);
     const flags = {
       'questions-visible': scene === 0 && step >= 3,
@@ -57,7 +64,7 @@
       element.inert = index !== scene;
     });
     sources.forEach((source, index) => {
-      const visible = scene > 0 || step >= [1, 2, 2, 4, 4][index];
+      const visible = scene < 3 && (scene > 0 || step >= [1, 2, 2, 4, 4][index]);
       source.classList.toggle('shown', visible);
       source.setAttribute('aria-hidden', String(!visible || (index > 2 && phase >= 3)));
       source.querySelector('.source-details')?.setAttribute('aria-hidden', String(planned));
@@ -86,7 +93,7 @@
     $('#chapter').textContent = names[scene];
     $('#page-number').textContent = `${String(scene + 1).padStart(2, '0')} / ${String(scenes.length).padStart(2, '0')}`;
     $('#step-count').textContent = `${step} / ${steps[scene]}`;
-    $('#step-label').textContent = ['AIPI 590 · Presentation 02', 'Purchase information → Next actions', 'Idea → Scope · Experience · Evaluation'][scene];
+    $('#step-label').textContent = stepLabels[scene];
     const total = steps.reduce((sum, value) => sum + value + 1, 0);
     const past = steps.slice(0, scene).reduce((sum, value) => sum + value + 1, 0);
     const percent = Math.round((past + step + 1) / total * 100);
@@ -162,7 +169,9 @@
   function readHash() {
     const [name, moment] = location.hash.slice(1).split('/');
     const aliases = { problem: 0, solution: 1, progress: 2 };
-    const target = aliases[name] ?? (/^[1-3]$/.test(name) ? Number(name) - 1 : 0);
+    extensions.forEach((section, index) => section.aliases.forEach(alias => { aliases[alias] = index + 3; }));
+    const numericTarget = /^\d+$/.test(name || '') && Number(name) >= 1 && Number(name) <= scenes.length ? Number(name) - 1 : 0;
+    const target = aliases[name] ?? numericTarget;
     goTo(target, /^\d+$/.test(moment || '') ? Number(moment) : 0);
   }
   async function fullscreen() {

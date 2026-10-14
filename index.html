@@ -22,15 +22,23 @@
     <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5v9l-9 5-9-5V8l9-5Zm-9 5 9 5 9-5M12 13v9M7.5 5.5l9 5"/></symbol>
   </defs></svg>
   <main class="viewport" aria-label="AIPI 590 presentation">
-    <div id="deck" class="deck" data-scene="0" data-step="0" data-phase="0" tabindex="-1">
-      <header class="topline"><p id="chapter" class="eyebrow">Project overview</p><span id="page-number">01 / 03</span></header>
-      <section id="problem" class="scene-copy" aria-label="Scattered return information">
-        <div class="question-core"><span class="context-label">A student. Several purchases. Different retailers.</span><h1>What do I need<br>to return<span class="accent">—and<br>what do I do next?</span></h1></div>
-        <div id="question-cloud" aria-label="Questions the shopper must answer"><span class="question-chip q-due">When is it due?</span><span class="question-chip q-where">Where can I return it?</span><span class="question-chip q-need">What do I need?</span></div>
+    <div id="deck" class="deck" data-scene="-1" data-step="0" data-phase="0" tabindex="-1">
+      <header class="topline"><p id="chapter" class="eyebrow">Return Pilot</p><span id="page-number">01 / 08</span></header>
+      <section id="cover" class="scene-copy cover" aria-label="Return Pilot cover">
+        <div class="cover-content">
+          <span class="cover-mark" aria-hidden="true"><svg class="icon"><use href="#i-box"/></svg></span>
+          <h1>Return Pilot</h1>
+          <p class="cover-subtitle">From scattered return information<br>to one clear next action.</p>
+          <div class="cover-credit"><p>AIPI 590 · Mid-Semester Presentation</p><p>Yingru Tao · Dongping Guo · Siqi Rui</p></div>
+        </div>
+      </section>
+      <section id="problem" class="scene-copy" aria-label="Scattered return information" aria-hidden="true" inert>
+        <div class="question-core"><span class="context-label">Multiple purchases. Multiple retailers. Different rules.</span><h1><span class="problem-lead">I know what I want to return.</span><br><span class="accent">But what do I actually do next?</span></h1></div>
+        <div id="question-cloud" aria-label="Questions the shopper must answer"><span class="question-chip q-due">When is it due?</span><span class="question-chip q-where">Where do I return it?</span><span class="question-chip q-need">What should I do first?</span></div>
       </section>
       <section id="solution" class="scene-copy" aria-label="Purchase information becomes an action plan" aria-hidden="true" inert>
-        <div class="organize-intro"><p class="context-label">The same purchases. The same policies.</p><h2>Let’s put it<br><span class="accent">together.</span></h2></div>
-        <div class="product-reveal"><span class="product-mark"><svg class="icon"><use href="#i-box"/></svg></span><h2>Return Pilot</h2><p>One place to manage<br>returns across retailers</p><span class="value-line">Less searching.<br>Less remembering.<br>A clearer next step.</span></div>
+        <div class="organize-intro"><p class="context-label">Same purchases. Same policies. Less manual work.</p><h2>We turn return information<br><span class="accent">into next actions.</span></h2></div>
+        <div class="product-reveal"><span class="product-mark"><svg class="icon"><use href="#i-box"/></svg></span><h2>Return Pilot</h2><p>One place to manage<br>returns across retailers</p><span class="value-line">Less searching.<br>Less remembering.<br>A clear next action.</span></div>
         <ol class="process-rail" aria-label="Information organization stages"><li>Gather</li><li>Find the details</li><li>Match each item</li><li>Order the actions</li></ol><p id="phase-caption" class="phase-caption" aria-live="polite"></p>
       </section>
       <!-- A single persistent group: the documents become tasks and then a concept thumbnail. -->
@@ -76,12 +84,62 @@
             <div class="prototype-copy"><p>The core experience<br>is now clickable.</p><span>Purchase review, tasks,<br>planning, and manual updates.</span><button id="launch-demo" class="text-button">Open Web demo <span aria-hidden="true">↗</span></button></div>
           </article>
           <article id="evaluation-panel" class="progress-panel" data-progress="3">
-            <div class="panel-header"><span class="panel-index">03</span><div><h3>AI evaluation</h3><p class="panel-summary">Which approach fits which task?</p></div><span class="evidence-badge pending">Evidence pending</span></div>
-            <div class="panel-material evaluation-material"><div class="method-options"><span>Rules</span><span>LLM</span><span>Hybrid</span></div><div class="evaluation-placeholder"><span class="placeholder-mark" aria-hidden="true">＋</span><p>Experiment design / results to be added<small>Comparison proposed · Completion status unverified</small></p></div></div>
+            <div class="panel-header"><span class="panel-index">03</span><div><h3>AI evaluation</h3><p class="panel-summary">Which approach fits which task?</p></div><span class="evidence-badge complete">20 cases tested</span></div>
+            <div class="panel-material evaluation-material"><div class="method-options"><span>Rules</span><span>LLM</span><span>Hybrid</span></div><div class="evaluation-placeholder complete"><span class="placeholder-mark" aria-hidden="true">✓</span><p>Planning-layer experiment complete<small>20 fixed cases · Detailed results next</small></p></div></div>
           </article>
         </div>
       </section>
-      <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Presentation 02</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 4</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>
+      <section id="experiment-setup" class="scene-copy experiment-scene" aria-label="Experiment setup" aria-hidden="true" inert>
+        <h2 class="experiment-title">Experiment: Where does AI actually add value?</h2>
+        <p class="experiment-subtitle">Same 20 return-planning cases · Same inputs · Four strategies · Two models</p>
+        <div class="harness-case"><span class="harness-number">20</span><strong>FIXED RETURN CASES</strong><span>Identical purchase context<br>and policy evidence</span></div>
+        <div class="harness-branches">
+          <div class="strategy-card"><b>A — RULES</b><span>Deterministic logic</span></div>
+          <div class="strategy-card"><b>B0 — BASIC</b><span>Base prompt</span></div>
+          <div class="strategy-card"><b>B1 — STRUCTURED</b><span>Structured decision prompt<br>+ worked example</span></div>
+          <div class="strategy-card"><b>C — HYBRID</b><span>B1 + deterministic validation<br>+ rule fallback</span></div>
+        </div>
+        <div class="harness-models"><span class="harness-label">EVALUATED MODELS</span><b>Qwen 3.7 Flash</b><b>GPT-6 Luna</b></div>
+        <div class="harness-measures"><span>Correct plan</span><span>Critical errors</span><span>Latency</span><span>Tokens</span><span>Cost</span></div>
+        <p class="experiment-scope">Planning layer only · Purchase context and policy evidence held constant</p>
+      </section>
+      <section id="experiment-prompts" class="scene-copy experiment-scene" aria-label="Prompt engineering experiment" aria-hidden="true" inert>
+        <h2 class="experiment-title">Experiment: Prompt engineering changed model behavior.</h2>
+        <p class="experiment-subtitle">The model stayed the same. The instructions became more explicit.</p>
+        <div class="prompt-column-label prompt-v1-label">VERSION 1</div><div class="prompt-column-label prompt-v2-label">VERSION 2</div>
+        <div class="prompt-card prompt-b0-v1"><span class="prompt-tag">B0 · v1</span><h3>Baseline</h3><p>Shared task and JSON schema</p><small>No explicit decision order · no worked example</small></div>
+        <div class="prompt-card prompt-b1-v1"><span class="prompt-tag">B1 · v1</span><h3>Added checks</h3><p>+ Retailer and policy<br>+ Supported method<br>+ Dates and grouping</p><small>Additional checks · no worked example</small></div>
+        <div class="prompt-improvements"><span>CLEARER SEMANTICS</span><i>+</i><strong>6-STEP<br>DECISION FLOW</strong><i>+</i><span>COMPLETE WORKED EXAMPLE</span></div>
+        <div class="prompt-card prompt-b0-v2"><span class="prompt-tag">B0 · v2</span><h3>Revised foundation</h3><p class="prompt-code-list">Clearer schema semantics<br>Input <em>·</em> output <em>·</em> method <em>·</em> dates <em>·</em> plan</p></div>
+        <div class="prompt-card prompt-b1-v2"><span class="prompt-tag">B1 · v2</span><h3>Structured decision flow</h3><p class="prompt-steps">01&nbsp; Establish context<br>02&nbsp; Apply policy &amp; dates<br>03&nbsp; Choose next path<br>04&nbsp; Build executable instructions<br>05&nbsp; Assemble the plan<br>06&nbsp; Final consistency check</p><strong>+ WORKED EXAMPLE</strong></div>
+        <div class="prompt-result"><div class="improvement-row"><span>Qwen 3.7 Flash</span><div class="improvement-track" style="--from:5%;--to:60%"><i></i><b class="improvement-start">5%</b><b class="improvement-end">60%</b></div><strong>+55 pts</strong></div><div class="improvement-row"><span>GPT-6 Luna</span><div class="improvement-track" style="--from:50%;--to:65%"><i></i><b class="improvement-start">50%</b><b class="improvement-end">65%</b></div><strong>+15 pts</strong></div><p>Same model. Same cases. More explicit decision structure.</p></div>
+      </section>
+      <section id="experiment-results" class="scene-copy experiment-scene" aria-label="Experiment results and rules baseline" aria-hidden="true" inert>
+        <h2 class="experiment-title">Experiment: The result changed how we divide the work.</h2>
+        <p class="experiment-subtitle">Accuracy alone was not the whole product decision.</p>
+        <div class="accuracy-chart" role="img" aria-label="Correct executable plans on 20 cases: Qwen 3.7 Flash B0 5 percent, B1 60 percent, hybrid C 85 percent; GPT-6 Luna B0 50 percent, B1 65 percent, hybrid C 100 percent.">
+          <div class="chart-heading"><span>Correct executable plan (%)</span><div class="chart-legend"><span><i class="legend-qwen"></i>Qwen 3.7 Flash</span><span><i class="legend-gpt"></i>GPT-6 Luna</span></div></div>
+          <div class="chart-plot"><span class="grid-mark mark-100">100</span><span class="grid-mark mark-50">50</span><span class="grid-mark mark-0">0</span><div class="grid-line line-100"></div><div class="grid-line line-50"></div><div class="grid-line line-0"></div>
+            <div class="chart-groups">
+              <div class="chart-group"><div class="chart-bars"><div class="chart-bar qwen" style="height:5%"><span><b>5%</b><small>1/20</small></span></div><div class="chart-bar gpt" style="height:50%"><span><b>50%</b><small>10/20</small></span></div></div><strong>B0</strong><small>BASIC</small></div>
+              <div class="chart-group"><div class="chart-bars"><div class="chart-bar qwen" style="height:60%"><span><b>60%</b><small>12/20</small></span></div><div class="chart-bar gpt" style="height:65%"><span><b>65%</b><small>13/20</small></span></div></div><strong>B1</strong><small>STRUCTURED</small></div>
+              <div class="chart-group"><div class="chart-bars"><div class="chart-bar qwen" style="height:85%"><span><b>85%</b><small>17/20</small></span></div><div class="chart-bar gpt" style="height:100%"><span><b>100%</b><small>20/20</small></span></div></div><strong>C</strong><small>HYBRID · FINAL SYSTEM</small></div>
+            </div>
+          </div>
+          <div class="chart-effect-labels"><span>PROMPT STRUCTURE <b>B0 → B1</b></span><span>VALIDATION + FALLBACK <b>B1 → C</b></span></div>
+          <p class="chart-caveat">C is final system correctness, including rule fallback.</p>
+        </div>
+        <div class="rules-benchmark"><span>RULES BASELINE</span><b>100%</b><strong>20 / 20 · no model call</strong></div>
+        <div class="experiment-callouts"><p class="effect-callout"><span>PROMPT STRUCTURE</span><b>Qwen +55 pts</b><b>GPT +15 pts</b><small>5 → 60% · 50 → 65%</small></p><p class="effect-callout"><span>VALIDATION + FALLBACK</span><b>Qwen +25 pts</b><b>GPT +35 pts</b><small>60 → 85% · 65 → 100%</small></p><p class="fallback-callout"><span>C fallback triggered</span><b>Qwen 8/20 · 40%</b><b>GPT 4/20 · 20%</b></p><p class="validation-flow">LLM PLAN → DETERMINISTIC CHECK<br>valid: accept · conflict: rule fallback<br><strong>No second LLM repair call</strong></p></div>
+        <div class="rules-tradeoff"><span>WHAT IT TOOK</span><div class="rules-coverage"><p><b>34</b> explicit decision checks</p><p><b>21</b> scenario-routing branches</p><p><b>7</b> fallback / exception paths</p></div><small>~116 rule-logic LOC</small><p class="rules-example">Nike QR already initiated → explicit 21-day handoff rule</p><h3>Rules are strongest where correctness is computable.</h3><p>High accuracy comes with explicit coverage. Unsupported scenarios or policy exceptions may require more rules.</p></div>
+      </section>
+      <section id="experiment-decision" class="scene-copy experiment-scene" aria-label="Token economics and system decision" aria-hidden="true" inert>
+        <h2 class="experiment-title">Experiment: Token economics and system decision</h2>
+        <p class="experiment-subtitle">B1 → C adds very little model cost: local validation, no second LLM call.</p>
+        <div class="economics-strip"><span>TOKEN ECONOMICS <small>PER CASE · B1 → C</small></span><p>Qwen 3.7 Flash <b>~16.5K → ~16.7K</b> tokens<br><strong>~¥0.00375 → ~¥0.00378</strong></p><p>GPT-6 Luna <b>~16.8K → ~17.0K</b> tokens<br><strong>~$0.00189 → ~$0.00191</strong></p><em>C adds local validation—not another model call.</em></div>
+        <div class="architecture"><div class="responsibility"><span>INTERPRET</span><b>LLM</b><p>Variable wording<br>Ambiguous context<br>Policy interpretation</p></div><div class="responsibility"><span>ENFORCE</span><b>RULES</b><p>Computable constraints<br>Required fields<br>State transitions</p></div><div class="responsibility"><span>PROTECT</span><b>GUARDRAILS</b><p>Detect conflicts<br>Safe fallback<br>No blind retry</p></div><h3>AI handles ambiguity. <span>Rules enforce certainty.</span></h3><small>Model choice changes the ceiling. Architecture determines what we trust.</small></div>
+      </section>
+      <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Mid-Semester Presentation</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 0</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>
       <p id="status" class="sr-only" role="status" aria-live="polite"></p>
     </div>
   </main>
@@ -90,7 +148,11 @@
   <aside class="presenter-notes" hidden>
     <section data-scene="1"><h2>画面一 · 约20秒</h2><p>我们关注的是需要处理多个商家退货的网购用户。比如一个学生，购买信息在邮件、小票和截图里，政策与操作步骤又在不同商家页面上。用户需要自己把这些信息拼起来，再决定先做什么。</p></section>
     <section data-scene="2"><h2>画面二 · 约25–30秒</h2><p>Return Pilot 希望将这些购买信息整理成跨商家的退货任务，结合政策和用户的选择，告诉用户现在该做什么，并持续跟进。缺少收货日期时，我们保留未确认状态，先请用户补充。我们的目标是减少查找、记忆和安排退货的负担，帮助用户及时完成必要步骤。这是体验概念，详细操作会在后面的 Web demo 展示。</p></section>
-    <section data-scene="3"><h2>画面三 · 约35–40秒</h2><p>从第一次 idea pitch 到现在，我们围绕三条线推进。第一，产品范围。当前原型已把购买确认、退货任务、计划与跟进串成流程，具体商家和支持条件还需要用本阶段范围文档确认。第二，产品体验。我们已经有可点击的 Web 原型，这里是它的真实截图；示例数据与手动更新让核心交互可以演示。第三，AI 评估。我们计划比较规则、LLM 和混合方案，研究各自适合承担什么。当前展示材料中尚未提供实验设计或结果，补充并核实后再报告进展。</p></section>
+    <section data-scene="3"><h2>画面三 · 约35–40秒</h2><p>从第一次 idea pitch 到现在，我们围绕三条线推进。第一，产品范围。当前原型已把购买确认、退货任务、计划与跟进串成流程，具体商家和支持条件还需要用本阶段范围文档确认。第二，产品体验。我们已经有可点击的 Web 原型，这里是它的真实截图；示例数据与手动更新让核心交互可以演示。第三，AI 评估。我们已用 20 个固定案例比较规则、LLM 和混合方案，接下来展示各自适合承担什么。</p></section>
+    <section data-scene="5"><h2>实验设置 · 约15–20秒</h2><p>我们只测规划层，把购买背景和政策证据固定在同样的 20 个案例里。四种策略分别是规则、基础提示、结构化提示，以及结构化提示加确定性验证和规则回退；两个模型接受相同输入。这样要回答的是 AI 在哪里真正增加价值。</p></section>
+    <section data-scene="6"><h2>提示词变化 · 约25–30秒</h2><p>先看旧版提示词：定义较少，只有几个附加检查。一次点击后，右侧出现更清楚的字段语义、明确的六步决策流程和一个完整示例。再次点击，两条提升线显示两个模型在相同案例上的进步。关键是决策结构更明确，而不只是提示词变长。</p></section>
+    <section data-scene="7"><h2>准确率与规则基线 · 约30–35秒</h2><p>图表先给出 B0、B1、C 在两个模型上的完整结果，规则基线为 20/20。第一步标出结构化提示和确定性验证各自带来的提升；C 是包含规则回退的最终系统正确率。第二步看规则基线达到 20/20 所需的显式检查、分支和例外覆盖。</p></section>
+    <section data-scene="8"><h2>成本与系统分工 · 约15–20秒</h2><p>B1 到 C 的模型成本只小幅增加，因为验证在本地完成，没有第二次 LLM 修复调用。由此确定产品分工：LLM 解释可变措辞和歧义，规则执行可计算约束，护栏检测冲突并安全回退。AI 处理歧义，规则保证确定性。</p></section>
   </aside>
   <script src="assets/presentation.js"></script>
 </body>

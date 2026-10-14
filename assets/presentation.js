@@ -2,15 +2,17 @@
   'use strict';
   const $ = selector => document.querySelector(selector);
   const deck = $('#deck');
-  const scenes = [$('#problem'), $('#solution'), $('#progress')];
-  const steps = [4, 2, 3];
-  const names = ['Project overview', 'Project overview', 'Progress overview'];
+  const cover = $('#cover');
+  const scenes = [$('#problem'), $('#solution'), $('#progress'), $('#experiment-setup'), $('#experiment-prompts'), $('#experiment-results'), $('#experiment-decision')];
+  const steps = [1, 2, 3, 1, 2, 2, 0];
+  const names = ['Project overview', 'Project overview', 'Progress overview', 'Experiment', 'Experiment', 'Experiment', 'Experiment'];
+  const labels = ['AIPI 590 · Presentation 02', 'Purchase information → Next actions', 'Idea → Scope · Experience · Evaluation', 'Experiment setup', 'Prompt design', 'Results → Rules baseline', 'Token economics → System decision'];
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const sources = [...document.querySelectorAll('.material')];
   const panels = [...document.querySelectorAll('.progress-panel')];
   const demo = $('#demo-overlay');
   const imagePreview = $('#image-overlay');
-  let scene = 0;
+  let scene = -1;
   let step = 0;
   let phase = 0;
   let animation = null;
@@ -40,9 +42,11 @@
     deck.dataset.scene = scene;
     deck.dataset.step = step;
     deck.dataset.phase = phase;
+    cover.setAttribute('aria-hidden', String(scene !== -1));
+    cover.inert = scene !== -1;
     const planned = scene === 2 || (scene === 1 && phase >= 4);
     const flags = {
-      'questions-visible': scene === 0 && step >= 3,
+      'questions-visible': scene === 0,
       organizing: scene === 1 && step >= 1,
       gather: scene > 0 && phase >= 1,
       highlight: scene === 1 && phase === 2,
@@ -57,7 +61,7 @@
       element.inert = index !== scene;
     });
     sources.forEach((source, index) => {
-      const visible = scene > 0 || step >= [1, 2, 2, 4, 4][index];
+      const visible = scene > 0 || (scene === 0 && (index < 3 || step >= 1));
       source.classList.toggle('shown', visible);
       source.setAttribute('aria-hidden', String(!visible || (index > 2 && phase >= 3)));
       source.querySelector('.source-details')?.setAttribute('aria-hidden', String(planned));
@@ -66,7 +70,7 @@
         ? source.querySelector('h4').textContent + ' — ' + source.querySelector('h3').textContent
         : ['Wireless Headphones order email', 'Everyday Hoodie purchase receipt', 'Phone Case purchase screenshot'][index]);
     });
-    $('#question-cloud').setAttribute('aria-hidden', String(!(scene === 0 && step >= 3)));
+    $('#question-cloud').setAttribute('aria-hidden', String(scene !== 0));
     $('.plan-paper').setAttribute('aria-hidden', String(!planned));
     $('.product-reveal').setAttribute('aria-hidden', String(!(scene === 1 && step >= 2)));
     panels.forEach((panel, index) => {
@@ -83,23 +87,23 @@
       li.classList.toggle('past', index < active);
     });
     $('#phase-caption').textContent = phaseCopy[phase] || '';
-    $('#chapter').textContent = names[scene];
-    $('#page-number').textContent = `${String(scene + 1).padStart(2, '0')} / ${String(scenes.length).padStart(2, '0')}`;
-    $('#step-count').textContent = `${step} / ${steps[scene]}`;
-    $('#step-label').textContent = ['AIPI 590 · Presentation 02', 'Purchase information → Next actions', 'Idea → Scope · Experience · Evaluation'][scene];
-    const total = steps.reduce((sum, value) => sum + value + 1, 0);
-    const past = steps.slice(0, scene).reduce((sum, value) => sum + value + 1, 0);
+    $('#chapter').textContent = scene === -1 ? 'Return Pilot' : names[scene];
+    $('#page-number').textContent = `${String(scene + 2).padStart(2, '0')} / ${String(scenes.length + 1).padStart(2, '0')}`;
+    $('#step-count').textContent = `${step} / ${scene === -1 ? 0 : steps[scene]}`;
+    $('#step-label').textContent = scene === -1 ? 'AIPI 590 · Mid-Semester Presentation' : labels[scene];
+    const total = steps.reduce((sum, value) => sum + value + 1, 1);
+    const past = scene === -1 ? 0 : 1 + steps.slice(0, scene).reduce((sum, value) => sum + value + 1, 0);
     const percent = Math.round((past + step + 1) / total * 100);
     $('#progressBar').style.width = `${percent}%`;
     $('.progress-track').setAttribute('aria-valuenow', String(percent));
-    $('#prevBtn').disabled = scene === 0 && step === 0;
+    $('#prevBtn').disabled = scene === -1;
     $('#nextBtn').disabled = scene === scenes.length - 1 && step === steps[scene];
-    document.title = `Return Pilot · ${names[scene]} · ${scene + 1}/${scenes.length}`;
+    document.title = `Return Pilot · ${scene === -1 ? 'Cover' : names[scene]} · ${scene + 2}/${scenes.length + 1}`;
   }
 
-  function writeHash() { history.replaceState(null, '', `#${scene + 1}/${step}`); }
+  function writeHash() { history.replaceState(null, '', `#${scene + 2}/${step}`); }
   function finalPhase() { return scene === 2 || (scene === 1 && step > 0) ? 5 : 0; }
-  function announce() { $('#status').textContent = `${names[scene]}, screen ${scene + 1}, step ${step} of ${steps[scene]}`; }
+  function announce() { $('#status').textContent = `${scene === -1 ? 'Cover' : names[scene]}, screen ${scene + 2}, step ${step} of ${scene === -1 ? 0 : steps[scene]}`; }
   function cancel() { cancelAnimationFrame(raf); raf = 0; animation = null; deck.dataset.busy = 'false'; }
   function instantRender() {
     deck.classList.add('instant');
@@ -133,6 +137,10 @@
   function forward() {
     if (demo.open || imagePreview.open) return;
     if (animation) { finish(); return; }
+    if (scene === -1) {
+      scene = 0; step = 0; phase = 0; render(); animate(); writeHash();
+      return;
+    }
     if (step < steps[scene]) {
       step++;
       if (scene === 1 && step === 1) {
@@ -147,22 +155,22 @@
     if (demo.open || imagePreview.open) return;
     cancel();
     if (step > 0) step--;
-    else if (scene > 0) { scene--; step = steps[scene]; }
+    else if (scene > -1) { scene--; step = scene === -1 ? 0 : steps[scene]; }
     phase = finalPhase();
     // A reverse command during any motion restores the prior stable beat immediately.
     instantRender(); writeHash(); announce();
   }
   function goTo(target, targetStep = 0) {
     cancel();
-    scene = Math.max(0, Math.min(scenes.length - 1, target));
-    step = Math.max(0, Math.min(steps[scene], targetStep));
+    scene = Math.max(-1, Math.min(scenes.length - 1, target));
+    step = scene === -1 ? 0 : Math.max(0, Math.min(steps[scene], targetStep));
     phase = finalPhase();
     instantRender(); writeHash(); announce();
   }
   function readHash() {
     const [name, moment] = location.hash.slice(1).split('/');
-    const aliases = { problem: 0, solution: 1, progress: 2 };
-    const target = aliases[name] ?? (/^[1-3]$/.test(name) ? Number(name) - 1 : 0);
+    const aliases = { cover: -1, problem: 0, solution: 1, progress: 2, setup: 3, prompts: 4, results: 5, decision: 6 };
+    const target = aliases[name] ?? (/^[1-8]$/.test(name) ? Number(name) - 2 : -1);
     goTo(target, /^\d+$/.test(moment || '') ? Number(moment) : 0);
   }
   async function fullscreen() {
@@ -181,13 +189,14 @@
   bindControl('#nextBtn', forward);
   bindControl('#prevBtn', backward);
   bindControl('#fullBtn', fullscreen);
+  cover.addEventListener('click', event => { if (event.detail === 1) forward(); });
   document.addEventListener('keydown', event => {
     if (demo.open || imagePreview.open || event.altKey || event.ctrlKey || event.metaKey || event.repeat) return;
     if (event.target.closest('a, button, input, textarea, select, [contenteditable]')) return;
     const key = event.key.toLowerCase();
     if (['arrowright', 'arrowdown', 'pagedown', 'enter', ' '].includes(key)) { event.preventDefault(); forward(); }
     else if (['arrowleft', 'arrowup', 'pageup', 'backspace'].includes(key)) { event.preventDefault(); backward(); }
-    else if (key === 'home') { event.preventDefault(); goTo(0); }
+    else if (key === 'home') { event.preventDefault(); goTo(-1); }
     else if (key === 'end') { event.preventDefault(); goTo(scenes.length - 1); }
     else if (key === 'f') { event.preventDefault(); fullscreen(); }
   });

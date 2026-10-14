@@ -213,15 +213,17 @@
     if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.4) dx < 0 ? forward() : backward();
   });
   deck.addEventListener('pointercancel', () => { pointerStart = null; });
-  $('#launch-demo').addEventListener('click', () => {
+  document.querySelectorAll('[data-demo-route]').forEach(button => button.addEventListener('click', () => {
     if (animation) finish();
-    returnFocus = $('#launch-demo');
+    returnFocus = button;
+    const route = button.dataset.demoRoute;
     const frame = $('#demo-frame');
-    if (!frame.hasAttribute('src')) frame.src = frame.dataset.src;
+    frame.src = `demo/index.html#${route}`;
+    document.querySelector('.demo-toolbar a').href = `demo/index.html#${route}`;
     demo.showModal(); $('#close-demo').focus();
-  });
+  }));
   $('#close-demo').addEventListener('click', () => demo.close());
-  $('#preview-prototype').addEventListener('click', () => {
+  $('#preview-prototype')?.addEventListener('click', () => {
     if (animation) finish();
     returnFocus = $('#preview-prototype');
     imagePreview.showModal(); $('#close-image').focus();

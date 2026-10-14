@@ -9,6 +9,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23D94F7D'/%3E%3Ctext x='8' y='24' font-size='24' fill='white' font-family='sans-serif'%3ER%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/presentation.css">
   <link rel="stylesheet" href="assets/personas.css">
+  <link rel="stylesheet" href="assets/mvp.css">
 </head>
 <body>
   <svg class="svg-definitions" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -25,7 +26,7 @@
   </defs></svg>
   <main class="viewport" aria-label="AIPI 590 presentation">
     <div id="deck" class="deck" data-scene="0" data-step="0" data-phase="0" tabindex="-1">
-      <header class="topline"><p id="chapter" class="eyebrow">Project overview</p><span id="page-number">01 / 06</span></header>
+      <header class="topline"><p id="chapter" class="eyebrow">Project overview</p><span id="page-number">01 / 07</span></header>
       <section id="problem" class="scene-copy" aria-label="Scattered return information">
         <div class="question-core"><span class="context-label">A student. Several purchases. Different retailers.</span><h1>What do I need<br>to return<span class="accent">—and<br>what do I do next?</span></h1></div>
         <div id="question-cloud" aria-label="Questions the shopper must answer"><span class="question-chip q-due">When is it due?</span><span class="question-chip q-where">Where can I return it?</span><span class="question-chip q-need">What do I need?</span></div>
@@ -63,25 +64,21 @@
         <article id="policy-b" class="material policy item-b" aria-label="Illustrative retailer B policy"><div class="document-type"><svg class="icon"><use href="#i-page"/></svg><span>Retailer B · Return policy</span></div><p class="field">Window starts on <b>delivery</b></p><p>Proof of purchase required.<br>Confirm the date first.</p><span class="policy-code">B / Everyday Hoodie</span></article>
       </div>
       <span class="illustration-label">Illustrative example</span>
-      <section id="progress" class="scene-copy" aria-label="Progress since our idea pitch" aria-hidden="true" inert>
-        <h2 class="progress-title">Progress since our <span class="accent">idea pitch</span></h2>
-        <div class="idea"><span class="context-label">The original idea</span><p>One place to manage<br>returns across retailers</p><div class="idea-rule"></div><span class="concept-label">Experience concept</span></div>
+      <section id="progress" class="scene-copy" aria-label="Progress overview" aria-hidden="true" inert>
+        <h2 class="progress-title">Progress overview</h2>
+        <p class="progress-intro">The core return journey is now a clickable web prototype.</p>
         <div class="progress-panels">
           <article id="scope-panel" class="progress-panel" data-progress="1">
-            <div class="panel-header"><span class="panel-index">01</span><div><h3>Product scope</h3><p class="panel-summary">Define the user, boundaries, and core flow</p></div><span class="evidence-badge pending">Scope to confirm</span></div>
-            <div class="panel-material scope-material"><p class="material-caption">Visible in the current prototype</p><div class="scope-flow"><div><svg class="icon"><use href="#i-receipt"/></svg><b>Review<br>purchases</b></div><span>→</span><div><svg class="icon"><use href="#i-box"/></svg><b>Manage<br>return tasks</b></div><span>→</span><div><svg class="icon"><use href="#i-arrow"/></svg><b>Plan &amp;<br>follow up</b></div></div><p class="scope-boundary">Retailer coverage and supported conditions<br><strong>Awaiting the confirmed scope document</strong></p></div>
-            <p class="compact-note">Prototype flow mapped · Retailer coverage / conditions to confirm</p>
+            <span class="progress-number">01</span><div class="progress-content"><h3>A defined user journey</h3><p>Review a purchase, check a sample policy, and save a return task.</p><span class="progress-detail">Editable purchase details · Missing information visible · User decides what to return</span></div><span class="progress-status">Flow designed</span>
           </article>
           <article id="experience-panel" class="progress-panel" data-progress="2">
-            <div class="panel-header"><span class="panel-index">02</span><div><h3>Product experience</h3><p class="panel-summary">Purchase information → Tasks → Action plan</p></div><span class="evidence-badge">Web prototype</span></div>
-            <figure class="prototype-evidence"><button id="preview-prototype" class="screenshot-button" aria-label="Enlarge actual Web prototype screenshot"><img src="assets/images/prototype-today.png" alt="Actual local Return Pilot Web prototype: Today page with purchase tasks and a return plan" width="1600" height="900"></button><figcaption>Actual prototype capture · Sample data</figcaption></figure>
-            <div class="prototype-copy"><p>The core experience<br>is now clickable.</p><span>Purchase review, tasks,<br>planning, and manual updates.</span><button id="launch-demo" class="text-button">Open Web demo <span aria-hidden="true">↗</span></button></div>
+            <span class="progress-number">02</span><div class="progress-content"><h3>A working frontend prototype</h3><p>Navigate return tasks, prepare a plan, and manually update progress.</p><span class="progress-detail">Interactive forms and task states · Changes saved locally in the browser</span></div><span class="progress-status">Ready to demo</span>
           </article>
           <article id="evaluation-panel" class="progress-panel" data-progress="3">
-            <div class="panel-header"><span class="panel-index">03</span><div><h3>AI evaluation</h3><p class="panel-summary">Which approach fits which task?</p></div><span class="evidence-badge pending">Evidence pending</span></div>
-            <div class="panel-material evaluation-material"><div class="method-options"><span>Rules</span><span>LLM</span><span>Hybrid</span></div><div class="evaluation-placeholder"><span class="placeholder-mark" aria-hidden="true">＋</span><p>Experiment design / results to be added<small>Comparison proposed · Completion status unverified</small></p></div></div>
+            <span class="progress-number">03</span><div class="progress-content"><h3>Next: connect and evaluate</h3><p>Integrate purchase extraction and official policy retrieval. Evaluate planning approaches.</p><span class="progress-detail">OCR and email processing · Rules / LLM / hybrid comparison · Real reminders</span></div><span class="progress-status planned">Planned</span>
           </article>
         </div>
+        <p class="progress-boundary">Current MVP: frontend prototype with sample data and manual updates.</p>
       </section>
       <!-- Customer persona ideas: illustrative feedback, not interview findings. -->
       <section id="persona-emma" class="scene-copy persona-scene" aria-label="Emma: clear next actions" aria-hidden="true" inert>
@@ -196,6 +193,17 @@
         </div>
         <span class="persona-evidence">Illustrative persona · Mobile is a future extension, not a delivered feature</span>
       </section>
+      <section id="mvp" class="scene-copy mvp-scene" aria-label="MVP demonstration" aria-hidden="true" inert>
+        <h2 class="persona-title">Our web MVP</h2>
+        <p class="persona-subtitle">One purchase, from review to a clear next action.</p>
+        <div class="mvp-outline"><span class="context-label">Demo walkthrough</span><h3>Wireless<br><span class="accent">Headphones</span></h3><p>A return deadline is approaching.<br>What should the shopper do next?</p>
+          <ol class="mvp-steps"><li>Review the purchase</li><li>Check the return task</li><li>Prepare a return plan</li><li>Update the progress</li></ol>
+          <button class="mvp-launch" data-demo-route="today">Launch live frontend <span>↗</span></button>
+        </div>
+        <figure class="mvp-preview"><img src="assets/images/prototype-today.png" alt="Return Pilot frontend Today dashboard with next actions and return plan"><figcaption>Existing frontend prototype · Sample workspace</figcaption></figure>
+        <div class="mvp-shortcuts" aria-label="Open a demo screen"><span>Jump to</span><button data-demo-route="review">Purchase review</button><button data-demo-route="detail">Return task</button><button data-demo-route="plan">Plan</button><button data-demo-route="tracking">Tracking</button></div>
+        <p class="mvp-disclosure">Sample policies and locations. Manual tracking. No live retailer or AI integrations.</p>
+      </section>
       <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Presentation 02</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 4</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>
       <p id="status" class="sr-only" role="status" aria-live="polite"></p>
     </div>
@@ -205,12 +213,14 @@
   <aside class="presenter-notes" hidden>
     <section data-scene="1"><h2>画面一 · 约20秒</h2><p>我们关注的是需要处理多个商家退货的网购用户。比如一个学生，购买信息在邮件、小票和截图里，政策与操作步骤又在不同商家页面上。用户需要自己把这些信息拼起来，再决定先做什么。</p></section>
     <section data-scene="2"><h2>画面二 · 约25–30秒</h2><p>Return Pilot 希望将这些购买信息整理成跨商家的退货任务，结合政策和用户的选择，告诉用户现在该做什么，并持续跟进。缺少收货日期时，我们保留未确认状态，先请用户补充。我们的目标是减少查找、记忆和安排退货的负担，帮助用户及时完成必要步骤。这是体验概念，详细操作会在后面的 Web demo 展示。</p></section>
-    <section data-scene="3"><h2>画面三 · 约35–40秒</h2><p>从第一次 idea pitch 到现在，我们围绕三条线推进。第一，产品范围。当前原型已把购买确认、退货任务、计划与跟进串成流程，具体商家和支持条件还需要用本阶段范围文档确认。第二，产品体验。我们已经有可点击的 Web 原型，这里是它的真实截图；示例数据与手动更新让核心交互可以演示。第三，AI 评估。我们计划比较规则、LLM 和混合方案，研究各自适合承担什么。当前展示材料中尚未提供实验设计或结果，补充并核实后再报告进展。</p></section>
+    <section data-scene="3"><h2>Progress overview · 约45秒</h2><p>Since our idea pitch, we have moved from the product concept to a clickable web prototype. First, we defined the core user journey: review a purchase, check a policy, and create a return task. Second, we implemented the frontend so users can explore tasks, prepare a return plan, and update their progress. Changes persist locally in the browser. Our next step is to connect real purchase extraction and policy retrieval, then compare rules, LLM, and hybrid planning. For this presentation, the MVP uses sample data and manual updates.</p></section>
     <section data-scene="4"><h2>Customer persona · Emma · 约30秒</h2><p>这三个人物是我们拟定的用户与反馈假设，还不是访谈结果。Emma 是经常跨商家购物的研究生。她的痛点不只是忘记截止时间，而是每次退货都要重新翻邮件、小票和政策，才能拼出商品、到货时间和操作要求。第一次点击，把同一批购买凭证变成有顺序的任务；第二次点击强调临近期限的行动，同时保留缺少日期的未确认状态。她预期会满意，因为产品减少了重复查找和自己记忆的负担。</p></section>
     <section data-scene="5"><h2>Customer persona · Ryan · 约30秒</h2><p>Ryan 是重视隐私的软件工程师。他认为产品有用，但担心为了几件退货就授权整个邮箱。第一次点击只突出订单邮件，并显示转发单封订单、上传小票和手动输入三种选择；第二次点击说明这种输入设计不要求全邮箱授权。这是后面 architecture 可以回应的具体访问范围问题，但不是已经完成的安全认证，也不代表加密、删除或数据保留机制已经实现。</p></section>
     <section data-scene="6"><h2>Customer persona · Maya · 约30秒</h2><p>Maya 是在工作与通勤之间办理退货的上班族。网页方便在家规划，但投递和查看凭证发生在外面。第一次点击出现手机端概念，用于查看步骤、拍摄凭证和更新进度；第二次点击把桌面与手机的同一批任务关联起来，作为未来扩展。最后用价值、信任、下一步三个词总结，并衔接后面的 architecture 或 future work。手机端尚未交付，图中是概念。</p></section>
+    <section data-scene="7"><h2>MVP demonstration · 约90秒</h2><p>Let me show you our current web MVP. We will follow one example: returning a pair of wireless headphones. On the Today page, the user can see the next action and the approaching deadline. In purchase review, they can check and edit the purchase details before proceeding. The return task brings the deadline, estimated refund, and next step together. The plan page shows what to prepare and groups sample returns into drop-off stops. Finally, the user can update the return status and follow its progress toward a refund. These interactions demonstrate the intended user journey. Policies and locations are sample data, tracking is manual, and the AI and retailer integrations are future work.</p></section>
   </aside>
   <script src="assets/personas.js"></script>
+  <script src="assets/mvp.js"></script>
   <script src="assets/presentation.js"></script>
 </body>
 </html>

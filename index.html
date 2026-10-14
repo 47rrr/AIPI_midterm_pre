@@ -1,18 +1,97 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Return Pilot — organize purchases, plan returns, and follow refunds in one place.">
-  <title>Return Pilot — Your returns, under control</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23242629'/%3E%3Cpath d='m16 6 10 6v10l-10 5-10-5V12l10-6Zm-10 6 10 5 10-5M16 17v10' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FBFAF8">
+  <meta name="description" content="Return Pilot — AIPI 590 project and progress overview">
+  <title>Return Pilot · AIPI 590 · Presentation 2</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23D94F7D'/%3E%3Ctext x='8' y='24' font-size='24' fill='white' font-family='sans-serif'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/presentation.css">
 </head>
 <body>
-  <div id="app"></div>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <dialog id="modal"></dialog>
-  <script src="app.js"></script>
+  <svg class="svg-definitions" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3h14v19l-3-2-4 2-4-2-3 2V3Z"/><path d="M8 7h8M8 11h8M8 15h5"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m4 18 5-5 4 3 4-6 4 8"/></symbol>
+    <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 14v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="12" width="4" height="9" rx="2"/><rect x="17" y="12" width="4" height="9" rx="2"/></symbol>
+    <symbol id="i-hoodie" viewBox="0 0 24 24"><path d="m8 4-5 4-2 7 4 2 2-5v10h10V12l2 5 4-2-2-7-5-4M8 4c0-4 8-4 8 0l-4 5-4-5ZM9 17h6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4M11 19h2"/></symbol>
+    <symbol id="i-page" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 8h18M7 12h10M7 16h7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5v9l-9 5-9-5V8l9-5Zm-9 5 9 5 9-5M12 13v9M7.5 5.5l9 5"/></symbol>
+  </defs></svg>
+  <main class="viewport" aria-label="AIPI 590 presentation">
+    <div id="deck" class="deck" data-scene="0" data-step="0" data-phase="0" tabindex="-1">
+      <header class="topline"><p id="chapter" class="eyebrow">Project overview</p><span id="page-number">01 / 03</span></header>
+      <section id="problem" class="scene-copy" aria-label="Scattered return information">
+        <div class="question-core"><span class="context-label">A student. Several purchases. Different retailers.</span><h1>What do I need<br>to return<span class="accent">—and<br>what do I do next?</span></h1></div>
+        <div id="question-cloud" aria-label="Questions the shopper must answer"><span class="question-chip q-due">When is it due?</span><span class="question-chip q-where">Where can I return it?</span><span class="question-chip q-need">What do I need?</span></div>
+      </section>
+      <section id="solution" class="scene-copy" aria-label="Purchase information becomes an action plan" aria-hidden="true" inert>
+        <div class="organize-intro"><p class="context-label">The same purchases. The same policies.</p><h2>Let’s put it<br><span class="accent">together.</span></h2></div>
+        <div class="product-reveal"><span class="product-mark"><svg class="icon"><use href="#i-box"/></svg></span><h2>Return Pilot</h2><p>One place to manage<br>returns across retailers</p><span class="value-line">Less searching.<br>Less remembering.<br>A clearer next step.</span></div>
+        <ol class="process-rail" aria-label="Information organization stages"><li>Gather</li><li>Find the details</li><li>Match each item</li><li>Order the actions</li></ol><p id="phase-caption" class="phase-caption" aria-live="polite"></p>
+      </section>
+      <!-- A single persistent group: the documents become tasks and then a concept thumbnail. -->
+      <div id="materials" class="materials">
+        <div class="plan-paper"><div class="plan-heading"><h3>Your next actions</h3><span>3 items · 2 retailers</span></div><p class="plan-foot">A next step for each item. Uncertainty stays visible.</p></div>
+        <article id="order-email" class="material purchase item-a" data-kind="email" aria-label="Wireless Headphones order email">
+          <div class="document-type"><svg class="icon"><use href="#i-mail"/></svg><span>Order email</span><span class="source-id">01</span></div>
+          <div class="item-identity"><span class="item-art"><svg class="icon"><use href="#i-headphones"/></svg></span><div><span class="retailer">Sample retailer A</span><h3 class="field name-field">Wireless Headphones</h3></div></div>
+          <div class="source-details"><p>Order <b>RP-1042</b></p><p class="field date-field">Delivered <b>Sep 15, 2026</b></p><div class="source-bottom"><span>Order confirmed</span><b>$59.99</b></div></div>
+          <div class="action-details"><div class="action-heading"><span class="priority">1</span><h4>Start your return</h4></div><p>Complete the next required step</p><span class="task-status">Request by Oct 15</span></div>
+          <div class="provenance">Order email <span>+ Retailer A policy</span></div>
+        </article>
+        <article id="purchase-receipt" class="material purchase item-b" data-kind="receipt" aria-label="Everyday Hoodie purchase receipt">
+          <div class="document-type"><svg class="icon"><use href="#i-receipt"/></svg><span>Purchase receipt</span><span class="source-id">02</span></div>
+          <div class="item-identity"><span class="item-art"><svg class="icon"><use href="#i-hoodie"/></svg></span><div><span class="retailer">Sample retailer B</span><h3 class="field name-field">Everyday Hoodie</h3></div></div>
+          <div class="source-details"><p>Order <b>RP-1028</b></p><p class="field date-field">Purchased <b>Sep 20, 2026</b></p><p class="missing field">Delivery date <b>Not provided</b></p><div class="source-bottom"><span>Total</span><b>$49.99</b></div><div class="receipt-bars" aria-hidden="true"></div></div>
+          <div class="action-details"><div class="action-heading"><span class="priority">2</span><h4>Confirm the delivery date</h4></div><p>More information is needed</p><span class="task-status uncertain">Needs confirmation · Deadline unverified</span></div>
+          <div class="provenance">Purchase receipt <span>+ Retailer B policy</span></div>
+        </article>
+        <article id="product-screenshot" class="material purchase item-c" data-kind="screenshot" aria-label="Phone Case purchase screenshot">
+          <div class="document-type"><svg class="icon"><use href="#i-image"/></svg><span>Purchase screenshot</span><span class="source-id">03</span></div>
+          <div class="item-identity"><span class="item-art"><svg class="icon"><use href="#i-phone"/></svg></span><div><span class="retailer">Sample retailer A</span><h3 class="field name-field">Phone Case</h3></div></div>
+          <div class="source-details"><p>Order <b>RP-1042</b> · <b>$19.01</b></p><p class="field date-field">Delivered <b>Sep 15, 2026</b></p><div class="source-bottom"><span class="decision-pill">Still deciding</span></div></div>
+          <div class="action-details"><div class="action-heading"><span class="priority">3</span><h4>Decide whether to keep it</h4></div><p>Set a decision reminder</p><span class="task-status neutral">Your choice · No return started</span></div>
+          <div class="provenance">Purchase screenshot <span>+ Retailer A policy</span></div>
+        </article>
+        <article id="policy-a" class="material policy item-a" aria-label="Illustrative retailer A policy"><div class="document-type"><svg class="icon"><use href="#i-page"/></svg><span>Retailer A · Return policy</span></div><p class="field">Start within <b>30 days of delivery</b></p><p>Check the method.<br>Prepare the matching label.</p><span class="policy-code">A / Headphones + phone case</span></article>
+        <article id="policy-b" class="material policy item-b" aria-label="Illustrative retailer B policy"><div class="document-type"><svg class="icon"><use href="#i-page"/></svg><span>Retailer B · Return policy</span></div><p class="field">Window starts on <b>delivery</b></p><p>Proof of purchase required.<br>Confirm the date first.</p><span class="policy-code">B / Everyday Hoodie</span></article>
+      </div>
+      <span class="illustration-label">Illustrative example</span>
+      <section id="progress" class="scene-copy" aria-label="Progress since our idea pitch" aria-hidden="true" inert>
+        <h2 class="progress-title">Progress since our <span class="accent">idea pitch</span></h2>
+        <div class="idea"><span class="context-label">The original idea</span><p>One place to manage<br>returns across retailers</p><div class="idea-rule"></div><span class="concept-label">Experience concept</span></div>
+        <div class="progress-panels">
+          <article id="scope-panel" class="progress-panel" data-progress="1">
+            <div class="panel-header"><span class="panel-index">01</span><div><h3>Product scope</h3><p class="panel-summary">Define the user, boundaries, and core flow</p></div><span class="evidence-badge pending">Scope to confirm</span></div>
+            <div class="panel-material scope-material"><p class="material-caption">Visible in the current prototype</p><div class="scope-flow"><div><svg class="icon"><use href="#i-receipt"/></svg><b>Review<br>purchases</b></div><span>→</span><div><svg class="icon"><use href="#i-box"/></svg><b>Manage<br>return tasks</b></div><span>→</span><div><svg class="icon"><use href="#i-arrow"/></svg><b>Plan &amp;<br>follow up</b></div></div><p class="scope-boundary">Retailer coverage and supported conditions<br><strong>Awaiting the confirmed scope document</strong></p></div>
+            <p class="compact-note">Prototype flow mapped · Retailer coverage / conditions to confirm</p>
+          </article>
+          <article id="experience-panel" class="progress-panel" data-progress="2">
+            <div class="panel-header"><span class="panel-index">02</span><div><h3>Product experience</h3><p class="panel-summary">Purchase information → Tasks → Action plan</p></div><span class="evidence-badge">Web prototype</span></div>
+            <figure class="prototype-evidence"><button id="preview-prototype" class="screenshot-button" aria-label="Enlarge actual Web prototype screenshot"><img src="assets/images/prototype-today.png" alt="Actual local Return Pilot Web prototype: Today page with purchase tasks and a return plan" width="1600" height="900"></button><figcaption>Actual prototype capture · Sample data</figcaption></figure>
+            <div class="prototype-copy"><p>The core experience<br>is now clickable.</p><span>Purchase review, tasks,<br>planning, and manual updates.</span><button id="launch-demo" class="text-button">Open Web demo <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article id="evaluation-panel" class="progress-panel" data-progress="3">
+            <div class="panel-header"><span class="panel-index">03</span><div><h3>AI evaluation</h3><p class="panel-summary">Which approach fits which task?</p></div><span class="evidence-badge pending">Evidence pending</span></div>
+            <div class="panel-material evaluation-material"><div class="method-options"><span>Rules</span><span>LLM</span><span>Hybrid</span></div><div class="evaluation-placeholder"><span class="placeholder-mark" aria-hidden="true">＋</span><p>Experiment design / results to be added<small>Comparison proposed · Completion status unverified</small></p></div></div>
+          </article>
+        </div>
+      </section>
+      <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Presentation 02</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 4</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>
+      <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+    </div>
+  </main>
+  <dialog id="demo-overlay" aria-label="Return Pilot Web demo"><div class="demo-toolbar"><span>Return Pilot · Web prototype</span><a href="demo/index.html#today" target="_blank" rel="noopener">Open in new tab ↗</a><button id="close-demo">← Back to presentation</button></div><iframe id="demo-frame" title="Return Pilot Web prototype" data-src="demo/index.html#today"></iframe></dialog>
+  <dialog id="image-overlay" aria-label="Actual Web prototype screenshot"><button id="close-image">Close preview ×</button><img src="assets/images/prototype-today.png" alt="Actual Return Pilot Today page captured from the local Web prototype"><p>Actual Web prototype · Sample data</p></dialog>
+  <aside class="presenter-notes" hidden>
+    <section data-scene="1"><h2>画面一 · 约20秒</h2><p>我们关注的是需要处理多个商家退货的网购用户。比如一个学生，购买信息在邮件、小票和截图里，政策与操作步骤又在不同商家页面上。用户需要自己把这些信息拼起来，再决定先做什么。</p></section>
+    <section data-scene="2"><h2>画面二 · 约25–30秒</h2><p>Return Pilot 希望将这些购买信息整理成跨商家的退货任务，结合政策和用户的选择，告诉用户现在该做什么，并持续跟进。缺少收货日期时，我们保留未确认状态，先请用户补充。我们的目标是减少查找、记忆和安排退货的负担，帮助用户及时完成必要步骤。这是体验概念，详细操作会在后面的 Web demo 展示。</p></section>
+    <section data-scene="3"><h2>画面三 · 约35–40秒</h2><p>从第一次 idea pitch 到现在，我们围绕三条线推进。第一，产品范围。当前原型已把购买确认、退货任务、计划与跟进串成流程，具体商家和支持条件还需要用本阶段范围文档确认。第二，产品体验。我们已经有可点击的 Web 原型，这里是它的真实截图；示例数据与手动更新让核心交互可以演示。第三，AI 评估。我们计划比较规则、LLM 和混合方案，研究各自适合承担什么。当前展示材料中尚未提供实验设计或结果，补充并核实后再报告进展。</p></section>
+  </aside>
+  <script src="assets/presentation.js"></script>
 </body>
 </html>

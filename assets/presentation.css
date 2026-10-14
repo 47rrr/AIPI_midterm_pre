@@ -118,56 +118,6 @@ dialog{border:1px solid var(--line);padding:0;color:var(--ink);background:var(--
 #experiment-prompts .prompt-result>p{margin:6px 0 0;font-size:16px;font-weight:680;max-width:none}
 [data-scene="4"][data-step="2"] .prompt-result{opacity:1;transform:none}
 
-#experiment-results .accuracy-chart{position:absolute;left:104px;top:264px;width:970px;height:478px;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);transition:opacity .55s var(--ease),transform .6s var(--ease)}
-#experiment-results .chart-heading{position:absolute;left:29px;right:29px;top:22px;display:flex;align-items:center;justify-content:space-between;font-size:18px;font-weight:700}
-#experiment-results .chart-legend{display:flex;gap:21px;color:var(--muted);font-size:14px;font-weight:600}
-#experiment-results .chart-legend span{display:flex;align-items:center;gap:8px}
-#experiment-results .chart-legend i{display:block;width:13px;height:13px;border-radius:3px}
-#experiment-results .legend-qwen{background:#555B64}#experiment-results .legend-gpt{background:var(--brand)}
-#experiment-results .chart-plot{position:absolute;left:28px;right:27px;top:119px;height:268px}
-#experiment-results .grid-line{position:absolute;left:43px;right:0;height:1px;background:var(--line)}
-#experiment-results .line-100{top:28px}#experiment-results .line-50{top:138px}#experiment-results .line-0{bottom:18px;background:rgba(24,25,29,.19)}
-#experiment-results .grid-mark{position:absolute;left:0;color:var(--muted-2);font-size:12px}#experiment-results .mark-100{top:21px}#experiment-results .mark-50{top:131px}#experiment-results .mark-0{bottom:11px}
-#experiment-results .chart-groups{position:absolute;left:68px;right:0;top:28px;height:222px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-#experiment-results .chart-group{position:relative;text-align:center}
-#experiment-results .chart-bars{position:absolute;inset:0 0 0;display:flex;align-items:flex-end;justify-content:center;gap:20px}
-#experiment-results .chart-bar{position:relative;width:64px;min-height:10px;border-radius:6px 6px 0 0}.chart-bar.qwen{background:#555B64}.chart-bar.gpt{background:var(--brand)}
-#experiment-results .chart-bar>span{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;white-space:nowrap}
-#experiment-results .chart-bar b{font-size:21px;letter-spacing:-.035em}#experiment-results .chart-bar small{font-size:12px;color:var(--muted)}
-#experiment-results .chart-group>strong{position:absolute;top:231px;left:0;right:0;font-size:21px}#experiment-results .chart-group>small{position:absolute;top:258px;left:0;right:0;font-size:13px;color:var(--muted);letter-spacing:.055em}
-#experiment-results .chart-effect-labels{position:absolute;left:240px;right:32px;bottom:23px;display:flex;gap:60px;opacity:0;transform:translateY(8px);transition:opacity .4s var(--ease),transform .5s var(--ease)}
-#experiment-results .chart-effect-labels span{font-size:13px;font-weight:800;color:var(--brand-ink);white-space:nowrap}#experiment-results .chart-effect-labels b{margin-left:9px;font-size:14px}
-#experiment-results .chart-caveat{position:absolute;left:29px;bottom:23px;color:var(--muted);font-size:14px;transition:opacity .3s}
-#experiment-results .rules-benchmark{position:absolute;left:1093px;top:264px;width:403px;height:152px;padding:20px 25px;background:var(--surface);border:1px solid var(--brand-border);border-radius:17px;box-shadow:var(--shadow-sm);transition:opacity .5s,border-color .45s,box-shadow .45s}
-#experiment-results .rules-benchmark span{display:block;color:var(--brand-ink);font-size:17px;font-weight:800;letter-spacing:.06em}
-#experiment-results .rules-benchmark b{font-size:57px;letter-spacing:-.065em;line-height:1.1;margin-right:16px}#experiment-results .rules-benchmark strong{font-size:16px;white-space:nowrap}
-#experiment-results .experiment-callouts{position:absolute;left:1093px;top:431px;width:403px;height:379px;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .45s var(--ease),transform .55s var(--ease),visibility .45s}
-#experiment-results .effect-callout{padding:12px 14px;margin-bottom:10px;border-left:3px solid var(--brand);background:rgba(255,255,255,.78);border-radius:7px;display:grid;grid-template-columns:1fr 1fr;gap:4px 10px}
-#experiment-results .effect-callout span{grid-column:1/-1;font-size:13px;letter-spacing:.06em;font-weight:800;color:var(--brand-ink)}#experiment-results .effect-callout b{font-size:18px}#experiment-results .effect-callout small{grid-column:1/-1;color:var(--muted);font-size:13px}
-#experiment-results .fallback-callout{display:flex;flex-wrap:wrap;gap:6px 20px;padding:10px 14px;background:var(--brand-soft);border-radius:8px;font-size:15px}#experiment-results .fallback-callout span{width:100%;color:var(--brand-ink);font-size:13px;font-weight:800;letter-spacing:.04em}
-#experiment-results .validation-flow{font-size:14px;line-height:1.4;color:var(--muted);margin-top:12px}#experiment-results .validation-flow strong{color:var(--ink)}
-[data-scene="5"][data-step="1"] #experiment-results .experiment-callouts{opacity:1;visibility:visible;transform:none}
-[data-scene="5"][data-step="1"] #experiment-results .chart-effect-labels{opacity:1;transform:none}
-[data-scene="5"][data-step="1"] .chart-caveat{opacity:0}
-#experiment-results .rules-tradeoff{position:absolute;left:270px;top:315px;width:788px;min-height:442px;padding:30px 35px;background:rgba(255,255,255,.96);border:1px solid var(--brand-border);border-radius:18px;box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transform:translateY(17px);transition:opacity .5s var(--ease),transform .6s var(--ease),visibility .5s}
-#experiment-results .rules-tradeoff>span{font-size:16px;color:var(--brand-ink);font-weight:800;letter-spacing:.1em}
-#experiment-results .rules-coverage{display:flex;gap:18px;margin-top:20px}#experiment-results .rules-coverage p{font-size:16px;color:var(--muted);width:220px;line-height:1.25}#experiment-results .rules-coverage b{display:block;color:var(--ink);font-size:51px;line-height:1.05;letter-spacing:-.06em}
-#experiment-results .rules-tradeoff>small{display:block;color:var(--muted);font-size:14px;margin-top:12px}
-#experiment-results .rules-example{font-size:17px;color:var(--brand-ink);margin-top:20px}
-#experiment-results .rules-tradeoff h3{font-size:28px;letter-spacing:-.035em;margin-top:24px}
-#experiment-results .rules-tradeoff>p:last-child{font-size:16px;line-height:1.4;color:var(--muted);margin-top:9px}
-[data-scene="5"][data-step="2"] .accuracy-chart{opacity:.24}
-[data-scene="5"][data-step="2"] .rules-benchmark{border-color:var(--brand);box-shadow:0 15px 40px rgba(217,79,125,.14)}
-[data-scene="5"][data-step="2"] #experiment-results .rules-tradeoff{opacity:1;visibility:visible;transform:none}
-[data-scene="5"][data-step="3"] .accuracy-chart,[data-scene="5"][data-step="3"] .rules-benchmark{opacity:.07}
-#experiment-results .architecture{top:264px;transition-delay:.2s;gap:18px}
-#experiment-results .responsibility{height:209px;padding:24px 29px}#experiment-results .responsibility>b{font-size:33px;margin-top:10px}#experiment-results .responsibility>p{font-size:17px;line-height:1.4;margin-top:12px}
-#experiment-results .architecture h3{font-size:53px;margin-top:27px}#experiment-results .architecture>small{font-size:18px;margin-top:-11px}
-#experiment-results .economics-strip{position:absolute;left:104px;right:104px;top:706px;min-height:123px;display:grid;grid-template-columns:180px 1fr 1fr 270px;gap:22px;align-items:center;padding:17px 22px;background:var(--surface);border:1px solid var(--brand-border);border-radius:14px;box-shadow:var(--shadow-sm);opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .45s var(--ease),transform .55s var(--ease),visibility .45s}
-#experiment-results .economics-strip>span{font-size:17px;font-weight:800;color:var(--brand-ink);letter-spacing:.035em}#experiment-results .economics-strip>span small{display:block;font-size:12px;color:var(--muted);margin-top:6px}
-#experiment-results .economics-strip p{font-size:15px;line-height:1.5;color:var(--muted)}#experiment-results .economics-strip b,#experiment-results .economics-strip strong{color:var(--ink);font-size:16px}#experiment-results .economics-strip em{font-style:normal;color:var(--brand-ink);font-size:16px;font-weight:700;line-height:1.3}
-[data-scene="5"][data-step="3"] .architecture,[data-scene="5"][data-step="3"] .economics-strip{opacity:1;visibility:visible;transform:none}
-
 /* Keep the Experiment title area fixed while fragments change below it. */
 #experiment-setup .strategy-card{border-color:var(--brand-border);box-shadow:0 14px 34px rgba(24,25,29,.075);padding:23px 24px}
 #experiment-setup .strategy-card b{font-size:25px}
@@ -195,16 +145,151 @@ dialog{border:1px solid var(--line);padding:0;color:var(--ink);background:var(--
 #experiment-prompts .prompt-result>p{font-size:17px;margin-top:6px}
 
 [data-scene="6"] .materials,[data-scene="6"] .illustration-label{visibility:hidden}
-#experiment-decision .economics-strip{position:absolute;left:104px;right:104px;top:278px;min-height:145px;display:grid;grid-template-columns:180px 1fr 1fr 270px;gap:22px;align-items:center;padding:20px 24px;background:var(--surface);border:1px solid var(--brand-border);border-radius:15px;box-shadow:var(--shadow-sm)}
-#experiment-decision .economics-strip>span{font-size:18px;font-weight:800;color:var(--brand-ink);letter-spacing:.035em}
-#experiment-decision .economics-strip>span small{display:block;font-size:13px;color:var(--muted);margin-top:6px}
-#experiment-decision .economics-strip p{font-size:17px;line-height:1.55;color:var(--muted)}
-#experiment-decision .economics-strip b,#experiment-decision .economics-strip strong{color:var(--ink);font-size:19px}
-#experiment-decision .economics-strip em{font-style:normal;color:var(--brand-ink);font-size:18px;font-weight:700;line-height:1.3}
-#experiment-decision .architecture{top:458px;gap:18px}
-#experiment-decision[aria-hidden="false"] .architecture{opacity:1;visibility:visible;transform:none}
-#experiment-decision .responsibility{height:198px;padding:23px 28px}
-#experiment-decision .responsibility>b{font-size:35px;margin-top:11px}
-#experiment-decision .responsibility>p{font-size:19px;line-height:1.42;margin-top:13px}
-#experiment-decision .architecture h3{font-size:52px;margin-top:24px}
-#experiment-decision .architecture>small{font-size:19px;margin-top:-9px}
+
+/* Slides 7–8 only: a persistent evidence chart, followed by the system decision. */
+#experiment-results .evidence-layout {
+  position: absolute; inset: 264px 104px auto; height: 506px;
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: 40px;
+}
+#experiment-results .evidence-chart { position: relative; min-width: 0; }
+#experiment-results .evidence-chart-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+#experiment-results .evidence-chart-heading h3 { font-size: 22px; font-weight: 720; letter-spacing: -.02em; }
+#experiment-results .evidence-legend { display: flex; gap: 21px; font-size: 16px; color: var(--muted); }
+#experiment-results .evidence-legend span { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+#experiment-results .evidence-legend i { width: 12px; height: 12px; border-radius: 3px; }
+#experiment-results .evidence-qwen { background: color-mix(in srgb, var(--ink) 78%, var(--bg)); }
+#experiment-results .evidence-gpt { background: var(--brand); }
+#experiment-results .evidence-gains { position: absolute; left: 20.5%; right: 13%; top: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+#experiment-results .evidence-gain { color: var(--brand-ink); }
+#experiment-results .evidence-gain > span { font-size: 15px; font-weight: 780; letter-spacing: .045em; }
+#experiment-results .evidence-gain p { margin-top: 8px; font-size: 17px; white-space: nowrap; }
+#experiment-results .evidence-gain em { font-style: normal; padding: 0 9px; color: var(--brand); }
+#experiment-results .evidence-gain i { position: relative; display: block; width: 100%; height: 1px; background: var(--brand); margin-top: 17px; }
+#experiment-results .evidence-gain i::after { content: ''; position: absolute; right: 0; top: -4px; width: 8px; height: 8px; border-top: 1.5px solid var(--brand); border-right: 1.5px solid var(--brand); transform: rotate(45deg); }
+#experiment-results .evidence-plot { position: absolute; top: 196px; left: 0; right: 0; height: 238px; }
+#experiment-results .evidence-gridline { position: absolute; left: 42px; right: 0; height: 1px; background: var(--line); }
+#experiment-results .evidence-gridline > span { position: absolute; right: calc(100% + 16px); top: -8px; color: var(--muted-2); font-size: 14px; }
+#experiment-results .evidence-grid-100 { top: 0; }
+#experiment-results .evidence-grid-50 { top: 50%; }
+#experiment-results .evidence-grid-0 { bottom: 0; background: color-mix(in srgb, var(--ink) 22%, transparent); }
+#experiment-results .evidence-groups { position: absolute; inset: 0 0 0 42px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+#experiment-results .evidence-group { position: relative; }
+#experiment-results .evidence-bars { position: absolute; inset: 0; display: flex; align-items: end; justify-content: center; gap: 24px; }
+#experiment-results .evidence-bar { position: relative; width: 72px; border-radius: 6px 6px 0 0; }
+#experiment-results .evidence-bar > span { position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; white-space: nowrap; }
+#experiment-results .evidence-bar b { font-size: 28px; font-weight: 760; letter-spacing: -.04em; line-height: 1.15; }
+#experiment-results .evidence-bar small { color: var(--muted); font-size: 16px; margin-top: 3px; }
+#experiment-results .evidence-group-label { position: absolute; top: calc(100% + 12px); width: 100%; text-align: center; }
+#experiment-results .evidence-group-label strong { display: block; font-size: 24px; letter-spacing: -.025em; }
+#experiment-results .evidence-group-label small { display: block; font-size: 15px; color: var(--muted); letter-spacing: .035em; margin-top: 3px; }
+#experiment-results .evidence-final-group .evidence-group-label strong { color: var(--brand-ink); }
+#experiment-results .evidence-footnote { position: absolute; left: 42px; bottom: -9px; font-size: 16px; color: var(--muted); }
+#experiment-results .evidence-reference { position: relative; border-left: 1px solid var(--brand-border); padding-left: 29px; }
+#experiment-results .evidence-benchmark h3 { font-size: 17px; font-weight: 780; letter-spacing: .075em; }
+#experiment-results .evidence-benchmark-result { display: flex; align-items: center; gap: 23px; margin-top: 14px; }
+#experiment-results .evidence-benchmark-result > strong { font-size: 78px; line-height: 1; letter-spacing: -.065em; font-weight: 790; }
+#experiment-results .evidence-benchmark-result > strong span { font-size: 52px; }
+#experiment-results .evidence-benchmark-result p { display: flex; flex-direction: column; gap: 8px; }
+#experiment-results .evidence-benchmark-result b { font-size: 26px; letter-spacing: -.03em; }
+#experiment-results .evidence-benchmark-result p span { font-size: 17px; color: var(--muted); }
+#experiment-results .evidence-benchmark-scope { margin-top: 11px; color: var(--muted); font-size: 16px; }
+#experiment-results .evidence-fallback { position: absolute; left: 29px; right: 0; top: 180px; padding-top: 22px; border-top: 1px solid var(--line); opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .35s var(--ease), transform .5s var(--ease), visibility .35s; }
+#experiment-results .evidence-fallback h4 { font-size: 19px; font-weight: 720; color: var(--brand-ink); }
+#experiment-results .evidence-fallback dl { margin: 20px 0 28px; display: flex; flex-direction: column; gap: 12px; }
+#experiment-results .evidence-fallback dl > div { display: flex; align-items: baseline; justify-content: space-between; }
+#experiment-results .evidence-fallback dt { font-size: 20px; }
+#experiment-results .evidence-fallback dd { margin: 0; font-size: 24px; font-weight: 720; letter-spacing: -.025em; }
+#experiment-results .evidence-fallback dd span { font-size: 19px; color: var(--muted); font-weight: 500; }
+#experiment-results .evidence-check-flow { display: flex; align-items: center; justify-content: space-between; gap: 9px; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+#experiment-results .evidence-check-flow span { font-size: 13px; font-weight: 750; line-height: 1.45; }
+#experiment-results .evidence-check-flow i { font-size: 20px; font-style: normal; color: var(--brand); }
+#experiment-results .evidence-fallback > p { margin-top: 15px; color: var(--muted); font-size: 17px; }
+#experiment-results .evidence-coverage { position: absolute; left: 29px; right: 0; top: 151px; padding-top: 15px; border-top: 1px solid var(--line); }
+#experiment-results .evidence-coverage h4 { font-size: 15px; color: var(--brand-ink); font-weight: 780; letter-spacing: .08em; }
+#experiment-results .evidence-coverage dl { margin: 10px 0 4px; }
+#experiment-results .evidence-coverage dl > div { display: flex; align-items: center; gap: 16px; height: 46px; }
+#experiment-results .evidence-coverage dt { min-width: 53px; font-size: 38px; line-height: 1; letter-spacing: -.055em; font-weight: 770; }
+#experiment-results .evidence-coverage dd { margin: 0; font-size: 18px; color: var(--muted); }
+#experiment-results .evidence-loc { font-size: 15px; color: var(--muted); }
+#experiment-results .evidence-example { padding-left: 12px; margin-top: 13px; border-left: 2px solid var(--brand-border); font-size: 17px; line-height: 1.45; }
+#experiment-results .evidence-example span { color: var(--brand-ink); }
+#experiment-results .evidence-coverage h3 { margin-top: 13px; font-size: 24px; line-height: 1.2; letter-spacing: -.035em; }
+#experiment-results .evidence-coverage-note { margin-top: 6px; color: var(--muted); font-size: 16px; line-height: 1.3; }
+#experiment-results .evidence-takeaway { position: absolute; left: 104px; right: 104px; top: 795px; padding-top: 15px; border-top: 1px solid var(--brand-border); display: grid; grid-template-columns: 1fr 35px 1fr 35px 1fr; align-items: center; gap: 16px; }
+#experiment-results .evidence-takeaway p { display: flex; align-items: baseline; gap: 14px; }
+#experiment-results .evidence-takeaway b { font-size: 14px; color: var(--brand-ink); letter-spacing: .06em; }
+#experiment-results .evidence-takeaway span { font-size: 17px; }
+#experiment-results .evidence-takeaway > i { font-style: normal; color: var(--brand); font-size: 25px; }
+#experiment-results :is(.evidence-reveal-one, .evidence-reveal-two) { opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .45s var(--ease), transform .55s var(--ease), visibility .45s; }
+[data-scene="5"]:is([data-step="1"], [data-step="2"]) #experiment-results .evidence-reveal-one,
+[data-scene="5"][data-step="1"] #experiment-results .evidence-fallback,
+[data-scene="5"][data-step="2"] #experiment-results .evidence-reveal-two { opacity: 1; visibility: visible; transform: none; }
+[data-scene="5"][data-step="2"] #experiment-results .evidence-coverage { transition-delay: .12s; }
+[data-scene="5"][data-step="2"] #experiment-results .evidence-takeaway { transition-delay: .25s; }
+
+#experiment-decision .decision-layout { position: absolute; inset: 267px 104px auto; height: 470px; display: grid; grid-template-rows: minmax(0, 1fr); grid-template-columns: 610px 1fr; gap: 72px; }
+#experiment-decision .decision-section-label { display: flex; align-items: baseline; gap: 20px; font-size: 16px; font-weight: 780; letter-spacing: .075em; }
+#experiment-decision .decision-section-label > span { color: var(--muted); font-size: 13px; letter-spacing: .045em; font-weight: 600; }
+#experiment-decision .decision-economics { transition: opacity .45s var(--ease); }
+#experiment-decision .decision-cost-track { margin-top: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+#experiment-decision .decision-cost-track h4 { font-size: 17px; font-weight: 750; letter-spacing: .055em; }
+#experiment-decision .decision-cost-comparison { display: grid; grid-template-columns: 210px 160px 210px; gap: 15px; margin-top: 12px; }
+#experiment-decision .decision-cost-point > span { display: block; font-size: 17px; font-weight: 700; color: var(--muted); margin-bottom: 5px; }
+#experiment-decision .decision-cost-point p { white-space: nowrap; font-size: 17px; color: var(--muted); }
+#experiment-decision .decision-cost-point strong { font-size: 35px; color: var(--ink); letter-spacing: -.045em; font-weight: 740; }
+#experiment-decision .decision-cost-point > b { display: block; font-size: 24px; font-weight: 650; letter-spacing: -.025em; margin-top: 5px; }
+#experiment-decision .decision-cost-final > span { color: var(--brand-ink); }
+#experiment-decision .decision-token-meter { position: relative; height: 5px; width: 188px; margin-top: 13px; background: var(--line); border-radius: 4px; overflow: hidden; }
+#experiment-decision .decision-token-meter i { position: absolute; inset: 0; background: color-mix(in srgb, var(--ink) 70%, var(--bg)); border-radius: inherit; }
+#experiment-decision .decision-token-meter em { position: absolute; right: 0; top: 0; bottom: 0; background: var(--brand); }
+#experiment-decision .decision-cost-delta { padding: 39px 10px 0 0; }
+#experiment-decision .decision-cost-delta > i { display: block; height: 1px; background: var(--brand-border); position: relative; margin-bottom: 12px; }
+#experiment-decision .decision-cost-delta > i::after { content: ''; position: absolute; right: 0; top: -4px; width: 8px; height: 8px; border-right: 1.5px solid var(--brand); border-top: 1.5px solid var(--brand); transform: rotate(45deg); }
+#experiment-decision .decision-cost-delta > span { font-size: 15px; line-height: 1.5; color: var(--muted); }
+#experiment-decision .decision-local-validation { margin-top: 19px; font-size: 24px; line-height: 1.3; letter-spacing: -.02em; }
+#experiment-decision .decision-local-validation strong { font-weight: 740; color: var(--brand-ink); }
+#experiment-decision .decision-system-area { position: relative; border-left: 1px solid var(--brand-border); padding-left: 40px; }
+#experiment-decision .decision-economic-takeaway { position: absolute; left: 57px; top: 83px; transition: opacity .3s var(--ease), visibility .3s, transform .4s var(--ease); }
+#experiment-decision .decision-economic-takeaway > p { color: var(--brand-ink); font-size: 20px; font-weight: 760; letter-spacing: .075em; }
+#experiment-decision .decision-economic-takeaway h3 { margin-top: 15px; font-size: 54px; line-height: 1.04; letter-spacing: -.05em; font-weight: 760; }
+#experiment-decision .decision-economic-takeaway > span { display: block; margin-top: 32px; font-size: 16px; color: var(--muted); }
+#experiment-decision .decision-reliability { display: flex; gap: 54px; margin-top: 13px; }
+#experiment-decision .decision-reliability p { display: flex; flex-direction: column; gap: 4px; }
+#experiment-decision .decision-reliability span { font-size: 17px; color: var(--muted); }
+#experiment-decision .decision-reliability strong { color: var(--brand-ink); font-size: 32px; font-weight: 720; letter-spacing: -.035em; }
+#experiment-decision .decision-system { position: absolute; top: 0; left: 40px; right: 0; height: 433px; }
+#experiment-decision .decision-llm { position: absolute; left: 22px; right: 0; top: 54px; display: grid; grid-template-columns: 230px 1fr; align-items: center; }
+#experiment-decision :is(.decision-llm, .decision-guardrails, .decision-rules) > div > span { font-size: 14px; font-weight: 770; letter-spacing: .09em; }
+#experiment-decision .decision-llm > div { color: var(--brand-ink); }
+#experiment-decision .decision-llm h4 { font-size: 44px; font-weight: 760; letter-spacing: -.04em; line-height: 1.1; margin-top: 4px; }
+#experiment-decision .decision-llm p { font-size: 19px; color: var(--muted); line-height: 1.45; }
+#experiment-decision .decision-proposal { position: absolute; top: 140px; left: 92px; height: 45px; display: flex; align-items: center; gap: 18px; }
+#experiment-decision .decision-proposal > span { font-size: 15px; color: var(--muted); }
+#experiment-decision :is(.decision-proposal, .decision-valid, .decision-conflict) > i { display: block; height: 100%; width: 1px; background: var(--brand-border); position: relative; }
+#experiment-decision :is(.decision-proposal, .decision-valid, .decision-conflict) > i::after { content: ''; position: absolute; left: -4px; bottom: 0; width: 8px; height: 8px; border-right: 1.5px solid var(--brand); border-bottom: 1.5px solid var(--brand); transform: rotate(45deg); }
+#experiment-decision .decision-guardrails { position: absolute; top: 195px; left: 0; right: 0; height: 96px; padding: 19px 22px; border: 1px solid color-mix(in srgb, var(--success) 20%, transparent); border-radius: 15px; background: var(--success-soft); display: grid; grid-template-columns: 230px 1fr; align-items: center; }
+#experiment-decision .decision-guardrails > div > span { color: var(--success); }
+#experiment-decision .decision-guardrails h4 { font-size: 28px; line-height: 1.2; letter-spacing: -.04em; margin-top: 5px; }
+#experiment-decision .decision-guardrails p { font-size: 18px; line-height: 1.5; }
+#experiment-decision .decision-valid { position: absolute; left: 92px; top: 291px; height: 59px; }
+#experiment-decision .decision-valid > span { position: absolute; top: 12px; left: 14px; font-size: 15px; color: var(--success); }
+#experiment-decision .decision-valid > i { background: color-mix(in srgb, var(--success) 35%, transparent); }
+#experiment-decision .decision-valid > i::after { border-color: var(--success); }
+#experiment-decision .decision-valid > strong { position: absolute; left: -36px; top: 76px; font-size: 27px; font-weight: 700; letter-spacing: -.025em; }
+#experiment-decision .decision-conflict { position: absolute; left: 427px; top: 291px; height: 36px; }
+#experiment-decision .decision-conflict > span { position: absolute; top: 8px; left: 14px; color: var(--muted); font-size: 15px; }
+#experiment-decision .decision-rules { position: absolute; left: 223px; right: 0; top: 337px; height: 104px; display: grid; grid-template-columns: 120px 1fr; align-items: center; padding: 17px 22px; border-radius: 15px; background: var(--ink); color: var(--surface); }
+#experiment-decision .decision-rules > div > span { opacity: .65; }
+#experiment-decision .decision-rules h4 { font-size: 30px; letter-spacing: -.035em; margin-top: 5px; }
+#experiment-decision .decision-rules p { font-size: 17px; line-height: 1.4; opacity: .85; }
+#experiment-decision .decision-principle { position: absolute; left: 104px; right: 104px; top: 759px; border-top: 1px solid var(--brand-border); padding-top: 22px; display: grid; grid-template-columns: 215px 1fr; align-items: start; }
+#experiment-decision .decision-principle > span { color: var(--brand-ink); font-size: 14px; font-weight: 780; letter-spacing: .08em; padding-top: 8px; }
+#experiment-decision .decision-principle h3 { font-size: 36px; font-weight: 750; letter-spacing: -.035em; line-height: 1.1; }
+#experiment-decision .decision-principle h3 span { color: var(--brand-ink); }
+#experiment-decision .decision-principle p { font-size: 19px; color: var(--muted); margin-top: 10px; }
+#experiment-decision :is(.decision-reveal-one, .decision-reveal-two) { opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity .45s var(--ease), transform .55s var(--ease), visibility .45s; }
+[data-scene="6"]:is([data-step="1"], [data-step="2"]) #experiment-decision .decision-reveal-one,
+[data-scene="6"][data-step="2"] #experiment-decision .decision-reveal-two { opacity: 1; visibility: visible; transform: none; }
+[data-scene="6"]:is([data-step="1"], [data-step="2"]) #experiment-decision .decision-system { transition-delay: .12s; }
+[data-scene="6"]:is([data-step="1"], [data-step="2"]) #experiment-decision .decision-economic-takeaway { opacity: 0; visibility: hidden; transform: translateY(-10px); }
+[data-scene="6"]:is([data-step="1"], [data-step="2"]) #experiment-decision .decision-economics { opacity: .84; }

@@ -4,7 +4,7 @@
   const deck = $('#deck');
   const cover = $('#cover');
   const scenes = [$('#problem'), $('#solution'), $('#progress'), $('#experiment-setup'), $('#experiment-prompts'), $('#experiment-results'), $('#experiment-decision')];
-  const steps = [1, 2, 3, 1, 2, 2, 0];
+  const steps = [1, 2, 3, 1, 2, 2, 2];
   const names = ['Project overview', 'Project overview', 'Progress overview', 'Experiment', 'Experiment', 'Experiment', 'Experiment'];
   const labels = ['AIPI 590 · Presentation 02', 'Purchase information → Next actions', 'Idea → Scope · Experience · Evaluation', 'Experiment setup', 'Prompt design', 'Results → Rules baseline', 'Token economics → System decision'];
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');

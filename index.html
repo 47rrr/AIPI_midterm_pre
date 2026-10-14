@@ -116,28 +116,112 @@
       </section>
       <section id="experiment-results" class="scene-copy experiment-scene" aria-label="Experiment results and rules baseline" aria-hidden="true" inert>
         <h2 class="experiment-title">Experiment: The result changed how we divide the work.</h2>
-        <p class="experiment-subtitle">Accuracy alone was not the whole product decision.</p>
-        <div class="accuracy-chart" role="img" aria-label="Correct executable plans on 20 cases: Qwen 3.7 Flash B0 5 percent, B1 60 percent, hybrid C 85 percent; GPT-6 Luna B0 50 percent, B1 65 percent, hybrid C 100 percent.">
-          <div class="chart-heading"><span>Correct executable plan (%)</span><div class="chart-legend"><span><i class="legend-qwen"></i>Qwen 3.7 Flash</span><span><i class="legend-gpt"></i>GPT-6 Luna</span></div></div>
-          <div class="chart-plot"><span class="grid-mark mark-100">100</span><span class="grid-mark mark-50">50</span><span class="grid-mark mark-0">0</span><div class="grid-line line-100"></div><div class="grid-line line-50"></div><div class="grid-line line-0"></div>
-            <div class="chart-groups">
-              <div class="chart-group"><div class="chart-bars"><div class="chart-bar qwen" style="height:5%"><span><b>5%</b><small>1/20</small></span></div><div class="chart-bar gpt" style="height:50%"><span><b>50%</b><small>10/20</small></span></div></div><strong>B0</strong><small>BASIC</small></div>
-              <div class="chart-group"><div class="chart-bars"><div class="chart-bar qwen" style="height:60%"><span><b>60%</b><small>12/20</small></span></div><div class="chart-bar gpt" style="height:65%"><span><b>65%</b><small>13/20</small></span></div></div><strong>B1</strong><small>STRUCTURED</small></div>
-              <div class="chart-group"><div class="chart-bars"><div class="chart-bar qwen" style="height:85%"><span><b>85%</b><small>17/20</small></span></div><div class="chart-bar gpt" style="height:100%"><span><b>100%</b><small>20/20</small></span></div></div><strong>C</strong><small>HYBRID · FINAL SYSTEM</small></div>
+        <p class="experiment-subtitle">Same 20 cases. Better prompts, then deterministic validation.</p>
+        <div class="evidence-layout">
+          <figure class="evidence-chart" aria-labelledby="evidence-chart-title">
+            <figcaption class="evidence-chart-heading">
+              <h3 id="evidence-chart-title">Correct executable plan (%)</h3>
+              <div class="evidence-legend"><span><i class="evidence-qwen"></i>Qwen 3.7 Flash</span><span><i class="evidence-gpt"></i>GPT-6 Luna</span></div>
+            </figcaption>
+            <div class="evidence-gains evidence-reveal-one">
+              <div class="evidence-gain"><span>PROMPT STRUCTURE</span><p>Qwen <b>+55 pts</b><em>·</em> GPT <b>+15 pts</b></p><i aria-hidden="true"></i></div>
+              <div class="evidence-gain"><span>VALIDATION + FALLBACK</span><p>Qwen <b>+25 pts</b><em>·</em> GPT <b>+35 pts</b></p><i aria-hidden="true"></i></div>
             </div>
-          </div>
-          <div class="chart-effect-labels"><span>PROMPT STRUCTURE <b>B0 → B1</b></span><span>VALIDATION + FALLBACK <b>B1 → C</b></span></div>
-          <p class="chart-caveat">C is final system correctness, including rule fallback.</p>
+            <div class="evidence-plot" role="img" aria-label="Correct executable plans on 20 cases. Qwen 3.7 Flash: B0 5%, 1/20; B1 60%, 12/20; C 85%, 17/20. GPT-6 Luna: B0 50%, 10/20; B1 65%, 13/20; C 100%, 20/20.">
+              <div class="evidence-gridline evidence-grid-100"><span>100</span></div>
+              <div class="evidence-gridline evidence-grid-50"><span>50</span></div>
+              <div class="evidence-gridline evidence-grid-0"><span>0</span></div>
+              <div class="evidence-groups">
+                <div class="evidence-group">
+                  <div class="evidence-bars"><div class="evidence-bar evidence-qwen" style="height:5%"><span><b>5%</b><small>1/20</small></span></div><div class="evidence-bar evidence-gpt" style="height:50%"><span><b>50%</b><small>10/20</small></span></div></div>
+                  <div class="evidence-group-label"><strong>B0</strong><small>BASIC</small></div>
+                </div>
+                <div class="evidence-group">
+                  <div class="evidence-bars"><div class="evidence-bar evidence-qwen" style="height:60%"><span><b>60%</b><small>12/20</small></span></div><div class="evidence-bar evidence-gpt" style="height:65%"><span><b>65%</b><small>13/20</small></span></div></div>
+                  <div class="evidence-group-label"><strong>B1</strong><small>STRUCTURED</small></div>
+                </div>
+                <div class="evidence-group evidence-final-group">
+                  <div class="evidence-bars"><div class="evidence-bar evidence-qwen" style="height:85%"><span><b>85%</b><small>17/20</small></span></div><div class="evidence-bar evidence-gpt" style="height:100%"><span><b>100%</b><small>20/20</small></span></div></div>
+                  <div class="evidence-group-label"><strong>C</strong><small>HYBRID · FINAL SYSTEM</small></div>
+                </div>
+              </div>
+            </div>
+            <p class="evidence-footnote">C = final system correctness, including rule fallback.</p>
+          </figure>
+          <aside class="evidence-reference" aria-label="Rules benchmark and supporting evidence">
+            <div class="evidence-benchmark">
+              <h3>RULES BASELINE</h3>
+              <div class="evidence-benchmark-result"><strong>100<span>%</span></strong><p><b>20 / 20</b><span>No model call</span></p></div>
+              <p class="evidence-benchmark-scope">On this bounded deterministic test set</p>
+            </div>
+            <div class="evidence-fallback">
+              <h4>C fallback triggered</h4>
+              <dl><div><dt>Qwen</dt><dd>8 / 20 <span>· 40%</span></dd></div><div><dt>GPT</dt><dd>4 / 20 <span>· 20%</span></dd></div></dl>
+              <div class="evidence-check-flow"><span>LLM<br>PLAN</span><i>→</i><span>DETERMINISTIC<br>CHECK</span><i>→</i><span>ACCEPT /<br>RULE FALLBACK</span></div>
+              <p>No second LLM repair call</p>
+            </div>
+            <div class="evidence-coverage evidence-reveal-two">
+              <h4>WHAT IT TOOK</h4>
+              <dl><div><dt>34</dt><dd>decision checks</dd></div><div><dt>21</dt><dd>scenario-routing branches</dd></div><div><dt>7</dt><dd>fallback / exception paths</dd></div></dl>
+              <p class="evidence-loc">~116 rule-logic LOC</p>
+              <p class="evidence-example">Nike QR already initiated<br><span>→ explicit 21-day handoff rule</span></p>
+              <h3>Rules are strongest where<br>correctness is computable.</h3>
+              <p class="evidence-coverage-note">High accuracy comes with explicit coverage.</p>
+            </div>
+          </aside>
         </div>
-        <div class="rules-benchmark"><span>RULES BASELINE</span><b>100%</b><strong>20 / 20 · no model call</strong></div>
-        <div class="experiment-callouts"><p class="effect-callout"><span>PROMPT STRUCTURE</span><b>Qwen +55 pts</b><b>GPT +15 pts</b><small>5 → 60% · 50 → 65%</small></p><p class="effect-callout"><span>VALIDATION + FALLBACK</span><b>Qwen +25 pts</b><b>GPT +35 pts</b><small>60 → 85% · 65 → 100%</small></p><p class="fallback-callout"><span>C fallback triggered</span><b>Qwen 8/20 · 40%</b><b>GPT 4/20 · 20%</b></p><p class="validation-flow">LLM PLAN → DETERMINISTIC CHECK<br>valid: accept · conflict: rule fallback<br><strong>No second LLM repair call</strong></p></div>
-        <div class="rules-tradeoff"><span>WHAT IT TOOK</span><div class="rules-coverage"><p><b>34</b> explicit decision checks</p><p><b>21</b> scenario-routing branches</p><p><b>7</b> fallback / exception paths</p></div><small>~116 rule-logic LOC</small><p class="rules-example">Nike QR already initiated → explicit 21-day handoff rule</p><h3>Rules are strongest where correctness is computable.</h3><p>High accuracy comes with explicit coverage. Unsupported scenarios or policy exceptions may require more rules.</p></div>
+        <div class="evidence-takeaway evidence-reveal-two" aria-label="Experiment takeaway">
+          <p><b>PROMPT</b><span>Structure improves model behavior</span></p><i aria-hidden="true">→</i>
+          <p><b>HYBRID</b><span>Validation improves reliability</span></p><i aria-hidden="true">→</i>
+          <p><b>RULES</b><span>Enforce what is computable</span></p>
+        </div>
       </section>
       <section id="experiment-decision" class="scene-copy experiment-scene" aria-label="Token economics and system decision" aria-hidden="true" inert>
         <h2 class="experiment-title">Experiment: Token economics and system decision</h2>
-        <p class="experiment-subtitle">B1 → C adds very little model cost: local validation, no second LLM call.</p>
-        <div class="economics-strip"><span>TOKEN ECONOMICS <small>PER CASE · B1 → C</small></span><p>Qwen 3.7 Flash <b>~16.5K → ~16.7K</b> tokens<br><strong>~¥0.00375 → ~¥0.00378</strong></p><p>GPT-6 Luna <b>~16.8K → ~17.0K</b> tokens<br><strong>~$0.00189 → ~$0.00191</strong></p><em>C adds local validation—not another model call.</em></div>
-        <div class="architecture"><div class="responsibility"><span>INTERPRET</span><b>LLM</b><p>Variable wording<br>Ambiguous context<br>Policy interpretation</p></div><div class="responsibility"><span>ENFORCE</span><b>RULES</b><p>Computable constraints<br>Required fields<br>State transitions</p></div><div class="responsibility"><span>PROTECT</span><b>GUARDRAILS</b><p>Detect conflicts<br>Safe fallback<br>No blind retry</p></div><h3>AI handles ambiguity. <span>Rules enforce certainty.</span></h3><small>Model choice changes the ceiling. Architecture determines what we trust.</small></div>
+        <p class="experiment-subtitle">Model cost → Responsibility → Architecture principle</p>
+        <div class="decision-layout">
+          <div class="decision-economics">
+            <h3 class="decision-section-label">MODEL COST <span>PER CASE · B1 → C</span></h3>
+            <div class="decision-cost-track">
+              <h4>QWEN 3.7 FLASH</h4>
+              <div class="decision-cost-comparison">
+                <div class="decision-cost-point"><span>B1</span><p><strong>~16.5K</strong> tokens</p><b>~¥0.00375</b><div class="decision-token-meter" aria-hidden="true"><i style="width:98.8%"></i></div></div>
+                <div class="decision-cost-delta"><i aria-hidden="true"></i><span>+~0.2K tokens<br>+~¥0.00003</span></div>
+                <div class="decision-cost-point decision-cost-final"><span>C</span><p><strong>~16.7K</strong> tokens</p><b>~¥0.00378</b><div class="decision-token-meter" aria-hidden="true"><i></i><em style="width:1.2%"></em></div></div>
+              </div>
+            </div>
+            <div class="decision-cost-track">
+              <h4>GPT-6 LUNA</h4>
+              <div class="decision-cost-comparison">
+                <div class="decision-cost-point"><span>B1</span><p><strong>~16.8K</strong> tokens</p><b>~$0.00189</b><div class="decision-token-meter" aria-hidden="true"><i style="width:98.82%"></i></div></div>
+                <div class="decision-cost-delta"><i aria-hidden="true"></i><span>+~0.2K tokens<br>+~$0.00002</span></div>
+                <div class="decision-cost-point decision-cost-final"><span>C</span><p><strong>~17.0K</strong> tokens</p><b>~$0.00191</b><div class="decision-token-meter" aria-hidden="true"><i></i><em style="width:1.18%"></em></div></div>
+              </div>
+            </div>
+            <p class="decision-local-validation">C adds local validation —<br><strong>not another model call.</strong></p>
+          </div>
+          <div class="decision-system-area">
+            <div class="decision-economic-takeaway">
+              <p>BIG RELIABILITY GAIN</p>
+              <h3>Small model-cost<br>change.</h3>
+              <span>B1 → C</span>
+              <div class="decision-reliability"><p><span>Qwen</span><strong>+25 pts</strong></p><p><span>GPT</span><strong>+35 pts</strong></p></div>
+            </div>
+            <div class="decision-system decision-reveal-one" role="group" aria-label="System responsibility: the LLM interprets and proposes a decision. Guardrails check for conflicts. Valid decisions are accepted; conflicts fall back to deterministic rules.">
+              <h3 class="decision-section-label">RESPONSIBILITY <span>ONE CONNECTED SYSTEM</span></h3>
+              <div class="decision-llm"><div><span>INTERPRET</span><h4>LLM</h4></div><p>Variable wording<br>Ambiguous context<br>Policy interpretation</p></div>
+              <div class="decision-proposal"><i aria-hidden="true"></i><span>proposed decision</span></div>
+              <div class="decision-guardrails"><div><span>PROTECT</span><h4>GUARDRAILS</h4></div><p>Detect conflicts<br>Safe fallback · No blind retry</p></div>
+              <div class="decision-valid"><span>valid</span><i aria-hidden="true"></i><strong>Accept</strong></div>
+              <div class="decision-conflict"><span>conflict</span><i aria-hidden="true"></i></div>
+              <div class="decision-rules"><div><span>ENFORCE</span><h4>RULES</h4></div><p>Computable constraints<br>Required fields<br>State transitions</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="decision-principle decision-reveal-two">
+          <span>PRODUCT PRINCIPLE</span>
+          <div><h3><span>AI handles ambiguity.</span> Rules enforce certainty.</h3><p>Model choice changes the ceiling. Architecture determines what we trust.</p></div>
+        </div>
       </section>
       <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Mid-Semester Presentation</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 0</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>
       <p id="status" class="sr-only" role="status" aria-live="polite"></p>

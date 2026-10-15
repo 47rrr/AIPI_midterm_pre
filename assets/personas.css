@@ -15,7 +15,7 @@
 .persona-sentiment.cautious{color:var(--warning);background:var(--warning-soft)}
 .persona-sentiment.future{color:var(--brand-ink);background:var(--brand-soft)}
 .persona-board{position:absolute;left:532px;top:270px;width:964px;height:466px;background:rgba(255,255,255,.66);border:1px solid var(--brand-border);border-radius:22px;box-shadow:var(--shadow-sm);overflow:hidden}
-.persona-caption{position:absolute;left:532px;right:104px;top:764px;color:var(--muted);font-size:21px;line-height:1.45;min-height:55px}
+.persona-caption{position:absolute;left:532px;right:104px;top:754px;color:var(--muted);font-size:28px;line-height:1.35;min-height:76px}
 .persona-caption strong{font-weight:700;color:var(--brand-ink)}
 .persona-evidence{position:absolute;left:104px;bottom:48px;color:var(--muted-2);font-size:13px}
 .persona-scene[aria-hidden=false] .persona-title{animation:personaHeadingIn .48s var(--ease) both}
@@ -111,7 +111,7 @@
 .persona-scene[data-persona-step="1"] .mobile-desktop-label,.persona-scene[data-persona-step="2"] .mobile-desktop-label{opacity:1}
 .persona-scene[data-persona-step="2"] .mobile-connection{opacity:1;transform:none}
 .persona-scene[data-persona-step="2"] .mobile-phone-action.primary{box-shadow:0 5px 16px rgba(217,79,125,.2)}
-.persona-summary{display:flex;align-items:center;gap:28px;font-size:18px}
+.persona-summary{display:flex;align-items:center;gap:28px;font-size:inherit}
 .persona-summary span{padding-right:26px;border-right:1px solid var(--brand-border)}
 .persona-summary span:last-child{border:0;padding:0}
 .persona-summary b{font-weight:730;color:var(--brand-ink)}

@@ -18,12 +18,8 @@
 .persona-caption{position:absolute;left:532px;right:104px;top:754px;color:var(--muted);font-size:28px;line-height:1.35;min-height:76px}
 .persona-caption strong{font-weight:700;color:var(--brand-ink)}
 .persona-evidence{position:absolute;left:104px;bottom:48px;color:var(--muted-2);font-size:13px}
-.persona-scene[aria-hidden=false] .persona-title{animation:personaHeadingIn .48s var(--ease) both}
-.persona-scene[aria-hidden=false] .persona-profile{animation:personaProfileIn .55s var(--ease) both}
-.persona-scene[aria-hidden=false] .persona-board{animation:personaBodyIn .56s var(--ease) .09s both}
-@keyframes personaHeadingIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes personaProfileIn{from{opacity:0;transform:translateX(-15px)}to{opacity:1;transform:none}}
-@keyframes personaBodyIn{from{opacity:0;transform:translateX(20px) scale(.985)}to{opacity:1;transform:none}}
+/* Use the shared scene transition. Separate entrance animations would restart
+   whenever instantRender settles a reveal or a quick navigation. */
 .persona-board-label{position:absolute;left:28px;top:23px;font-size:15px;font-weight:680;color:var(--muted);letter-spacing:-.01em}
 .persona-board-state{position:absolute;right:28px;top:22px;display:inline-block;padding:6px 10px;border-radius:7px;background:var(--surface-soft);color:var(--muted);font-size:13px;transition:background .4s,color .4s}
 .persona-board .icon{width:25px;height:25px}

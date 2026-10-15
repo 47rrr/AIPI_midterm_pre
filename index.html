@@ -30,7 +30,7 @@
   </defs></svg>
   <main class="viewport" aria-label="AIPI 590 presentation">
     <div id="deck" class="deck" data-scene="-1" data-step="0" data-phase="0" tabindex="-1">
-      <header class="topline"><p id="chapter" class="eyebrow">Return Pilot</p><span id="page-number">01 / 14</span></header>
+      <header class="topline"><p id="chapter" class="eyebrow">Return Pilot</p><span id="page-number">01 / 15</span></header>
       <section id="cover" class="scene-copy cover" aria-label="Return Pilot cover">
         <div class="cover-content">
           <span class="cover-mark" aria-hidden="true"><svg class="icon"><use href="#i-box"/></svg></span>
@@ -294,27 +294,67 @@
       <section id="experiment-setup" class="scene-copy experiment-scene" aria-label="Experiment setup" aria-hidden="true" inert>
         <h2 class="experiment-title">Experiment: Where does AI actually add value?</h2>
         <p class="experiment-subtitle">Same 20 return-planning cases · Same inputs · Four strategies · Two models</p>
-        <div class="harness-case"><span class="harness-number">20</span><strong>FIXED RETURN CASES</strong><span>Identical purchase context<br>and policy evidence</span></div>
-        <div class="harness-branches">
-          <div class="strategy-card"><b>A — RULES</b><span>Deterministic logic</span></div>
-          <div class="strategy-card"><b>B0 — BASIC</b><span>Base prompt</span></div>
-          <div class="strategy-card"><b>B1 — STRUCTURED</b><span>Structured decision prompt<br>+ worked example</span></div>
-          <div class="strategy-card"><b>C — HYBRID</b><span>B1 + deterministic validation<br>+ rule fallback</span></div>
+        <div class="setup-cases"><svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg><b>20</b><div><strong>Fixed return-planning cases</strong><p>Same purchase context and policy evidence</p></div></div>
+        <div class="setup-down setup-down-first" aria-hidden="true">&#8595;</div>
+        <div class="setup-strategies">
+          <div class="setup-baseline"><h3>RULES BASELINE</h3><div class="setup-strategy"><svg class="icon" aria-hidden="true"><use href="#i-page"/></svg><div><b>A</b><strong>RULES ONLY</strong><p>Deterministic baseline</p></div></div></div>
+          <div class="setup-llm"><h3>LLM-BASED APPROACHES <span aria-hidden="true"></span></h3><div class="setup-flow">
+            <div class="setup-strategy"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><div><b>B0</b><strong>BASIC PROMPT</strong><p>LLM baseline</p></div></div>
+            <span class="setup-next" aria-hidden="true">&#8594;</span>
+            <div class="setup-strategy"><svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg><div><b>B1</b><strong>STRUCTURED</strong><p>Decision flow + worked example</p></div></div>
+            <span class="setup-next" aria-hidden="true">&#8594;</span>
+            <div class="setup-strategy setup-hybrid"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><b>C</b><strong>HYBRID</strong><p>B1 + validation &amp; rule fallback</p></div></div>
+          </div></div>
         </div>
-        <div class="harness-models"><span class="harness-label">EVALUATED MODELS</span><b>Qwen 3.7 Flash</b><b>GPT-6 Luna</b></div>
-        <div class="harness-measures"><span>Correct plan</span><span>Critical errors</span><span>Latency</span><span>Tokens</span><span>Cost</span></div>
-        <p class="experiment-scope">Planning layer only · Purchase context and policy evidence held constant</p>
+        <div class="setup-down setup-down-last" aria-hidden="true">&#8595;</div>
+        <div class="setup-evaluation">
+          <div class="setup-models"><h3>MODELS</h3><div><b><span class="setup-model-mark">Q</span>Qwen 3.7 Flash</b><b><span class="setup-model-mark setup-gpt">&#9678;</span>GPT-6 Luna</b></div></div>
+          <div class="setup-metrics"><h3>EVALUATION METRICS</h3><div><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Correct plan</span><span><i>&#9651;</i>Critical errors</span><span><i>&#9687;</i>Latency</span><span><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg>Tokens</span><span><i>$</i>Cost</span></div></div>
+        </div>
       </section>
       <section id="experiment-prompts" class="scene-copy experiment-scene" aria-label="Prompt engineering experiment" aria-hidden="true" inert>
-        <h2 class="experiment-title">Experiment: Prompt engineering changed model behavior.</h2>
-        <p class="experiment-subtitle">The model stayed the same. The instructions became more explicit.</p>
-        <div class="prompt-column-label prompt-v1-label">VERSION 1</div><div class="prompt-column-label prompt-v2-label">VERSION 2</div>
-        <div class="prompt-card prompt-b0-v1"><span class="prompt-tag">B0 · v1</span><h3>Baseline</h3><p>Shared task and JSON schema</p><small>No explicit decision order · no worked example</small></div>
-        <div class="prompt-card prompt-b1-v1"><span class="prompt-tag">B1 · v1</span><h3>Added checks</h3><p>+ Retailer and policy<br>+ Supported method<br>+ Dates and grouping</p><small>Additional checks · no worked example</small></div>
-        <div class="prompt-improvements"><span>CLEARER SEMANTICS</span><i>+</i><strong>6-STEP<br>DECISION FLOW</strong><i>+</i><span>COMPLETE WORKED EXAMPLE</span></div>
-        <div class="prompt-card prompt-b0-v2"><span class="prompt-tag">B0 · v2</span><h3>Revised foundation</h3><p class="prompt-code-list">Clearer schema semantics<br>Input <em>·</em> output <em>·</em> method <em>·</em> dates <em>·</em> plan</p></div>
-        <div class="prompt-card prompt-b1-v2"><span class="prompt-tag">B1 · v2</span><h3>Structured decision flow</h3><p class="prompt-steps">01&nbsp; Establish context<br>02&nbsp; Apply policy &amp; dates<br>03&nbsp; Choose next path<br>04&nbsp; Build executable instructions<br>05&nbsp; Assemble the plan<br>06&nbsp; Final consistency check</p><strong>+ WORKED EXAMPLE</strong></div>
-        <div class="prompt-result"><div class="improvement-row"><span>Qwen 3.7 Flash</span><div class="improvement-track" style="--from:5%;--to:60%"><i></i><b class="improvement-start">5%</b><b class="improvement-end">60%</b></div><strong>+55 pts</strong></div><div class="improvement-row"><span>GPT-6 Luna</span><div class="improvement-track" style="--from:50%;--to:65%"><i></i><b class="improvement-start">50%</b><b class="improvement-end">65%</b></div><strong>+15 pts</strong></div><p>Same model. Same cases. More explicit decision structure.</p></div>
+        <h2 class="experiment-title">Experiment: Structured prompting improved planning accuracy.</h2>
+        <p class="experiment-subtitle">Same models. Same 20 cases. More explicit decision structure.</p>
+        <div class="pe-methods">
+          <div class="pe-foundation">
+            <h3>B0 &mdash; Foundational Prompt</h3>
+            <p class="pe-concept">What the model should do</p>
+            <dl class="pe-techniques">
+              <div><dt>Role &amp; Task Framing</dt><dd>Define the assistant's role and planning objective.</dd></div>
+              <div><dt>Context &amp; Constraints</dt><dd>Set evidence, policy boundaries, and restrictions.</dd></div>
+              <div><dt>Structured Output</dt><dd>Require a consistent JSON schema.</dd></div>
+            </dl>
+          </div>
+          <span class="pe-arrow pe-reveal-one" aria-hidden="true">&rarr;</span>
+          <div class="pe-structured pe-reveal-one">
+            <h3>B1 &mdash; Structured Prompt</h3>
+            <p class="pe-concept">How the model should decide</p>
+            <span class="pe-retained">B0 foundation retained &middot; three added techniques</span>
+            <dl class="pe-techniques">
+              <div><dt><span>01</span> Structured Reasoning</dt><dd>Explicit internal decision procedure (CoT-style).</dd></div>
+              <div><dt><span>02</span> Example-Based Prompting</dt><dd>One complete worked example (one-shot).</dd></div>
+              <div><dt><span>03</span> Self-Verification</dt><dd>Prompt-level consistency check before final output.</dd></div>
+            </dl>
+          </div>
+        </div>
+        <div class="pe-results pe-reveal-two">
+          <h3>CORRECT PLANS &middot; B0 VS B1</h3>
+          <div class="pe-model-results">
+            <figure class="pe-model" aria-label="Qwen 3.7 Flash: B0 5 percent, 1 of 20; B1 60 percent, 12 of 20. Improvement of 55 percentage points.">
+              <figcaption><strong>Qwen 3.7 Flash</strong><b>+55 <span>pp</span></b></figcaption>
+              <div class="pe-bar-row"><span>B0</span><div class="pe-bar-track"><i style="width:5%"></i></div><strong>5% <small>(1/20)</small></strong></div>
+              <div class="pe-bar-row pe-b1"><span>B1</span><div class="pe-bar-track"><i style="width:60%"></i></div><strong>60% <small>(12/20)</small></strong></div>
+              <div class="pe-scale" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+            </figure>
+            <figure class="pe-model" aria-label="GPT-6 Luna: B0 50 percent, 10 of 20; B1 65 percent, 13 of 20. Improvement of 15 percentage points.">
+              <figcaption><strong>GPT-6 Luna</strong><b>+15 <span>pp</span></b></figcaption>
+              <div class="pe-bar-row"><span>B0</span><div class="pe-bar-track"><i style="width:50%"></i></div><strong>50% <small>(10/20)</small></strong></div>
+              <div class="pe-bar-row pe-b1"><span>B1</span><div class="pe-bar-track"><i style="width:65%"></i></div><strong>65% <small>(13/20)</small></strong></div>
+              <div class="pe-scale" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+            </figure>
+          </div>
+          <p class="pe-takeaway">Same models. Same cases. Better decision structure.<span>pp = percentage points</span></p>
+        </div>
       </section>
       <section id="experiment-results" class="scene-copy experiment-scene" aria-label="Experiment results and rules baseline" aria-hidden="true" inert>
         <h2 class="experiment-title">Experiment: The result changed how we divide the work.</h2>
@@ -325,10 +365,6 @@
               <h3 id="evidence-chart-title">Correct executable plan (%)</h3>
               <div class="evidence-legend"><span><i class="evidence-qwen"></i>Qwen 3.7 Flash</span><span><i class="evidence-gpt"></i>GPT-6 Luna</span></div>
             </figcaption>
-            <div class="evidence-gains evidence-reveal-one">
-              <div class="evidence-gain"><span>PROMPT STRUCTURE</span><p>Qwen <b>+55 pts</b><em>·</em> GPT <b>+15 pts</b></p><i aria-hidden="true"></i></div>
-              <div class="evidence-gain"><span>VALIDATION + FALLBACK</span><p>Qwen <b>+25 pts</b><em>·</em> GPT <b>+35 pts</b></p><i aria-hidden="true"></i></div>
-            </div>
             <div class="evidence-plot" role="img" aria-label="Correct executable plans on 20 cases. Qwen 3.7 Flash: B0 5%, 1/20; B1 60%, 12/20; C 85%, 17/20. GPT-6 Luna: B0 50%, 10/20; B1 65%, 13/20; C 100%, 20/20.">
               <div class="evidence-gridline evidence-grid-100"><span>100</span></div>
               <div class="evidence-gridline evidence-grid-50"><span>50</span></div>
@@ -343,12 +379,11 @@
                   <div class="evidence-group-label"><strong>B1</strong><small>STRUCTURED</small></div>
                 </div>
                 <div class="evidence-group evidence-final-group">
-                  <div class="evidence-bars"><div class="evidence-bar evidence-qwen" style="height:85%"><span><b>85%</b><small>17/20</small></span></div><div class="evidence-bar evidence-gpt" style="height:100%"><span><b>100%</b><small>20/20</small></span></div></div>
+                  <div class="evidence-bars"><div class="evidence-bar evidence-qwen" style="height:70%"><span><b>70%</b><small>14/20</small></span></div><div class="evidence-bar evidence-gpt" style="height:100%"><span><b>100%</b><small>20/20</small></span></div></div>
                   <div class="evidence-group-label"><strong>C</strong><small>HYBRID · FINAL SYSTEM</small></div>
                 </div>
               </div>
             </div>
-            <p class="evidence-footnote">C = final system correctness, including rule fallback.</p>
           </figure>
           <aside class="evidence-reference" aria-label="Rules benchmark and supporting evidence">
             <div class="evidence-benchmark">
@@ -368,7 +403,6 @@
               <p class="evidence-loc">~116 rule-logic LOC</p>
               <p class="evidence-example">Nike QR already initiated<br><span>→ explicit 21-day handoff rule</span></p>
               <h3>Rules are strongest where<br>correctness is computable.</h3>
-              <p class="evidence-coverage-note">High accuracy comes with explicit coverage.</p>
             </div>
           </aside>
         </div>
@@ -378,51 +412,51 @@
           <p><b>RULES</b><span>Enforce what is computable</span></p>
         </div>
       </section>
-      <section id="experiment-decision" class="scene-copy experiment-scene" aria-label="Token economics and system decision" aria-hidden="true" inert>
-        <h2 class="experiment-title">Experiment: Token economics and system decision</h2>
-        <p class="experiment-subtitle">Model cost → Responsibility → Architecture principle</p>
-        <div class="decision-layout">
-          <div class="decision-economics">
-            <h3 class="decision-section-label">MODEL COST <span>PER CASE · B1 → C</span></h3>
-            <div class="decision-cost-track">
-              <h4>QWEN 3.7 FLASH</h4>
-              <div class="decision-cost-comparison">
-                <div class="decision-cost-point"><span>B1</span><p><strong>~16.5K</strong> tokens</p><b>~¥0.00375</b><div class="decision-token-meter" aria-hidden="true"><i style="width:98.8%"></i></div></div>
-                <div class="decision-cost-delta"><i aria-hidden="true"></i><span>+~0.2K tokens<br>+~¥0.00003</span></div>
-                <div class="decision-cost-point decision-cost-final"><span>C</span><p><strong>~16.7K</strong> tokens</p><b>~¥0.00378</b><div class="decision-token-meter" aria-hidden="true"><i></i><em style="width:1.2%"></em></div></div>
-              </div>
+      <section id="experiment-economics" class="scene-copy experiment-scene" aria-label="Token economics" aria-hidden="true" inert>
+        <h2 class="experiment-title">Experiment: Token Economics</h2>
+        <p class="experiment-subtitle">Model quality comes with a measurable cost trade-off.</p>
+        <div class="economics-models">
+          <article class="economics-model"><h3>Qwen 3.7 Flash</h3>
+            <div class="economics-comparison">
+              <div class="economics-stage"><h4>B1</h4><p><b>~16.5K</b> tokens</p><strong>$0.000570</strong><span>/ case</span></div>
+              <i class="economics-arrow" aria-hidden="true">&rarr;</i>
+              <div class="economics-stage economics-c"><h4>C</h4><p><b>~16.7K</b> tokens</p><strong>$0.000575</strong><span>/ case</span></div>
             </div>
-            <div class="decision-cost-track">
-              <h4>GPT-6 LUNA</h4>
-              <div class="decision-cost-comparison">
-                <div class="decision-cost-point"><span>B1</span><p><strong>~16.8K</strong> tokens</p><b>~$0.00189</b><div class="decision-token-meter" aria-hidden="true"><i style="width:98.82%"></i></div></div>
-                <div class="decision-cost-delta"><i aria-hidden="true"></i><span>+~0.2K tokens<br>+~$0.00002</span></div>
-                <div class="decision-cost-point decision-cost-final"><span>C</span><p><strong>~17.0K</strong> tokens</p><b>~$0.00191</b><div class="decision-token-meter" aria-hidden="true"><i></i><em style="width:1.18%"></em></div></div>
-              </div>
+            <p class="economics-increment"><b>+$0.000005 / case</b><span>+202 total tokens</span></p>
+          </article>
+          <article class="economics-model"><h3>GPT-6 Luna</h3>
+            <div class="economics-comparison">
+              <div class="economics-stage"><h4>B1</h4><p><b>~16.8K</b> tokens</p><strong>$0.00189</strong><span>/ case</span></div>
+              <i class="economics-arrow" aria-hidden="true">&rarr;</i>
+              <div class="economics-stage economics-c"><h4>C</h4><p><b>~17.0K</b> tokens</p><strong>$0.00191</strong><span>/ case</span></div>
             </div>
-            <p class="decision-local-validation">C adds local validation —<br><strong>not another model call.</strong></p>
-          </div>
-          <div class="decision-system-area">
-            <div class="decision-economic-takeaway">
-              <p>BIG RELIABILITY GAIN</p>
-              <h3>Small model-cost<br>change.</h3>
-              <span>B1 → C</span>
-              <div class="decision-reliability"><p><span>Qwen</span><strong>+25 pts</strong></p><p><span>GPT</span><strong>+35 pts</strong></p></div>
-            </div>
-            <div class="decision-system decision-reveal-one" role="group" aria-label="System responsibility: the LLM interprets and proposes a decision. Guardrails check for conflicts. Valid decisions are accepted; conflicts fall back to deterministic rules.">
-              <h3 class="decision-section-label">RESPONSIBILITY <span>ONE CONNECTED SYSTEM</span></h3>
-              <div class="decision-llm"><div><span>INTERPRET</span><h4>LLM</h4></div><p>Variable wording<br>Ambiguous context<br>Policy interpretation</p></div>
-              <div class="decision-proposal"><i aria-hidden="true"></i><span>proposed decision</span></div>
-              <div class="decision-guardrails"><div><span>PROTECT</span><h4>GUARDRAILS</h4></div><p>Detect conflicts<br>Safe fallback · No blind retry</p></div>
-              <div class="decision-valid"><span>valid</span><i aria-hidden="true"></i><strong>Accept</strong></div>
-              <div class="decision-conflict"><span>conflict</span><i aria-hidden="true"></i></div>
-              <div class="decision-rules"><div><span>ENFORCE</span><h4>RULES</h4></div><p>Computable constraints<br>Required fields<br>State transitions</p></div>
-            </div>
-          </div>
+            <p class="economics-increment"><b>+$0.00002 / case</b></p>
+          </article>
         </div>
-        <div class="decision-principle decision-reveal-two">
-          <span>PRODUCT PRINCIPLE</span>
-          <div><h3><span>AI handles ambiguity.</span> Rules enforce certainty.</h3><p>Model choice changes the ceiling. Architecture determines what we trust.</p></div>
+        <div class="economics-conclusion ending-reveal-one">
+          <div class="economics-ratio"><span>GPT &asymp;</span><strong>3.3&times;</strong><span>Qwen model cost / case</span></div>
+          <p class="economics-ratio-detail">B1: $0.00189 / $0.000570 &asymp; 3.32&times; <span>&middot;</span> C: $0.00191 / $0.000575 &asymp; 3.32&times;</p>
+          <h3>Higher model quality comes at ~3.3&times; the API cost.</h3>
+        </div>
+      </section>
+      <section id="challenges-priorities" class="scene-copy experiment-scene" aria-label="Challenges and next priorities" aria-hidden="true" inert>
+        <h2 class="experiment-title">Challenges &amp; Next Priorities</h2>
+        <p class="experiment-subtitle">What we learned while building &mdash; and where we go next.</p>
+        <div class="closing-challenges">
+          <h3>CHALLENGES</h3>
+          <ol>
+            <li><span aria-hidden="true">01</span><p>Our initial prompts listed requirements without enough structure, which led to poor model outputs.</p></li>
+            <li><span aria-hidden="true">02</span><p>GPT performed better in our evaluation, but costs about 3.3&times; more than Qwen and still requires substantial policy context.</p></li>
+            <li><span aria-hidden="true">03</span><p>We had to decide both whom to recruit and which research method would give us the most useful product feedback.</p></li>
+          </ol>
+        </div>
+        <div class="closing-priorities">
+          <h3>NEXT PRIORITIES</h3>
+          <div class="closing-priority-grid">
+            <article><h4>Smarter Agent Harness</h4><p>Better retrieval, context filtering, and tool use</p><small>Send only relevant policy evidence to the model.</small></article>
+            <article><h4>Privacy</h4><p>Narrower access, stronger protection, clearer user controls</p><small>Define data boundaries, storage, permissions, and user choice.</small></article>
+            <article><h4>Mobile Experience</h4><p>Bring return instructions and progress tracking on the go</p><small>Receipt capture &middot; Quick instructions &middot; Progress updates</small></article>
+          </div>
         </div>
       </section>
       <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Mid-Semester Presentation</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 0</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>
@@ -440,9 +474,10 @@
     <section data-scene="7"><h2>Customer persona · Maya · 约30秒</h2><p>Maya 是在工作与通勤之间办理退货的上班族。网页方便在家规划，但投递和查看凭证发生在外面。第一次点击出现手机端概念，用于查看步骤、拍摄凭证和更新进度；第二次点击把桌面与手机的同一批任务关联起来，作为未来扩展。最后用价值、信任、下一步三个词总结，并衔接后面的 architecture 或 future work。手机端尚未交付，图中是概念。</p></section>
     <section data-scene="8"><h2>MVP demonstration · 约90秒</h2><p>Enter the demo from Login. Purchases brings the fur jacket, cup, rain boots, and phone case together. Each item shows its return status; select eligible items and leave expired purchases out. Click Add purchase, then Try sample receipt. Review the headphones and save them to Purchases. Click Build my return plan: compatible returns are grouped by drop-off location and the nearest deadline comes first. Counts, amounts, and stops come from the selected items. Continue to Tracking and mark a drop-off to show how the same plan becomes trackable actions, all the way to a confirmed refund. Receipt extraction, prices, policies and drop-off locations are samples; tracking is updated manually.</p></section>
     <section data-scene="11"><h2>实验设置 · 约15–20秒</h2><p>我们只测规划层，把购买背景和政策证据固定在同样的 20 个案例里。四种策略分别是规则、基础提示、结构化提示，以及结构化提示加确定性验证和规则回退；两个模型接受相同输入。这样要回答的是 AI 在哪里真正增加价值。</p></section>
-    <section data-scene="12"><h2>提示词变化 · 约25–30秒</h2><p>先看旧版提示词：定义较少，只有几个附加检查。一次点击后，右侧出现更清楚的字段语义、明确的六步决策流程和一个完整示例。再次点击，两条提升线显示两个模型在相同案例上的进步。关键是决策结构更明确，而不只是提示词变长。</p></section>
+    <section data-scene="12"><h2>Prompt engineering &middot; B0 foundation &rarr; B1 techniques &rarr; measured improvement</h2><p>First, we tested whether prompt engineering alone could improve planning accuracy. Our baseline prompt already defined the role, task, constraints, and output schema.</p><p>For B1, we added structured reasoning, one complete worked example, and an explicit consistency check.</p><p>With the same models and the same 20 cases, Qwen improved from 5% to 60%, while GPT improved from 50% to 65%. This suggests that clearer decision structure can significantly improve planning accuracy, although prompt engineering alone does not eliminate errors.</p></section>
     <section data-scene="13"><h2>准确率与规则基线 · 约30–35秒</h2><p>图表先给出 B0、B1、C 在两个模型上的完整结果，规则基线为 20/20。第一步标出结构化提示和确定性验证各自带来的提升；C 是包含规则回退的最终系统正确率。第二步看规则基线达到 20/20 所需的显式检查、分支和例外覆盖。</p></section>
-    <section data-scene="14"><h2>成本与系统分工 · 约15–20秒</h2><p>B1 到 C 的模型成本只小幅增加，因为验证在本地完成，没有第二次 LLM 修复调用。由此确定产品分工：LLM 解释可变措辞和歧义，规则执行可计算约束，护栏检测冲突并安全回退。AI 处理歧义，规则保证确定性。</p></section>
+    <section data-scene="14"><h2>Token economics &middot; model cost trade-off</h2><p>Token economics gave us another trade-off. GPT performed better in our evaluation, but it is also around 3.3 times the model API cost of Qwen per case. Qwen B1 costs $0.000570 and C costs $0.000575; GPT B1 costs $0.00189 and C costs $0.00191. The ratios are approximately 3.32 at both B1 and C. Qwen uses approximately 16.5K to 16.7K tokens, a total increase of 202, while GPT uses approximately 16.8K to 17.0K.</p><p>Click once to reveal the cross-model comparison. Within each model, moving from B1 to C adds very little model cost because validation runs locally without another LLM repair call. The increments are $0.000005 for Qwen and $0.00002 for GPT per case. These are estimated model API costs, excluding infrastructure, engineering, and broader operating costs.</p><p>For the MVP, we may still prioritize reliability, but one optimization opportunity is reducing unnecessary input context, for example retrieving only relevant parts of retailer policies rather than sending all policy content. This does not finalize GPT as our production model or establish that higher cost automatically creates better business value.</p></section>
+    <section data-scene="15"><h2>Challenges &amp; next priorities &middot; 30&ndash;40 seconds</h2><p>We faced three main challenges. First, our initial prompts were unstructured, so we improved them through structured prompt engineering. Second, GPT performed better, but at about 3.3 times the model API cost. We may still prioritize reliability while reducing unnecessary policy context and input tokens; we have not finalized a production model. Third, we had to decide how to approach customer discovery. We chose interviews with everyday shoppers because this consumer problem benefits from deeper qualitative feedback to shape the MVP.</p><p>Click once: next, we want to improve our agent harness through targeted retrieval, context filtering, and tool use; strengthen privacy protections; and explore mobile support. Privacy improvements and mobile remain future work.</p></section>
   </aside>
   <script src="assets/personas.js"></script>
   <script src="assets/mvp.js"></script>

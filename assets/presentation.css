@@ -144,7 +144,6 @@ dialog{border:1px solid var(--line);padding:0;color:var(--ink);background:var(--
 #experiment-prompts .improvement-track i{height:7px;top:23px}
 #experiment-prompts .prompt-result>p{font-size:17px;margin-top:6px}
 
-[data-scene-id="experiment-decision"] .materials,[data-scene-id="experiment-decision"] .illustration-label{visibility:hidden}
 
 /* Experiment results and decision: a persistent evidence chart, followed by the system decision. */
 #experiment-results .evidence-layout {
@@ -159,14 +158,7 @@ dialog{border:1px solid var(--line);padding:0;color:var(--ink);background:var(--
 #experiment-results .evidence-legend i { width: 12px; height: 12px; border-radius: 3px; }
 #experiment-results .evidence-qwen { background: color-mix(in srgb, var(--ink) 78%, var(--bg)); }
 #experiment-results .evidence-gpt { background: var(--brand); }
-#experiment-results .evidence-gains { position: absolute; left: 20.5%; right: 13%; top: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
-#experiment-results .evidence-gain { color: var(--brand-ink); }
-#experiment-results .evidence-gain > span { font-size: 15px; font-weight: 780; letter-spacing: .045em; }
-#experiment-results .evidence-gain p { margin-top: 8px; font-size: 17px; white-space: nowrap; }
-#experiment-results .evidence-gain em { font-style: normal; padding: 0 9px; color: var(--brand); }
-#experiment-results .evidence-gain i { position: relative; display: block; width: 100%; height: 1px; background: var(--brand); margin-top: 17px; }
-#experiment-results .evidence-gain i::after { content: ''; position: absolute; right: 0; top: -4px; width: 8px; height: 8px; border-top: 1.5px solid var(--brand); border-right: 1.5px solid var(--brand); transform: rotate(45deg); }
-#experiment-results .evidence-plot { position: absolute; top: 196px; left: 0; right: 0; height: 238px; }
+#experiment-results .evidence-plot { position: absolute; top: 120px; left: 0; right: 0; height: 300px; }
 #experiment-results .evidence-gridline { position: absolute; left: 42px; right: 0; height: 1px; background: var(--line); }
 #experiment-results .evidence-gridline > span { position: absolute; right: calc(100% + 16px); top: -8px; color: var(--muted-2); font-size: 14px; }
 #experiment-results .evidence-grid-100 { top: 0; }
@@ -183,7 +175,6 @@ dialog{border:1px solid var(--line);padding:0;color:var(--ink);background:var(--
 #experiment-results .evidence-group-label strong { display: block; font-size: 24px; letter-spacing: -.025em; }
 #experiment-results .evidence-group-label small { display: block; font-size: 15px; color: var(--muted); letter-spacing: .035em; margin-top: 3px; }
 #experiment-results .evidence-final-group .evidence-group-label strong { color: var(--brand-ink); }
-#experiment-results .evidence-footnote { position: absolute; left: 42px; bottom: -9px; font-size: 16px; color: var(--muted); }
 #experiment-results .evidence-reference { position: relative; border-left: 1px solid var(--brand-border); padding-left: 29px; }
 #experiment-results .evidence-benchmark h3 { font-size: 17px; font-weight: 780; letter-spacing: .075em; }
 #experiment-results .evidence-benchmark-result { display: flex; align-items: center; gap: 23px; margin-top: 14px; }
@@ -214,7 +205,6 @@ dialog{border:1px solid var(--line);padding:0;color:var(--ink);background:var(--
 #experiment-results .evidence-example { padding-left: 12px; margin-top: 13px; border-left: 2px solid var(--brand-border); font-size: 17px; line-height: 1.45; }
 #experiment-results .evidence-example span { color: var(--brand-ink); }
 #experiment-results .evidence-coverage h3 { margin-top: 13px; font-size: 24px; line-height: 1.2; letter-spacing: -.035em; }
-#experiment-results .evidence-coverage-note { margin-top: 6px; color: var(--muted); font-size: 16px; line-height: 1.3; }
 #experiment-results .evidence-takeaway { position: absolute; left: 104px; right: 104px; top: 795px; padding-top: 15px; border-top: 1px solid var(--brand-border); display: grid; grid-template-columns: 1fr 35px 1fr 35px 1fr; align-items: center; gap: 16px; }
 #experiment-results .evidence-takeaway p { display: flex; align-items: baseline; gap: 14px; }
 #experiment-results .evidence-takeaway b { font-size: 14px; color: var(--brand-ink); letter-spacing: .06em; }
@@ -227,69 +217,129 @@ dialog{border:1px solid var(--line);padding:0;color:var(--ink);background:var(--
 [data-scene-id="experiment-results"][data-step="2"] #experiment-results .evidence-coverage { transition-delay: .12s; }
 [data-scene-id="experiment-results"][data-step="2"] #experiment-results .evidence-takeaway { transition-delay: .25s; }
 
-#experiment-decision .decision-layout { position: absolute; inset: 267px 104px auto; height: 470px; display: grid; grid-template-rows: minmax(0, 1fr); grid-template-columns: 610px 1fr; gap: 72px; }
-#experiment-decision .decision-section-label { display: flex; align-items: baseline; gap: 20px; font-size: 16px; font-weight: 780; letter-spacing: .075em; }
-#experiment-decision .decision-section-label > span { color: var(--muted); font-size: 13px; letter-spacing: .045em; font-weight: 600; }
-#experiment-decision .decision-economics { transition: opacity .45s var(--ease); }
-#experiment-decision .decision-cost-track { margin-top: 22px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
-#experiment-decision .decision-cost-track h4 { font-size: 17px; font-weight: 750; letter-spacing: .055em; }
-#experiment-decision .decision-cost-comparison { display: grid; grid-template-columns: 210px 160px 210px; gap: 15px; margin-top: 12px; }
-#experiment-decision .decision-cost-point > span { display: block; font-size: 17px; font-weight: 700; color: var(--muted); margin-bottom: 5px; }
-#experiment-decision .decision-cost-point p { white-space: nowrap; font-size: 17px; color: var(--muted); }
-#experiment-decision .decision-cost-point strong { font-size: 35px; color: var(--ink); letter-spacing: -.045em; font-weight: 740; }
-#experiment-decision .decision-cost-point > b { display: block; font-size: 24px; font-weight: 650; letter-spacing: -.025em; margin-top: 5px; }
-#experiment-decision .decision-cost-final > span { color: var(--brand-ink); }
-#experiment-decision .decision-token-meter { position: relative; height: 5px; width: 188px; margin-top: 13px; background: var(--line); border-radius: 4px; overflow: hidden; }
-#experiment-decision .decision-token-meter i { position: absolute; inset: 0; background: color-mix(in srgb, var(--ink) 70%, var(--bg)); border-radius: inherit; }
-#experiment-decision .decision-token-meter em { position: absolute; right: 0; top: 0; bottom: 0; background: var(--brand); }
-#experiment-decision .decision-cost-delta { padding: 39px 10px 0 0; }
-#experiment-decision .decision-cost-delta > i { display: block; height: 1px; background: var(--brand-border); position: relative; margin-bottom: 12px; }
-#experiment-decision .decision-cost-delta > i::after { content: ''; position: absolute; right: 0; top: -4px; width: 8px; height: 8px; border-right: 1.5px solid var(--brand); border-top: 1.5px solid var(--brand); transform: rotate(45deg); }
-#experiment-decision .decision-cost-delta > span { font-size: 15px; line-height: 1.5; color: var(--muted); }
-#experiment-decision .decision-local-validation { margin-top: 19px; font-size: 24px; line-height: 1.3; letter-spacing: -.02em; }
-#experiment-decision .decision-local-validation strong { font-weight: 740; color: var(--brand-ink); }
-#experiment-decision .decision-system-area { position: relative; border-left: 1px solid var(--brand-border); padding-left: 40px; }
-#experiment-decision .decision-economic-takeaway { position: absolute; left: 57px; top: 83px; transition: opacity .3s var(--ease), visibility .3s, transform .4s var(--ease); }
-#experiment-decision .decision-economic-takeaway > p { color: var(--brand-ink); font-size: 20px; font-weight: 760; letter-spacing: .075em; }
-#experiment-decision .decision-economic-takeaway h3 { margin-top: 15px; font-size: 54px; line-height: 1.04; letter-spacing: -.05em; font-weight: 760; }
-#experiment-decision .decision-economic-takeaway > span { display: block; margin-top: 32px; font-size: 16px; color: var(--muted); }
-#experiment-decision .decision-reliability { display: flex; gap: 54px; margin-top: 13px; }
-#experiment-decision .decision-reliability p { display: flex; flex-direction: column; gap: 4px; }
-#experiment-decision .decision-reliability span { font-size: 17px; color: var(--muted); }
-#experiment-decision .decision-reliability strong { color: var(--brand-ink); font-size: 32px; font-weight: 720; letter-spacing: -.035em; }
-#experiment-decision .decision-system { position: absolute; top: 0; left: 40px; right: 0; height: 433px; }
-#experiment-decision .decision-llm { position: absolute; left: 22px; right: 0; top: 54px; display: grid; grid-template-columns: 230px 1fr; align-items: center; }
-#experiment-decision :is(.decision-llm, .decision-guardrails, .decision-rules) > div > span { font-size: 14px; font-weight: 770; letter-spacing: .09em; }
-#experiment-decision .decision-llm > div { color: var(--brand-ink); }
-#experiment-decision .decision-llm h4 { font-size: 44px; font-weight: 760; letter-spacing: -.04em; line-height: 1.1; margin-top: 4px; }
-#experiment-decision .decision-llm p { font-size: 19px; color: var(--muted); line-height: 1.45; }
-#experiment-decision .decision-proposal { position: absolute; top: 140px; left: 92px; height: 45px; display: flex; align-items: center; gap: 18px; }
-#experiment-decision .decision-proposal > span { font-size: 15px; color: var(--muted); }
-#experiment-decision :is(.decision-proposal, .decision-valid, .decision-conflict) > i { display: block; height: 100%; width: 1px; background: var(--brand-border); position: relative; }
-#experiment-decision :is(.decision-proposal, .decision-valid, .decision-conflict) > i::after { content: ''; position: absolute; left: -4px; bottom: 0; width: 8px; height: 8px; border-right: 1.5px solid var(--brand); border-bottom: 1.5px solid var(--brand); transform: rotate(45deg); }
-#experiment-decision .decision-guardrails { position: absolute; top: 195px; left: 0; right: 0; height: 96px; padding: 19px 22px; border: 1px solid color-mix(in srgb, var(--success) 20%, transparent); border-radius: 15px; background: var(--success-soft); display: grid; grid-template-columns: 230px 1fr; align-items: center; }
-#experiment-decision .decision-guardrails > div > span { color: var(--success); }
-#experiment-decision .decision-guardrails h4 { font-size: 28px; line-height: 1.2; letter-spacing: -.04em; margin-top: 5px; }
-#experiment-decision .decision-guardrails p { font-size: 18px; line-height: 1.5; }
-#experiment-decision .decision-valid { position: absolute; left: 92px; top: 291px; height: 59px; }
-#experiment-decision .decision-valid > span { position: absolute; top: 12px; left: 14px; font-size: 15px; color: var(--success); }
-#experiment-decision .decision-valid > i { background: color-mix(in srgb, var(--success) 35%, transparent); }
-#experiment-decision .decision-valid > i::after { border-color: var(--success); }
-#experiment-decision .decision-valid > strong { position: absolute; left: -36px; top: 76px; font-size: 27px; font-weight: 700; letter-spacing: -.025em; }
-#experiment-decision .decision-conflict { position: absolute; left: 427px; top: 291px; height: 36px; }
-#experiment-decision .decision-conflict > span { position: absolute; top: 8px; left: 14px; color: var(--muted); font-size: 15px; }
-#experiment-decision .decision-rules { position: absolute; left: 223px; right: 0; top: 337px; height: 104px; display: grid; grid-template-columns: 120px 1fr; align-items: center; padding: 17px 22px; border-radius: 15px; background: var(--ink); color: var(--surface); }
-#experiment-decision .decision-rules > div > span { opacity: .65; }
-#experiment-decision .decision-rules h4 { font-size: 30px; letter-spacing: -.035em; margin-top: 5px; }
-#experiment-decision .decision-rules p { font-size: 17px; line-height: 1.4; opacity: .85; }
-#experiment-decision .decision-principle { position: absolute; left: 104px; right: 104px; top: 759px; border-top: 1px solid var(--brand-border); padding-top: 22px; display: grid; grid-template-columns: 215px 1fr; align-items: start; }
-#experiment-decision .decision-principle > span { color: var(--brand-ink); font-size: 14px; font-weight: 780; letter-spacing: .08em; padding-top: 8px; }
-#experiment-decision .decision-principle h3 { font-size: 36px; font-weight: 750; letter-spacing: -.035em; line-height: 1.1; }
-#experiment-decision .decision-principle h3 span { color: var(--brand-ink); }
-#experiment-decision .decision-principle p { font-size: 19px; color: var(--muted); margin-top: 10px; }
-#experiment-decision :is(.decision-reveal-one, .decision-reveal-two) { opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity .45s var(--ease), transform .55s var(--ease), visibility .45s; }
-[data-scene-id="experiment-decision"]:is([data-step="1"], [data-step="2"]) #experiment-decision .decision-reveal-one,
-[data-scene-id="experiment-decision"][data-step="2"] #experiment-decision .decision-reveal-two { opacity: 1; visibility: visible; transform: none; }
-[data-scene-id="experiment-decision"]:is([data-step="1"], [data-step="2"]) #experiment-decision .decision-system { transition-delay: .12s; }
-[data-scene-id="experiment-decision"]:is([data-step="1"], [data-step="2"]) #experiment-decision .decision-economic-takeaway { opacity: 0; visibility: hidden; transform: translateY(-10px); }
-[data-scene-id="experiment-decision"]:is([data-step="1"], [data-step="2"]) #experiment-decision .decision-economics { opacity: .84; }
+
+/* Experiment setup: reference layout, scoped to page 11. */
+#experiment-setup .experiment-title{left:68px;right:68px;top:96px;font-size:49px}
+#experiment-setup .experiment-subtitle{left:68px;right:68px;top:161px;font-size:23px}
+#experiment-setup .setup-cases{position:absolute;left:68px;right:68px;top:217px;height:129px;border:1px solid var(--line);border-radius:15px;background:var(--surface);display:flex;align-items:center;justify-content:center;gap:36px}
+#experiment-setup .setup-cases>.icon{width:66px;height:75px;color:var(--brand)}
+#experiment-setup .setup-cases>b{font-size:86px;line-height:1;letter-spacing:-.06em;color:var(--brand-ink)}
+#experiment-setup .setup-cases strong{font-size:27px;letter-spacing:-.025em}
+#experiment-setup .setup-cases p{font-size:21px;color:var(--muted);margin-top:6px}
+#experiment-setup .setup-down{position:absolute;left:780px;width:40px;text-align:center;color:var(--brand);font-size:46px;line-height:1}
+#experiment-setup .setup-down-first{top:351px}
+#experiment-setup .setup-down-last{top:603px}
+#experiment-setup .setup-strategies{position:absolute;left:68px;right:68px;top:403px;height:195px;display:grid;grid-template-columns:320px 1fr;gap:36px}
+#experiment-setup .setup-strategies h3,#experiment-setup .setup-evaluation h3{font-size:16px;letter-spacing:.1em;font-weight:800;color:var(--muted)}
+#experiment-setup .setup-baseline{border:1px solid var(--line);border-radius:15px;background:var(--surface-soft);padding:18px 22px}
+#experiment-setup .setup-strategy{display:flex;align-items:flex-start;gap:28px;min-width:0}
+#experiment-setup .setup-strategy>.icon{width:46px;height:50px;flex-shrink:0;margin-top:7px;color:#555d6c}
+#experiment-setup .setup-strategy b{display:block;font-size:44px;line-height:1.15;letter-spacing:-.04em}
+#experiment-setup .setup-strategy strong{display:block;font-size:20px;margin-top:8px;letter-spacing:-.025em}
+#experiment-setup .setup-strategy p{font-size:16px;color:var(--muted);margin-top:10px;white-space:nowrap;letter-spacing:-.025em}
+#experiment-setup .setup-baseline .setup-strategy{margin-top:22px;gap:38px}
+#experiment-setup .setup-llm{border-left:1px dashed #b9bec7;padding-left:36px}
+#experiment-setup .setup-llm h3{display:flex;gap:18px;align-items:center;color:var(--brand-ink);height:24px}
+#experiment-setup .setup-llm h3 span{height:1px;background:var(--brand);flex:1;position:relative}
+#experiment-setup .setup-llm h3 span:after{content:'\203a';position:absolute;right:-1px;top:-12px;font-size:22px}
+#experiment-setup .setup-flow{display:grid;grid-template-columns:1fr 36px 1fr 36px 1.05fr;align-items:center;gap:9px;margin-top:8px}
+#experiment-setup .setup-flow .setup-strategy{height:163px;padding:24px 22px;border:1px solid var(--line);border-radius:15px;background:var(--surface);gap:26px}
+#experiment-setup .setup-next{font-size:36px;color:var(--muted);text-align:center}
+#experiment-setup .setup-flow .setup-hybrid{border-color:var(--brand);background:var(--brand-soft)}
+#experiment-setup .setup-hybrid :is(b,strong,.icon){color:var(--brand-ink)}
+#experiment-setup .setup-evaluation{position:absolute;left:68px;right:68px;top:667px;height:151px;padding:21px 24px;border:1px solid var(--line);border-radius:15px;background:var(--surface);display:grid;grid-template-columns:530px 1fr;gap:32px}
+#experiment-setup .setup-models{border-right:1px dashed #b9bec7;padding-right:30px}
+#experiment-setup .setup-models>div,#experiment-setup .setup-metrics>div{display:flex;gap:18px;margin-top:12px}
+#experiment-setup .setup-models b,#experiment-setup .setup-metrics>div>span{display:flex;align-items:center;justify-content:center;gap:13px;height:73px;background:var(--surface-soft);border:1px solid var(--line);border-radius:14px;white-space:nowrap}
+#experiment-setup .setup-models b{flex:1;font-size:21px;letter-spacing:-.035em}
+#experiment-setup .setup-model-mark{font-size:30px;color:#7257ed;font-weight:850}
+#experiment-setup .setup-gpt{color:var(--ink);font-size:37px}
+#experiment-setup .setup-metrics>div{gap:16px}
+#experiment-setup .setup-metrics>div>span{padding:0 15px;flex:1;color:#596170;font-size:16px;font-weight:600;gap:10px}
+#experiment-setup .setup-metrics .icon{width:27px;height:27px;flex-shrink:0}
+#experiment-setup .setup-metrics i{font-style:normal;font-size:29px;line-height:1;font-weight:400}
+
+#experiment-setup .setup-strategy p{white-space:normal;line-height:1.25}
+
+/* Slide 12: foundation, added methodology, then measured accuracy. */
+#experiment-prompts .pe-methods{position:absolute;left:104px;right:104px;top:260px;height:337px;display:grid;grid-template-columns:548px 84px 1fr}
+#experiment-prompts .pe-foundation{padding:20px 24px 12px 0}
+#experiment-prompts .pe-methods h3{font-size:29px;line-height:1.2;letter-spacing:-.035em}
+#experiment-prompts .pe-concept{font-size:21px;color:var(--muted);margin-top:6px}
+#experiment-prompts .pe-techniques{margin:22px 0 0;padding:0;display:grid;gap:18px}
+#experiment-prompts .pe-techniques dt{font-size:23px;font-weight:720;line-height:1.2;letter-spacing:-.02em}
+#experiment-prompts .pe-techniques dd{margin:5px 0 0;font-size:18px;line-height:1.3;color:var(--muted)}
+#experiment-prompts .pe-arrow{align-self:center;text-align:center;color:var(--brand);font-size:39px}
+#experiment-prompts .pe-structured{padding:19px 28px;background:var(--surface);border:1px solid var(--brand-border);border-left:3px solid var(--brand);border-radius:12px}
+#experiment-prompts .pe-structured h3{color:var(--brand-ink)}
+#experiment-prompts .pe-retained{display:block;margin-top:11px;font-size:17px;font-weight:650;color:var(--brand-ink)}
+#experiment-prompts .pe-structured .pe-techniques{margin-top:14px;gap:10px}
+#experiment-prompts .pe-techniques dt>span{display:inline-block;width:34px;font-size:18px;color:var(--brand);font-weight:750}
+#experiment-prompts .pe-structured dd{margin-left:39px}
+#experiment-prompts .pe-results{position:absolute;left:104px;right:104px;top:619px;height:214px;border-top:1px solid var(--brand-border);padding-top:13px}
+#experiment-prompts .pe-results>h3{font-size:17px;font-weight:800;letter-spacing:.09em;color:var(--muted)}
+#experiment-prompts .pe-model-results{display:grid;grid-template-columns:1fr 1fr;gap:58px;margin-top:9px}
+#experiment-prompts .pe-model figcaption{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;line-height:1.1}
+#experiment-prompts .pe-model figcaption>strong{font-size:23px;letter-spacing:-.025em}
+#experiment-prompts .pe-model figcaption>b{font-size:31px;color:var(--brand-ink);letter-spacing:-.04em}
+#experiment-prompts .pe-model figcaption>b>span{font-size:23px;letter-spacing:0}
+#experiment-prompts .pe-bar-row{display:grid;grid-template-columns:33px 1fr 150px;gap:12px;align-items:center;height:35px}
+#experiment-prompts .pe-bar-row>span{font-size:18px;font-weight:750;color:#5c626d}
+#experiment-prompts .pe-bar-track{height:19px;background:rgba(24,25,29,.045);border-radius:3px;overflow:hidden}
+#experiment-prompts .pe-bar-track i{display:block;height:100%;background:#858b95;border-radius:3px}
+#experiment-prompts .pe-bar-row>strong{font-size:23px;font-weight:750;color:#5c626d;white-space:nowrap}
+#experiment-prompts .pe-bar-row small{font-size:18px;font-weight:550;color:var(--muted);margin-left:5px}
+#experiment-prompts .pe-b1 .pe-bar-track i{background:var(--brand)}
+#experiment-prompts .pe-b1>strong,#experiment-prompts .pe-b1>span{color:var(--brand-ink)}
+#experiment-prompts .pe-scale{display:flex;justify-content:space-between;margin:3px 162px 0 45px;font-size:15px;line-height:1.2;color:var(--muted)}
+#experiment-prompts .pe-takeaway{display:flex;justify-content:space-between;margin-top:13px;font-size:19px;font-weight:650}
+#experiment-prompts .pe-takeaway>span{font-size:16px;font-weight:400;color:var(--muted)}
+#experiment-prompts :is(.pe-reveal-one,.pe-reveal-two){opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+[data-scene-id="experiment-prompts"]:is([data-step="1"],[data-step="2"]) #experiment-prompts .pe-reveal-one,
+[data-scene-id="experiment-prompts"][data-step="2"] #experiment-prompts .pe-reveal-two{opacity:1;visibility:visible}
+
+/* Final slide: estimated API prices take priority over token usage. */
+
+/* Final Experiment slide: model cost trade-off. */
+[data-scene-id="experiment-economics"] :is(.materials,.illustration-label){visibility:hidden}
+#experiment-economics .economics-models{position:absolute;left:104px;right:104px;top:276px;display:grid;grid-template-columns:1fr 1fr;gap:42px}
+#experiment-economics .economics-model+ .economics-model{border-left:1px solid var(--line);padding-left:42px}
+#experiment-economics .economics-model h3{font-size:31px;letter-spacing:-.035em;margin-bottom:20px}
+#experiment-economics .economics-comparison{display:grid;grid-template-columns:1fr 32px 1fr;gap:13px;align-items:center}
+#experiment-economics .economics-stage{padding:18px 20px;background:rgba(24,25,29,.025);border-radius:9px;min-width:0}
+#experiment-economics .economics-stage h4{font-size:17px;letter-spacing:.06em;margin-bottom:12px}
+#experiment-economics .economics-stage p{font-size:17px;color:var(--muted);white-space:nowrap}
+#experiment-economics .economics-stage p b{font-size:28px;letter-spacing:-.03em;color:var(--ink);margin-right:4px}
+#experiment-economics .economics-stage>strong{display:block;font-size:35px;letter-spacing:-.045em;font-variant-numeric:tabular-nums;white-space:nowrap;margin-top:8px}
+#experiment-economics .economics-stage>span{display:block;font-size:16px;color:var(--muted);margin-top:3px}
+#experiment-economics .economics-c{background:var(--brand-soft)}
+#experiment-economics .economics-c h4,#experiment-economics .economics-c>strong{color:var(--brand-ink)}
+#experiment-economics .economics-arrow{font-style:normal;font-size:29px;color:var(--muted);text-align:center}
+#experiment-economics .economics-increment{display:flex;gap:24px;align-items:baseline;margin-top:16px;font-size:21px}
+#experiment-economics .economics-increment b{font-weight:650;color:var(--brand-ink)}
+#experiment-economics .economics-increment span{font-size:17px;color:var(--muted)}
+#experiment-economics .economics-conclusion{position:absolute;left:104px;right:104px;top:577px;padding-top:16px;border-top:1px solid var(--brand-border);text-align:center}
+#experiment-economics .economics-ratio{display:flex;align-items:center;justify-content:center;gap:23px}
+#experiment-economics .economics-ratio>span{font-size:30px;font-weight:650;letter-spacing:-.025em}
+#experiment-economics .economics-ratio>strong{font-size:76px;line-height:1;letter-spacing:-.065em;color:var(--brand-ink)}
+#experiment-economics .economics-ratio-detail{font-size:16px;color:var(--muted);margin-top:9px}
+#experiment-economics .economics-ratio-detail span{margin:0 14px}
+#experiment-economics .economics-conclusion h3{font-size:29px;letter-spacing:-.025em;margin-top:20px}
+#experiment-economics .ending-reveal-one{opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+[data-scene-id="experiment-economics"][data-step="1"] #experiment-economics .ending-reveal-one{opacity:1;visibility:visible}
+
+/* Closing slide: challenges first, then future priorities. */
+[data-scene-id="challenges-priorities"] :is(.materials,.illustration-label){visibility:hidden}
+#challenges-priorities .closing-challenges{position:absolute;left:104px;right:104px;top:270px}
+#challenges-priorities :is(.closing-challenges,.closing-priorities)>h3{font-size:17px;font-weight:800;letter-spacing:.1em;color:var(--brand-ink)}
+#challenges-priorities .closing-challenges ol{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:20px}
+#challenges-priorities .closing-challenges li{display:grid;grid-template-columns:45px 1fr;gap:19px;min-height:68px;align-items:start}
+#challenges-priorities .closing-challenges li>span{font-size:21px;line-height:1.4;color:var(--brand);font-weight:750;padding-top:3px}
+#challenges-priorities .closing-challenges li>p{font-size:27px;line-height:1.3;letter-spacing:-.015em;color:var(--ink);max-width:1300px}
+#challenges-priorities .closing-priorities{position:absolute;left:104px;right:104px;top:601px;border-top:1px solid var(--brand-border);padding-top:23px;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+#challenges-priorities .closing-priority-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;margin-top:25px}
+#challenges-priorities .closing-priority-grid article+article{border-left:1px solid var(--line);padding-left:30px}
+#challenges-priorities .closing-priority-grid h4{font-size:28px;font-weight:740;letter-spacing:-.03em;line-height:1.2}
+#challenges-priorities .closing-priority-grid p{font-size:23px;line-height:1.35;margin-top:14px}
+#challenges-priorities .closing-priority-grid small{display:block;font-size:18px;color:var(--muted);line-height:1.4;margin-top:15px}
+[data-scene-id="challenges-priorities"][data-step="1"] #challenges-priorities .closing-priorities{opacity:1;visibility:visible}

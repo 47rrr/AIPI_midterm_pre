@@ -11,10 +11,11 @@
     ...extensions,
     { id: 'system', steps: 1, name: 'System overview', label: 'Purchase → Policy → Plan → Refund' },
     { id: 'costs', steps: 1, name: 'Pilot cost', label: '200 active users · Monthly service budget' },
-    { id: 'experiment-setup', steps: 1, name: 'Experiment', label: 'Experiment setup', aliases: ['setup'] },
+    { id: 'experiment-setup', steps: 0, name: 'Experiment', label: 'Experiment setup', aliases: ['setup'] },
     { id: 'experiment-prompts', steps: 2, name: 'Experiment', label: 'Prompt design', aliases: ['prompts'] },
     { id: 'experiment-results', steps: 2, name: 'Experiment', label: 'Results → Rules baseline', aliases: ['results'] },
-    { id: 'experiment-decision', steps: 2, name: 'Experiment', label: 'Token economics → System decision', aliases: ['decision'] }
+    { id: 'experiment-economics', steps: 1, name: 'Experiment', label: 'Token economics', aliases: ['economics'] },
+    { id: 'challenges-priorities', steps: 1, name: 'Next steps', label: 'Challenges and next priorities', aliases: ['challenges', 'priorities'] }
   ];
   const scenes = sections.map(section => document.getElementById(section.id));
   const steps = sections.map(section => section.steps);

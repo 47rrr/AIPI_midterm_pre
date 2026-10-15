@@ -15,7 +15,8 @@
     { id: 'experiment-prompts', steps: 2, name: 'Experiment', label: 'Prompt design', aliases: ['prompts'] },
     { id: 'experiment-results', steps: 2, name: 'Experiment', label: 'Results → Rules baseline', aliases: ['results'] },
     { id: 'experiment-economics', steps: 1, name: 'Experiment', label: 'Token economics', aliases: ['economics'] },
-    { id: 'challenges-priorities', steps: 1, name: 'Next steps', label: 'Challenges and next priorities', aliases: ['challenges', 'priorities'] }
+    { id: 'challenges-priorities', steps: 1, name: 'Next steps', label: 'Challenges and next priorities', aliases: ['challenges', 'priorities'] },
+    { id: 'qa', steps: 0, name: 'Q & A', label: 'Q & A', aliases: ['questions'] }
   ];
   const scenes = sections.map(section => document.getElementById(section.id));
   const steps = sections.map(section => section.steps);

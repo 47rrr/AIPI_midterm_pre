@@ -85,7 +85,9 @@
       element.setAttribute('aria-hidden', String(index !== scene));
       element.inert = index !== scene;
       if (extensions.some(section => section.id === element.id)) {
-        element.dataset.personaStep = index === scene ? String(step) : '0';
+        // Completed sections keep their final composition during the outgoing fade;
+        // upcoming sections are ready to enter at their initial step.
+        element.dataset.personaStep = String(index < scene ? steps[index] : index === scene ? step : 0);
       }
     });
     $('#materials').setAttribute('aria-hidden', String(scene < 0 || scene > 2));

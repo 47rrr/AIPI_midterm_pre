@@ -1,0 +1,9 @@
+/* MVP demonstration styles from customer-personas. */
+#mvp .persona-title{top:112px;font-size:48px}
+#mvp .persona-subtitle{top:174px;font-size:19px}
+.mvp-inline-nav{position:absolute;left:680px;right:104px;top:172px;display:flex;justify-content:flex-end;gap:10px}
+.mvp-inline-nav button{border:1px solid var(--brand-border);border-radius:8px;padding:10px 14px;color:var(--brand-ink);background:var(--surface);font-size:15px}
+.mvp-inline-nav button:hover{background:var(--brand-soft)}
+.mvp-inline-frame{position:absolute;left:104px;top:231px;width:1392px;height:543px;border:1px solid var(--line);border-radius:16px;background:white;box-shadow:var(--shadow-md);pointer-events:auto}
+.mvp-disclosure{position:absolute;left:104px;top:798px;font-size:16px;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){#mvp *{animation:none!important;transition:none!important}}

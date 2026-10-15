@@ -4,10 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#FBFAF8">
-  <meta name="description" content="Return Pilot — AIPI 590 project and progress overview">
+  <meta name="description" content="Return Pilot — Project progress, customer personas, MVP, system overview, costs, and experiments">
   <title>Return Pilot · AIPI 590 · Presentation 2</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23D94F7D'/%3E%3Ctext x='8' y='24' font-size='24' fill='white' font-family='sans-serif'%3ER%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/presentation.css">
+  <link rel="stylesheet" href="assets/personas.css">
+  <link rel="stylesheet" href="assets/mvp.css">
+  <link rel="stylesheet" href="assets/system.css">
 </head>
 <body>
   <svg class="svg-definitions" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -20,17 +23,29 @@
     <symbol id="i-page" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 8h18M7 12h10M7 16h7"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
     <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5v9l-9 5-9-5V8l9-5Zm-9 5 9 5 9-5M12 13v9M7.5 5.5l9 5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 5h9a4 4 0 0 1 0 8H8a3 3 0 0 0 0 6h9"/></symbol>
+    <symbol id="i-refund" viewBox="0 0 24 24"><path d="M4 8a9 9 0 1 1-1 8M4 3v5h5M15 8h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9M12 6v12"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
   </defs></svg>
   <main class="viewport" aria-label="AIPI 590 presentation">
-    <div id="deck" class="deck" data-scene="0" data-step="0" data-phase="0" tabindex="-1">
-      <header class="topline"><p id="chapter" class="eyebrow">Project overview</p><span id="page-number">01 / 03</span></header>
-      <section id="problem" class="scene-copy" aria-label="Scattered return information">
-        <div class="question-core"><span class="context-label">A student. Several purchases. Different retailers.</span><h1>What do I need<br>to return<span class="accent">—and<br>what do I do next?</span></h1></div>
-        <div id="question-cloud" aria-label="Questions the shopper must answer"><span class="question-chip q-due">When is it due?</span><span class="question-chip q-where">Where can I return it?</span><span class="question-chip q-need">What do I need?</span></div>
+    <div id="deck" class="deck" data-scene="-1" data-step="0" data-phase="0" tabindex="-1">
+      <header class="topline"><p id="chapter" class="eyebrow">Return Pilot</p><span id="page-number">01 / 14</span></header>
+      <section id="cover" class="scene-copy cover" aria-label="Return Pilot cover">
+        <div class="cover-content">
+          <span class="cover-mark" aria-hidden="true"><svg class="icon"><use href="#i-box"/></svg></span>
+          <h1>Return Pilot</h1>
+          <p class="cover-subtitle">From scattered return information<br>to one clear next action.</p>
+          <div class="cover-credit"><p>AIPI 590 · Mid-Semester Presentation</p><p>Yingru Tao · Dongping Guo · Siqi Rui</p></div>
+        </div>
+      </section>
+      <section id="problem" class="scene-copy" aria-label="Scattered return information" aria-hidden="true" inert>
+        <div class="question-core"><span class="context-label">Multiple purchases. Multiple retailers. Different rules.</span><h1><span class="problem-lead">I know what I want to return.</span><br><span class="accent">But what do I actually do next?</span></h1></div>
+        <div id="question-cloud" aria-label="Questions the shopper must answer"><span class="question-chip q-due">When is it due?</span><span class="question-chip q-where">Where do I return it?</span><span class="question-chip q-need">What should I do first?</span></div>
       </section>
       <section id="solution" class="scene-copy" aria-label="Purchase information becomes an action plan" aria-hidden="true" inert>
-        <div class="organize-intro"><p class="context-label">The same purchases. The same policies.</p><h2>Let’s put it<br><span class="accent">together.</span></h2></div>
-        <div class="product-reveal"><span class="product-mark"><svg class="icon"><use href="#i-box"/></svg></span><h2>Return Pilot</h2><p>One place to manage<br>returns across retailers</p><span class="value-line">Less searching.<br>Less remembering.<br>A clearer next step.</span></div>
+        <div class="organize-intro"><p class="context-label">Same purchases. Same policies. Less manual work.</p><h2>We turn return information<br><span class="accent">into next actions.</span></h2></div>
+        <div class="product-reveal"><span class="product-mark"><svg class="icon"><use href="#i-box"/></svg></span><h2>Return Pilot</h2><p>One place to manage<br>returns across retailers</p><span class="value-line">Less searching.<br>Less remembering.<br>A clear next action.</span></div>
         <ol class="process-rail" aria-label="Information organization stages"><li>Gather</li><li>Find the details</li><li>Match each item</li><li>Order the actions</li></ol><p id="phase-caption" class="phase-caption" aria-live="polite"></p>
       </section>
       <!-- A single persistent group: the documents become tasks and then a concept thumbnail. -->
@@ -76,22 +91,361 @@
             <div class="prototype-copy"><p>The core experience<br>is now clickable.</p><span>Purchase review, tasks,<br>planning, and manual updates.</span><button id="launch-demo" class="text-button">Open Web demo <span aria-hidden="true">↗</span></button></div>
           </article>
           <article id="evaluation-panel" class="progress-panel" data-progress="3">
-            <div class="panel-header"><span class="panel-index">03</span><div><h3>AI evaluation</h3><p class="panel-summary">Which approach fits which task?</p></div><span class="evidence-badge pending">Evidence pending</span></div>
-            <div class="panel-material evaluation-material"><div class="method-options"><span>Rules</span><span>LLM</span><span>Hybrid</span></div><div class="evaluation-placeholder"><span class="placeholder-mark" aria-hidden="true">＋</span><p>Experiment design / results to be added<small>Comparison proposed · Completion status unverified</small></p></div></div>
+            <div class="panel-header"><span class="panel-index">03</span><div><h3>AI evaluation</h3><p class="panel-summary">Which approach fits which task?</p></div><span class="evidence-badge complete">20 cases tested</span></div>
+            <div class="panel-material evaluation-material"><div class="method-options"><span>Rules</span><span>LLM</span><span>Hybrid</span></div><div class="evaluation-placeholder complete"><span class="placeholder-mark" aria-hidden="true">✓</span><p>Planning-layer experiment complete<small>20 fixed cases · Detailed results next</small></p></div></div>
           </article>
         </div>
       </section>
-      <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Presentation 02</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 4</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>
+      <section id="persona-emma" class="scene-copy persona-scene" aria-label="Emma: clear next actions" aria-hidden="true" inert>
+        <h2 class="persona-title">Less searching. <span class="accent">A clearer next step.</span></h2>
+        <p class="persona-subtitle">The pain: each return starts with another search through receipts, emails, and retailer rules.</p>
+        <article class="persona-profile">
+          <div class="persona-identity"><span class="persona-avatar" aria-hidden="true">E</span><div><h3>Emma</h3><p>Graduate student</p></div></div>
+          <p class="persona-context">Shops across several retailers.</p>
+          <blockquote class="persona-quote">“I’m really happy with this. I finally know what to return first, without searching all my emails and store policies.”</blockquote>
+          <span class="persona-sentiment">Expected response · Satisfied</span>
+        </article>
+        <div class="persona-board">
+          <p class="persona-board-label">The same purchases. A different experience.</p>
+          <span class="persona-board-state"><span class="persona-board-before">Information → Action</span></span>
+          <h3 class="persona-source-list-label">Your next actions</h3>
+          <article class="persona-source s-email">
+            <div class="persona-document"><svg class="icon"><use href="#i-mail"/></svg><span>Order email</span></div>
+            <h4>Wireless Headphones</h4>
+            <div class="persona-source-detail">Retailer A<br>Delivered <b>September 15</b><br>Which deadline applies?</div>
+            <span class="persona-priority">1</span>
+            <div class="persona-task-action"><strong>Start your return</strong><span>Request by October 15 · Based on delivery date</span></div>
+          </article>
+          <article class="persona-source s-receipt">
+            <div class="persona-document"><svg class="icon"><use href="#i-receipt"/></svg><span>Paper receipt</span></div>
+            <h4>Everyday Hoodie</h4>
+            <div class="persona-source-detail">Retailer B<br>Purchased <b>September 20</b><br><span class="missing-date">Delivery date is missing</span></div>
+            <span class="persona-priority">2</span>
+            <div class="persona-task-action"><strong>Confirm the delivery date</strong><span>Deadline stays unverified until the date is confirmed</span></div>
+          </article>
+          <article class="persona-source s-screenshot">
+            <div class="persona-document"><svg class="icon"><use href="#i-image"/></svg><span>Screenshot</span></div>
+            <h4>Phone Case</h4>
+            <div class="persona-source-detail">Retailer A<br>Still deciding<br>When should I decide?</div>
+            <span class="persona-priority">3</span>
+            <div class="persona-task-action"><strong>Decide whether to keep it</strong><span>The choice stays with you · No return started</span></div>
+          </article>
+          <p class="persona-before-caption">Different policies. Different dates. No obvious priority.</p>
+        </div>
+        <div class="persona-caption">
+          <p class="persona-initial-caption">The burden is <strong>rebuilding the same information</strong> before every return.</p>
+          <p class="persona-step-one">Gather the evidence, match the policy, and <strong>give each item a next action.</strong></p>
+          <p class="persona-answer">Design value: <strong>one structured task list</strong>, with priorities and uncertainty visible.</p>
+        </div>
+        <span class="persona-evidence">Illustrative persona · Expected feedback to validate</span>
+      </section>
+      <section id="persona-ryan" class="scene-copy persona-scene" aria-label="Ryan: selective sharing and privacy" aria-hidden="true" inert>
+        <h2 class="persona-title">Useful—if I control <span class="accent">what I share.</span></h2>
+        <p class="persona-subtitle">The concern: managing a few returns should not require access to an entire inbox.</p>
+        <article class="persona-profile">
+          <div class="persona-identity"><span class="persona-avatar" aria-hidden="true">R</span><div><h3>Ryan</h3><p>Software engineer</p></div></div>
+          <p class="persona-context">Careful about sharing personal data.</p>
+          <blockquote class="persona-quote">“I’d use it, but I don’t want an app reading my entire inbox just to manage a few returns.”</blockquote>
+          <span class="persona-sentiment cautious">Expected response · Cautious</span>
+        </article>
+        <div class="persona-board">
+          <p class="persona-board-label">Privacy concern → A narrower input boundary</p>
+          <span class="persona-board-state">Proposed architecture</span>
+          <div class="privacy-inbox">
+            <h3 class="privacy-inbox-title"><svg class="icon"><use href="#i-mail"/></svg>My inbox</h3>
+            <div class="privacy-mail"><svg class="icon"><use href="#i-mail"/></svg>Personal messages</div>
+            <div class="privacy-mail"><svg class="icon"><use href="#i-mail"/></svg>Work conversations</div>
+            <div class="privacy-mail selected"><svg class="icon"><use href="#i-receipt"/></svg>Order confirmation</div>
+            <div class="privacy-mail"><svg class="icon"><use href="#i-mail"/></svg>Travel plans</div>
+            <div class="privacy-mail"><svg class="icon"><use href="#i-mail"/></svg>Subscriptions</div>
+          </div>
+          <div class="privacy-question"><h4>Does it need<br><span class="accent">everything?</span></h4><p>Only a few of these messages are relevant to a return.</p></div>
+          <div class="privacy-options">
+            <h4>Only the purchases you choose</h4>
+            <div class="privacy-option"><svg class="icon"><use href="#i-mail"/></svg>Forward one order email</div>
+            <div class="privacy-option"><svg class="icon"><use href="#i-receipt"/></svg>Upload a receipt</div>
+            <div class="privacy-option"><svg class="icon"><use href="#i-page"/></svg>Enter details manually</div>
+            <p class="privacy-scope">Selected evidence → Purchase understanding → Return tasks</p>
+          </div>
+          <div class="privacy-no-access"><svg class="icon"><use href="#i-check"/></svg>No full-inbox permission required.</div>
+        </div>
+        <div class="persona-caption">
+          <p class="persona-initial-caption">Concern: <strong>the scope of access</strong>, not just whether the app is useful.</p>
+          <p class="persona-step-one">Users decide which order email, receipt, or fields <strong>enter the system.</strong></p>
+          <p class="persona-answer">Architecture response: <strong>selective purchase input</strong>. Wider security controls still need implementation.</p>
+        </div>
+        <span class="persona-evidence">Illustrative persona · Input boundary is a planned design, not a security certification</span>
+      </section>
+      <section id="persona-maya" class="scene-copy persona-scene" aria-label="Maya: a future mobile experience" aria-hidden="true" inert>
+        <h2 class="persona-title">Plan on the web. <span class="accent">Follow through on the go.</span></h2>
+        <p class="persona-subtitle">The request: make the next step accessible where returns actually happen.</p>
+        <article class="persona-profile">
+          <div class="persona-identity"><span class="persona-avatar" aria-hidden="true">M</span><div><h3>Maya</h3><p>Working professional</p></div></div>
+          <p class="persona-context">Fits errands around work and commuting.</p>
+          <blockquote class="persona-quote">“I’d love this on my phone—especially when I’m at the drop-off point and need the instructions.”</blockquote>
+          <span class="persona-sentiment future">Expected request · Mobile access</span>
+        </article>
+        <div class="persona-board">
+          <p class="persona-board-label">From planning at home to action outside</p>
+          <span class="persona-board-state">Future opportunity</span>
+          <div class="mobile-desktop">
+            <div class="mobile-window-bar"><i></i><i></i><i></i><span>Return Pilot · Web workspace</span></div>
+            <div class="mobile-desktop-body"><h4>One trip. Three returns.</h4><p>Organize the tasks before leaving home.</p><div class="mobile-task-row"><strong>Wireless Headphones</strong><small>Next action</small><span class="mobile-task-status">Request return</span></div><div class="mobile-task-row"><strong>Everyday Hoodie</strong><small>Next action</small><span class="mobile-task-status">Confirm date</span></div></div>
+          </div>
+          <span class="mobile-desktop-label">Current focus · Web MVP</span>
+          <div class="mobile-connection" aria-hidden="true"><span>→</span><small>Same tasks<br>and progress</small><span>←</span></div>
+          <div class="mobile-phone" aria-label="Illustrative future mobile interface">
+            <span class="mobile-phone-label">Mobile concept</span><h4>At the drop-off?</h4><p>Keep the next step within reach.</p>
+            <div class="mobile-phone-action"><svg class="icon"><use href="#i-page"/></svg>Open return instructions</div>
+            <div class="mobile-phone-action"><svg class="icon"><use href="#i-image"/></svg>Photograph the receipt</div>
+            <div class="mobile-phone-action primary"><svg class="icon"><use href="#i-check"/></svg>Update progress</div>
+          </div>
+        </div>
+        <div class="persona-caption">
+          <p class="persona-initial-caption">The Web MVP supports planning. <strong>The drop-off happens away from the desk.</strong></p>
+          <p class="persona-step-one">Future mobile scope: <strong>receipt capture, quick instructions, and progress updates.</strong></p>
+          <div class="persona-answer persona-summary"><span><b>Value</b> · Clear next actions</span><span><b>Trust</b> · Selective input</span><span><b>Next</b> · Mobile access</span></div>
+        </div>
+        <span class="persona-evidence">Illustrative persona · Mobile is a future extension, not a delivered feature</span>
+      </section>
+      <section id="mvp" class="scene-copy mvp-scene" aria-label="MVP demonstration" aria-hidden="true" inert>
+        <h2 class="persona-title">Our web MVP</h2>
+        <p class="persona-subtitle">One purchase, from review to a clear next action.</p>
+        <nav class="mvp-inline-nav" aria-label="MVP demo pages"><button data-inline-route="login">Login</button><button data-inline-route="today">Today</button><button data-inline-route="review">Purchase review</button><button data-inline-route="detail">Return task</button><button data-inline-route="plan">Plan</button><button data-inline-route="tracking">Tracking</button></nav>
+        <iframe id="inline-mvp" class="mvp-inline-frame" src="demo/index.html#login" title="Interactive Return Pilot frontend prototype"></iframe>
+        <p class="mvp-disclosure">Sample policies and locations. Manual tracking. No live retailer or AI integrations.</p>
+      </section>
+      <section id="system" class="scene-copy overview-scene" aria-labelledby="system-title" aria-hidden="true" inert>
+        <div class="overview-heading">
+          <h2 id="system-title">From purchase <span class="accent">to refund.</span></h2>
+          <p>AI interprets. Rules calculate. You decide.</p>
+        </div>
+        <ol class="system-flow" aria-label="The return journey">
+          <li class="flow-node has-ai">
+            <div class="flow-node-top"><span class="flow-number">01</span><svg class="icon"><use href="#i-receipt"/></svg></div>
+            <h3>Import</h3><p>Receipt / PDF<br>Email / Manual</p>
+            <span class="ai-tag" data-reveal="system" data-reveal-step="1" aria-hidden="true">AI <span>Extract details</span></span>
+          </li>
+          <li class="flow-node has-ai">
+            <div class="flow-node-top"><span class="flow-number">02</span><svg class="icon"><use href="#i-page"/></svg></div>
+            <h3>Match policy</h3><p>Check conditions<br>Calculate deadlines</p>
+            <span class="ai-tag" data-reveal="system" data-reveal-step="1" aria-hidden="true">AI <span>Assess eligibility</span></span>
+          </li>
+          <li class="flow-node">
+            <div class="flow-node-top"><span class="flow-number">03</span><svg class="icon"><use href="#i-check"/></svg></div>
+            <h3>Choose</h3><p>You select items<br>Urgent returns first</p>
+            <span class="flow-role">Your decision</span>
+          </li>
+          <li class="flow-node has-ai">
+            <div class="flow-node-top"><span class="flow-number">04</span><svg class="icon"><use href="#i-route"/></svg></div>
+            <h3>Plan</h3><p>Time + place<br>Group nearby returns</p>
+            <span class="ai-tag" data-reveal="system" data-reveal-step="1" aria-hidden="true">AI <span>Use preferences</span></span>
+          </li>
+          <li class="flow-node">
+            <div class="flow-node-top"><span class="flow-number">05</span><svg class="icon"><use href="#i-box"/></svg></div>
+            <h3>Return</h3><p>Steps, labels &amp; QR<br>You drop it off</p>
+            <span class="flow-role">Guided by the app</span>
+          </li>
+          <li class="flow-node has-ai">
+            <div class="flow-node-top"><span class="flow-number">06</span><svg class="icon"><use href="#i-refund"/></svg></div>
+            <h3>Track refund</h3><p>Email updates<br>You confirm refund</p>
+            <span class="ai-tag" data-reveal="system" data-reveal-step="1" aria-hidden="true">AI <span>Read status</span></span>
+          </li>
+        </ol>
+        <div class="system-foundation" data-reveal="system" data-reveal-step="1" aria-hidden="true">
+          <div class="policy-feed">
+            <div class="foundation-heading"><span>Policy library</span><small>Updates checked weekly</small></div>
+            <div class="policy-feed-flow"><span><b class="inline-ai">AI</b> checks updates</span><svg class="icon"><use href="#i-arrow"/></svg><span>Team reviews</span><svg class="icon"><use href="#i-arrow"/></svg><span class="policy-published">Policies go live</span></div>
+          </div>
+          <div class="system-notes">
+            <p class="deployment-caption"><span class="deployment-current">Cloud MVP</span><span class="deployment-line" aria-hidden="true"></span><span>On-device AI next</span></p>
+            <p class="privacy-note"><svg class="icon"><use href="#i-shield"/></svg><span>Planned: encrypted transfer &amp; storage</span></p>
+          </div>
+        </div>
+      </section>
+      <section id="costs" class="scene-copy overview-scene" aria-labelledby="cost-title" aria-hidden="true" inert>
+        <div class="overview-heading">
+          <h2 id="cost-title">Monthly budget for <span class="accent">200 active users.</span></h2>
+          <p>Cloud MVP · Estimated <strong>$40–70</strong> per month</p>
+        </div>
+        <div class="call-model">
+          <div class="call-hero"><span class="call-total">≈7</span><p>model calls<br>per complete return</p></div>
+          <dl class="call-stages">
+            <div style="--calls:2"><dt><span class="call-dots" aria-hidden="true"><i></i><i></i></span><span class="call-stage-count">2</span></dt><dd>Import<br>&amp; policy</dd></div>
+            <div style="--calls:1"><dt><span class="call-dots" aria-hidden="true"><i></i></span><span class="call-stage-count">1</span></dt><dd>Plan</dd></div>
+            <div style="--calls:3"><dt><span class="call-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="call-stage-count">3</span></dt><dd>Email<br>updates</dd></div>
+            <div style="--calls:1"><dt><span class="call-dots" aria-hidden="true"><i class="reserve-dot"></i></span><span class="call-stage-count">1</span></dt><dd>Adjust /<br>retry</dd></div>
+          </dl>
+          <div class="call-formula"><span>Monthly calls per user</span><p>2 × purchases <b>+</b> 5 × returns</p></div>
+        </div>
+        <div class="budget-board" aria-label="Monthly platform budgets for 200 active users">
+          <div class="budget-heading"><span>Usage per user / month</span><span>Platform / month</span></div>
+          <div class="budget-row" style="--budget-width:57.14%"><div class="budget-profile"><h3>Light</h3><p>10 purchases · 2 returns</p></div><div class="budget-track" aria-hidden="true"><span></span></div><strong class="budget-amount">$40</strong></div>
+          <div class="budget-row budget-typical" style="--budget-width:71.43%"><div class="budget-profile"><h3>Typical</h3><p>20 purchases · 4 returns</p></div><div class="budget-track" aria-hidden="true"><span></span></div><strong class="budget-amount">$50</strong></div>
+          <div class="budget-row" style="--budget-width:100%"><div class="budget-profile"><h3>Heavy</h3><p>40 purchases · 8 returns</p></div><div class="budget-track" aria-hidden="true"><span></span></div><strong class="budget-amount">$70</strong></div>
+        </div>
+        <div class="cost-breakdown" data-reveal="costs" data-reveal-step="1" aria-hidden="true">
+          <span class="breakdown-label">Inside the $50</span>
+          <dl><div><dt>$25</dt><dd>Server, data &amp; email</dd></div><div><dt>$7</dt><dd>AI</dd></div><div><dt>$8</dt><dd>Search</dd></div><div><dt>$10</dt><dd>Spare budget</dd></div></dl>
+        </div>
+        <p class="budget-assumption">Estimated service costs · Actual bills will depend on usage</p>
+        <p class="budget-sources">Pricing: <a href="https://developers.openai.com/api/docs/models/gpt-6-luna" target="_blank" rel="noopener">GPT-6 Luna ↗</a><span>·</span><a href="https://brave.com/search/api/" target="_blank" rel="noopener">Brave Search ↗</a></p>
+      </section>
+      <section id="experiment-setup" class="scene-copy experiment-scene" aria-label="Experiment setup" aria-hidden="true" inert>
+        <h2 class="experiment-title">Experiment: Where does AI actually add value?</h2>
+        <p class="experiment-subtitle">Same 20 return-planning cases · Same inputs · Four strategies · Two models</p>
+        <div class="harness-case"><span class="harness-number">20</span><strong>FIXED RETURN CASES</strong><span>Identical purchase context<br>and policy evidence</span></div>
+        <div class="harness-branches">
+          <div class="strategy-card"><b>A — RULES</b><span>Deterministic logic</span></div>
+          <div class="strategy-card"><b>B0 — BASIC</b><span>Base prompt</span></div>
+          <div class="strategy-card"><b>B1 — STRUCTURED</b><span>Structured decision prompt<br>+ worked example</span></div>
+          <div class="strategy-card"><b>C — HYBRID</b><span>B1 + deterministic validation<br>+ rule fallback</span></div>
+        </div>
+        <div class="harness-models"><span class="harness-label">EVALUATED MODELS</span><b>Qwen 3.7 Flash</b><b>GPT-6 Luna</b></div>
+        <div class="harness-measures"><span>Correct plan</span><span>Critical errors</span><span>Latency</span><span>Tokens</span><span>Cost</span></div>
+        <p class="experiment-scope">Planning layer only · Purchase context and policy evidence held constant</p>
+      </section>
+      <section id="experiment-prompts" class="scene-copy experiment-scene" aria-label="Prompt engineering experiment" aria-hidden="true" inert>
+        <h2 class="experiment-title">Experiment: Prompt engineering changed model behavior.</h2>
+        <p class="experiment-subtitle">The model stayed the same. The instructions became more explicit.</p>
+        <div class="prompt-column-label prompt-v1-label">VERSION 1</div><div class="prompt-column-label prompt-v2-label">VERSION 2</div>
+        <div class="prompt-card prompt-b0-v1"><span class="prompt-tag">B0 · v1</span><h3>Baseline</h3><p>Shared task and JSON schema</p><small>No explicit decision order · no worked example</small></div>
+        <div class="prompt-card prompt-b1-v1"><span class="prompt-tag">B1 · v1</span><h3>Added checks</h3><p>+ Retailer and policy<br>+ Supported method<br>+ Dates and grouping</p><small>Additional checks · no worked example</small></div>
+        <div class="prompt-improvements"><span>CLEARER SEMANTICS</span><i>+</i><strong>6-STEP<br>DECISION FLOW</strong><i>+</i><span>COMPLETE WORKED EXAMPLE</span></div>
+        <div class="prompt-card prompt-b0-v2"><span class="prompt-tag">B0 · v2</span><h3>Revised foundation</h3><p class="prompt-code-list">Clearer schema semantics<br>Input <em>·</em> output <em>·</em> method <em>·</em> dates <em>·</em> plan</p></div>
+        <div class="prompt-card prompt-b1-v2"><span class="prompt-tag">B1 · v2</span><h3>Structured decision flow</h3><p class="prompt-steps">01&nbsp; Establish context<br>02&nbsp; Apply policy &amp; dates<br>03&nbsp; Choose next path<br>04&nbsp; Build executable instructions<br>05&nbsp; Assemble the plan<br>06&nbsp; Final consistency check</p><strong>+ WORKED EXAMPLE</strong></div>
+        <div class="prompt-result"><div class="improvement-row"><span>Qwen 3.7 Flash</span><div class="improvement-track" style="--from:5%;--to:60%"><i></i><b class="improvement-start">5%</b><b class="improvement-end">60%</b></div><strong>+55 pts</strong></div><div class="improvement-row"><span>GPT-6 Luna</span><div class="improvement-track" style="--from:50%;--to:65%"><i></i><b class="improvement-start">50%</b><b class="improvement-end">65%</b></div><strong>+15 pts</strong></div><p>Same model. Same cases. More explicit decision structure.</p></div>
+      </section>
+      <section id="experiment-results" class="scene-copy experiment-scene" aria-label="Experiment results and rules baseline" aria-hidden="true" inert>
+        <h2 class="experiment-title">Experiment: The result changed how we divide the work.</h2>
+        <p class="experiment-subtitle">Same 20 cases. Better prompts, then deterministic validation.</p>
+        <div class="evidence-layout">
+          <figure class="evidence-chart" aria-labelledby="evidence-chart-title">
+            <figcaption class="evidence-chart-heading">
+              <h3 id="evidence-chart-title">Correct executable plan (%)</h3>
+              <div class="evidence-legend"><span><i class="evidence-qwen"></i>Qwen 3.7 Flash</span><span><i class="evidence-gpt"></i>GPT-6 Luna</span></div>
+            </figcaption>
+            <div class="evidence-gains evidence-reveal-one">
+              <div class="evidence-gain"><span>PROMPT STRUCTURE</span><p>Qwen <b>+55 pts</b><em>·</em> GPT <b>+15 pts</b></p><i aria-hidden="true"></i></div>
+              <div class="evidence-gain"><span>VALIDATION + FALLBACK</span><p>Qwen <b>+25 pts</b><em>·</em> GPT <b>+35 pts</b></p><i aria-hidden="true"></i></div>
+            </div>
+            <div class="evidence-plot" role="img" aria-label="Correct executable plans on 20 cases. Qwen 3.7 Flash: B0 5%, 1/20; B1 60%, 12/20; C 85%, 17/20. GPT-6 Luna: B0 50%, 10/20; B1 65%, 13/20; C 100%, 20/20.">
+              <div class="evidence-gridline evidence-grid-100"><span>100</span></div>
+              <div class="evidence-gridline evidence-grid-50"><span>50</span></div>
+              <div class="evidence-gridline evidence-grid-0"><span>0</span></div>
+              <div class="evidence-groups">
+                <div class="evidence-group">
+                  <div class="evidence-bars"><div class="evidence-bar evidence-qwen" style="height:5%"><span><b>5%</b><small>1/20</small></span></div><div class="evidence-bar evidence-gpt" style="height:50%"><span><b>50%</b><small>10/20</small></span></div></div>
+                  <div class="evidence-group-label"><strong>B0</strong><small>BASIC</small></div>
+                </div>
+                <div class="evidence-group">
+                  <div class="evidence-bars"><div class="evidence-bar evidence-qwen" style="height:60%"><span><b>60%</b><small>12/20</small></span></div><div class="evidence-bar evidence-gpt" style="height:65%"><span><b>65%</b><small>13/20</small></span></div></div>
+                  <div class="evidence-group-label"><strong>B1</strong><small>STRUCTURED</small></div>
+                </div>
+                <div class="evidence-group evidence-final-group">
+                  <div class="evidence-bars"><div class="evidence-bar evidence-qwen" style="height:85%"><span><b>85%</b><small>17/20</small></span></div><div class="evidence-bar evidence-gpt" style="height:100%"><span><b>100%</b><small>20/20</small></span></div></div>
+                  <div class="evidence-group-label"><strong>C</strong><small>HYBRID · FINAL SYSTEM</small></div>
+                </div>
+              </div>
+            </div>
+            <p class="evidence-footnote">C = final system correctness, including rule fallback.</p>
+          </figure>
+          <aside class="evidence-reference" aria-label="Rules benchmark and supporting evidence">
+            <div class="evidence-benchmark">
+              <h3>RULES BASELINE</h3>
+              <div class="evidence-benchmark-result"><strong>100<span>%</span></strong><p><b>20 / 20</b><span>No model call</span></p></div>
+              <p class="evidence-benchmark-scope">On this bounded deterministic test set</p>
+            </div>
+            <div class="evidence-fallback">
+              <h4>C fallback triggered</h4>
+              <dl><div><dt>Qwen</dt><dd>8 / 20 <span>· 40%</span></dd></div><div><dt>GPT</dt><dd>4 / 20 <span>· 20%</span></dd></div></dl>
+              <div class="evidence-check-flow"><span>LLM<br>PLAN</span><i>→</i><span>DETERMINISTIC<br>CHECK</span><i>→</i><span>ACCEPT /<br>RULE FALLBACK</span></div>
+              <p>No second LLM repair call</p>
+            </div>
+            <div class="evidence-coverage evidence-reveal-two">
+              <h4>WHAT IT TOOK</h4>
+              <dl><div><dt>34</dt><dd>decision checks</dd></div><div><dt>21</dt><dd>scenario-routing branches</dd></div><div><dt>7</dt><dd>fallback / exception paths</dd></div></dl>
+              <p class="evidence-loc">~116 rule-logic LOC</p>
+              <p class="evidence-example">Nike QR already initiated<br><span>→ explicit 21-day handoff rule</span></p>
+              <h3>Rules are strongest where<br>correctness is computable.</h3>
+              <p class="evidence-coverage-note">High accuracy comes with explicit coverage.</p>
+            </div>
+          </aside>
+        </div>
+        <div class="evidence-takeaway evidence-reveal-two" aria-label="Experiment takeaway">
+          <p><b>PROMPT</b><span>Structure improves model behavior</span></p><i aria-hidden="true">→</i>
+          <p><b>HYBRID</b><span>Validation improves reliability</span></p><i aria-hidden="true">→</i>
+          <p><b>RULES</b><span>Enforce what is computable</span></p>
+        </div>
+      </section>
+      <section id="experiment-decision" class="scene-copy experiment-scene" aria-label="Token economics and system decision" aria-hidden="true" inert>
+        <h2 class="experiment-title">Experiment: Token economics and system decision</h2>
+        <p class="experiment-subtitle">Model cost → Responsibility → Architecture principle</p>
+        <div class="decision-layout">
+          <div class="decision-economics">
+            <h3 class="decision-section-label">MODEL COST <span>PER CASE · B1 → C</span></h3>
+            <div class="decision-cost-track">
+              <h4>QWEN 3.7 FLASH</h4>
+              <div class="decision-cost-comparison">
+                <div class="decision-cost-point"><span>B1</span><p><strong>~16.5K</strong> tokens</p><b>~¥0.00375</b><div class="decision-token-meter" aria-hidden="true"><i style="width:98.8%"></i></div></div>
+                <div class="decision-cost-delta"><i aria-hidden="true"></i><span>+~0.2K tokens<br>+~¥0.00003</span></div>
+                <div class="decision-cost-point decision-cost-final"><span>C</span><p><strong>~16.7K</strong> tokens</p><b>~¥0.00378</b><div class="decision-token-meter" aria-hidden="true"><i></i><em style="width:1.2%"></em></div></div>
+              </div>
+            </div>
+            <div class="decision-cost-track">
+              <h4>GPT-6 LUNA</h4>
+              <div class="decision-cost-comparison">
+                <div class="decision-cost-point"><span>B1</span><p><strong>~16.8K</strong> tokens</p><b>~$0.00189</b><div class="decision-token-meter" aria-hidden="true"><i style="width:98.82%"></i></div></div>
+                <div class="decision-cost-delta"><i aria-hidden="true"></i><span>+~0.2K tokens<br>+~$0.00002</span></div>
+                <div class="decision-cost-point decision-cost-final"><span>C</span><p><strong>~17.0K</strong> tokens</p><b>~$0.00191</b><div class="decision-token-meter" aria-hidden="true"><i></i><em style="width:1.18%"></em></div></div>
+              </div>
+            </div>
+            <p class="decision-local-validation">C adds local validation —<br><strong>not another model call.</strong></p>
+          </div>
+          <div class="decision-system-area">
+            <div class="decision-economic-takeaway">
+              <p>BIG RELIABILITY GAIN</p>
+              <h3>Small model-cost<br>change.</h3>
+              <span>B1 → C</span>
+              <div class="decision-reliability"><p><span>Qwen</span><strong>+25 pts</strong></p><p><span>GPT</span><strong>+35 pts</strong></p></div>
+            </div>
+            <div class="decision-system decision-reveal-one" role="group" aria-label="System responsibility: the LLM interprets and proposes a decision. Guardrails check for conflicts. Valid decisions are accepted; conflicts fall back to deterministic rules.">
+              <h3 class="decision-section-label">RESPONSIBILITY <span>ONE CONNECTED SYSTEM</span></h3>
+              <div class="decision-llm"><div><span>INTERPRET</span><h4>LLM</h4></div><p>Variable wording<br>Ambiguous context<br>Policy interpretation</p></div>
+              <div class="decision-proposal"><i aria-hidden="true"></i><span>proposed decision</span></div>
+              <div class="decision-guardrails"><div><span>PROTECT</span><h4>GUARDRAILS</h4></div><p>Detect conflicts<br>Safe fallback · No blind retry</p></div>
+              <div class="decision-valid"><span>valid</span><i aria-hidden="true"></i><strong>Accept</strong></div>
+              <div class="decision-conflict"><span>conflict</span><i aria-hidden="true"></i></div>
+              <div class="decision-rules"><div><span>ENFORCE</span><h4>RULES</h4></div><p>Computable constraints<br>Required fields<br>State transitions</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="decision-principle decision-reveal-two">
+          <span>PRODUCT PRINCIPLE</span>
+          <div><h3><span>AI handles ambiguity.</span> Rules enforce certainty.</h3><p>Model choice changes the ceiling. Architecture determines what we trust.</p></div>
+        </div>
+      </section>
+      <footer class="chrome"><span id="step-label" class="step-label">AIPI 590 · Mid-Semester Presentation</span><nav class="controls" aria-label="Presentation navigation"><button id="prevBtn" aria-label="Previous step" title="Previous step (←)">‹</button><span id="step-count">0 / 0</span><button id="nextBtn" aria-label="Next step" title="Next step (→ / Space)">›</button><button id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">⛶</button></nav><div class="progress-track" role="progressbar" aria-label="Presentation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressBar"></div></div></footer>
       <p id="status" class="sr-only" role="status" aria-live="polite"></p>
     </div>
   </main>
   <dialog id="demo-overlay" aria-label="Return Pilot Web demo"><div class="demo-toolbar"><span>Return Pilot · Web prototype</span><a href="demo/index.html#today" target="_blank" rel="noopener">Open in new tab ↗</a><button id="close-demo">← Back to presentation</button></div><iframe id="demo-frame" title="Return Pilot Web prototype" data-src="demo/index.html#today"></iframe></dialog>
   <dialog id="image-overlay" aria-label="Actual Web prototype screenshot"><button id="close-image">Close preview ×</button><img src="assets/images/prototype-today.png" alt="Actual Return Pilot Today page captured from the local Web prototype"><p>Actual Web prototype · Sample data</p></dialog>
   <aside class="presenter-notes" hidden>
-    <section data-scene="1"><h2>画面一 · 约20秒</h2><p>我们关注的是需要处理多个商家退货的网购用户。比如一个学生，购买信息在邮件、小票和截图里，政策与操作步骤又在不同商家页面上。用户需要自己把这些信息拼起来，再决定先做什么。</p></section>
-    <section data-scene="2"><h2>画面二 · 约25–30秒</h2><p>Return Pilot 希望将这些购买信息整理成跨商家的退货任务，结合政策和用户的选择，告诉用户现在该做什么，并持续跟进。缺少收货日期时，我们保留未确认状态，先请用户补充。我们的目标是减少查找、记忆和安排退货的负担，帮助用户及时完成必要步骤。这是体验概念，详细操作会在后面的 Web demo 展示。</p></section>
-    <section data-scene="3"><h2>画面三 · 约35–40秒</h2><p>从第一次 idea pitch 到现在，我们围绕三条线推进。第一，产品范围。当前原型已把购买确认、退货任务、计划与跟进串成流程，具体商家和支持条件还需要用本阶段范围文档确认。第二，产品体验。我们已经有可点击的 Web 原型，这里是它的真实截图；示例数据与手动更新让核心交互可以演示。第三，AI 评估。我们计划比较规则、LLM 和混合方案，研究各自适合承担什么。当前展示材料中尚未提供实验设计或结果，补充并核实后再报告进展。</p></section>
+    <section data-scene="2"><h2>画面一 · 约20秒</h2><p>我们关注的是需要处理多个商家退货的网购用户。比如一个学生，购买信息在邮件、小票和截图里，政策与操作步骤又在不同商家页面上。用户需要自己把这些信息拼起来，再决定先做什么。</p></section>
+    <section data-scene="3"><h2>画面二 · 约25–30秒</h2><p>Return Pilot 希望将这些购买信息整理成跨商家的退货任务，结合政策和用户的选择，告诉用户现在该做什么，并持续跟进。缺少收货日期时，我们保留未确认状态，先请用户补充。我们的目标是减少查找、记忆和安排退货的负担，帮助用户及时完成必要步骤。这是体验概念，详细操作会在后面的 Web demo 展示。</p></section>
+    <section data-scene="4"><h2>画面三 · 约35–40秒</h2><p>从第一次 idea pitch 到现在，我们围绕三条线推进。第一，产品范围。当前原型已把购买确认、退货任务、计划与跟进串成流程，具体商家和支持条件还需要用本阶段范围文档确认。第二，产品体验。我们已经有可点击的 Web 原型，这里是它的真实截图；示例数据与手动更新让核心交互可以演示。第三，AI 评估。我们已用 20 个固定案例比较规则、LLM 和混合方案，接下来展示各自适合承担什么。</p></section>
+    <section data-scene="5"><h2>Customer persona · Emma · 约30秒</h2><p>这三个人物是我们拟定的用户与反馈假设，还不是访谈结果。Emma 是经常跨商家购物的研究生。她的痛点不只是忘记截止时间，而是每次退货都要重新翻邮件、小票和政策，才能拼出商品、到货时间和操作要求。第一次点击，把同一批购买凭证变成有顺序的任务；第二次点击强调临近期限的行动，同时保留缺少日期的未确认状态。她预期会满意，因为产品减少了重复查找和自己记忆的负担。</p></section>
+    <section data-scene="6"><h2>Customer persona · Ryan · 约30秒</h2><p>Ryan 是重视隐私的软件工程师。他认为产品有用，但担心为了几件退货就授权整个邮箱。第一次点击只突出订单邮件，并显示转发单封订单、上传小票和手动输入三种选择；第二次点击说明这种输入设计不要求全邮箱授权。这是后面 architecture 可以回应的具体访问范围问题，但不是已经完成的安全认证，也不代表加密、删除或数据保留机制已经实现。</p></section>
+    <section data-scene="7"><h2>Customer persona · Maya · 约30秒</h2><p>Maya 是在工作与通勤之间办理退货的上班族。网页方便在家规划，但投递和查看凭证发生在外面。第一次点击出现手机端概念，用于查看步骤、拍摄凭证和更新进度；第二次点击把桌面与手机的同一批任务关联起来，作为未来扩展。最后用价值、信任、下一步三个词总结，并衔接后面的 architecture 或 future work。手机端尚未交付，图中是概念。</p></section>
+    <section data-scene="8"><h2>MVP demonstration · 约90秒</h2><p>Let me show you our current web MVP. We will follow one example: returning a pair of wireless headphones. On the Today page, the user can see the next action and the approaching deadline. In purchase review, they can check and edit the purchase details before proceeding. The return task brings the deadline, estimated refund, and next step together. The plan page shows what to prepare and groups sample returns into drop-off stops. Finally, the user can update the return status and follow its progress toward a refund. These interactions demonstrate the intended user journey. Policies and locations are sample data, tracking is manual, and the AI and retailer integrations are future work.</p></section>
+    <section data-scene="11"><h2>实验设置 · 约15–20秒</h2><p>我们只测规划层，把购买背景和政策证据固定在同样的 20 个案例里。四种策略分别是规则、基础提示、结构化提示，以及结构化提示加确定性验证和规则回退；两个模型接受相同输入。这样要回答的是 AI 在哪里真正增加价值。</p></section>
+    <section data-scene="12"><h2>提示词变化 · 约25–30秒</h2><p>先看旧版提示词：定义较少，只有几个附加检查。一次点击后，右侧出现更清楚的字段语义、明确的六步决策流程和一个完整示例。再次点击，两条提升线显示两个模型在相同案例上的进步。关键是决策结构更明确，而不只是提示词变长。</p></section>
+    <section data-scene="13"><h2>准确率与规则基线 · 约30–35秒</h2><p>图表先给出 B0、B1、C 在两个模型上的完整结果，规则基线为 20/20。第一步标出结构化提示和确定性验证各自带来的提升；C 是包含规则回退的最终系统正确率。第二步看规则基线达到 20/20 所需的显式检查、分支和例外覆盖。</p></section>
+    <section data-scene="14"><h2>成本与系统分工 · 约15–20秒</h2><p>B1 到 C 的模型成本只小幅增加，因为验证在本地完成，没有第二次 LLM 修复调用。由此确定产品分工：LLM 解释可变措辞和歧义，规则执行可计算约束，护栏检测冲突并安全回退。AI 处理歧义，规则保证确定性。</p></section>
   </aside>
+  <script src="assets/personas.js"></script>
+  <script src="assets/mvp.js"></script>
   <script src="assets/presentation.js"></script>
 </body>
 </html>

@@ -120,11 +120,6 @@
       element.setAttribute('aria-hidden', String(!visible));
       element.inert = !visible;
     });
-    [...document.querySelectorAll('.process-rail li')].forEach((li, index) => {
-      const active = Math.min(3, Math.max(0, phase - 1));
-      li.classList.toggle('active', index === active);
-      li.classList.toggle('past', index < active);
-    });
     $('#phase-caption').textContent = phaseCopy[phase] || '';
     $('#chapter').textContent = scene === -1 ? 'Return Pilot' : names[scene];
     $('#page-number').textContent = `${String(scene + 2).padStart(2, '0')} / ${String(scenes.length + 1).padStart(2, '0')}`;

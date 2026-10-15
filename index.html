@@ -46,7 +46,7 @@
       <section id="solution" class="scene-copy" aria-label="Purchase information becomes an action plan" aria-hidden="true" inert>
         <div class="organize-intro"><p class="context-label">Same purchases. Same policies. Less manual work.</p><h2>We turn return information<br><span class="accent">into next actions.</span></h2></div>
         <div class="product-reveal"><span class="product-mark"><svg class="icon"><use href="#i-box"/></svg></span><h2>Return Pilot</h2><p>One place to manage<br>returns across retailers</p><span class="value-line">Less searching.<br>Less remembering.<br>A clear next action.</span></div>
-        <ol class="process-rail" aria-label="Information organization stages"><li>Gather</li><li>Find the details</li><li>Match each item</li><li>Order the actions</li></ol><p id="phase-caption" class="phase-caption" aria-live="polite"></p>
+        <p id="phase-caption" class="phase-caption" aria-live="polite"></p>
       </section>
       <!-- A single persistent group: the documents become tasks and then a concept thumbnail. -->
       <div id="materials" class="materials">
@@ -210,10 +210,10 @@
       </section>
       <section id="mvp" class="scene-copy mvp-scene" aria-label="MVP demonstration" aria-hidden="true" inert>
         <h2 class="persona-title">Our web MVP</h2>
-        <p class="persona-subtitle">One purchase, from review to a clear next action.</p>
-        <nav class="mvp-inline-nav" aria-label="MVP demo pages"><button data-inline-route="login">Login</button><button data-inline-route="today">Today</button><button data-inline-route="review">Purchase review</button><button data-inline-route="detail">Return task</button><button data-inline-route="plan">Plan</button><button data-inline-route="tracking">Tracking</button></nav>
+        <p class="persona-subtitle">Collect purchases. Make one plan. Follow every refund.</p>
+        <nav class="mvp-inline-nav" aria-label="MVP demo controls"><button data-inline-route="login">Login</button><a href="demo/index.html#login" target="_blank" rel="noopener">Open full demo ↗</a></nav>
         <iframe id="inline-mvp" class="mvp-inline-frame" src="demo/index.html#login" title="Interactive Return Pilot frontend prototype"></iframe>
-        <p class="mvp-disclosure">Sample policies and locations. Manual tracking. No live retailer or AI integrations.</p>
+        <p class="mvp-disclosure">Interactive demo · Sample receipt extraction, policies and drop-off locations · Manual tracking</p>
       </section>
       <section id="system" class="scene-copy overview-scene" aria-labelledby="system-title" aria-hidden="true" inert>
         <div class="overview-heading">
@@ -429,7 +429,7 @@
       <p id="status" class="sr-only" role="status" aria-live="polite"></p>
     </div>
   </main>
-  <dialog id="demo-overlay" aria-label="Return Pilot Web demo"><div class="demo-toolbar"><span>Return Pilot · Web prototype</span><a href="demo/index.html#today" target="_blank" rel="noopener">Open in new tab ↗</a><button id="close-demo">← Back to presentation</button></div><iframe id="demo-frame" title="Return Pilot Web prototype" data-src="demo/index.html#today"></iframe></dialog>
+  <dialog id="demo-overlay" aria-label="Return Pilot Web demo"><div class="demo-toolbar"><span>Return Pilot · Web prototype</span><a href="demo/index.html#login" target="_blank" rel="noopener">Open in new tab ↗</a><button id="close-demo">← Back to presentation</button></div><iframe id="demo-frame" title="Return Pilot Web prototype" data-src="demo/index.html#login"></iframe></dialog>
   <dialog id="image-overlay" aria-label="Actual Web prototype screenshot"><button id="close-image">Close preview ×</button><img src="assets/images/prototype-today.png" alt="Actual Return Pilot Today page captured from the local Web prototype"><p>Actual Web prototype · Sample data</p></dialog>
   <aside class="presenter-notes" hidden>
     <section data-scene="2"><h2>画面一 · 约20秒</h2><p>我们关注的是需要处理多个商家退货的网购用户。比如一个学生，购买信息在邮件、小票和截图里，政策与操作步骤又在不同商家页面上。用户需要自己把这些信息拼起来，再决定先做什么。</p></section>
@@ -438,7 +438,7 @@
     <section data-scene="5"><h2>Customer persona · Emma · 约30秒</h2><p>这三个人物是我们拟定的用户与反馈假设，还不是访谈结果。Emma 是经常跨商家购物的研究生。她的痛点不只是忘记截止时间，而是每次退货都要重新翻邮件、小票和政策，才能拼出商品、到货时间和操作要求。第一次点击，把同一批购买凭证变成有顺序的任务；第二次点击强调临近期限的行动，同时保留缺少日期的未确认状态。她预期会满意，因为产品减少了重复查找和自己记忆的负担。</p></section>
     <section data-scene="6"><h2>Customer persona · Ryan · 约30秒</h2><p>Ryan 是重视隐私的软件工程师。他认为产品有用，但担心为了几件退货就授权整个邮箱。第一次点击只突出订单邮件，并显示转发单封订单、上传小票和手动输入三种选择；第二次点击说明这种输入设计不要求全邮箱授权。这是后面 architecture 可以回应的具体访问范围问题，但不是已经完成的安全认证，也不代表加密、删除或数据保留机制已经实现。</p></section>
     <section data-scene="7"><h2>Customer persona · Maya · 约30秒</h2><p>Maya 是在工作与通勤之间办理退货的上班族。网页方便在家规划，但投递和查看凭证发生在外面。第一次点击出现手机端概念，用于查看步骤、拍摄凭证和更新进度；第二次点击把桌面与手机的同一批任务关联起来，作为未来扩展。最后用价值、信任、下一步三个词总结，并衔接后面的 architecture 或 future work。手机端尚未交付，图中是概念。</p></section>
-    <section data-scene="8"><h2>MVP demonstration · 约90秒</h2><p>Let me show you our current web MVP. We will follow one example: returning a pair of wireless headphones. On the Today page, the user can see the next action and the approaching deadline. In purchase review, they can check and edit the purchase details before proceeding. The return task brings the deadline, estimated refund, and next step together. The plan page shows what to prepare and groups sample returns into drop-off stops. Finally, the user can update the return status and follow its progress toward a refund. These interactions demonstrate the intended user journey. Policies and locations are sample data, tracking is manual, and the AI and retailer integrations are future work.</p></section>
+    <section data-scene="8"><h2>MVP demonstration · 约90秒</h2><p>Enter the demo from Login. Purchases brings the fur jacket, cup, rain boots, and phone case together. Each item shows its return status; select eligible items and leave expired purchases out. Click Add purchase, then Try sample receipt. Review the headphones and save them to Purchases. Click Build my return plan: compatible returns are grouped by drop-off location and the nearest deadline comes first. Counts, amounts, and stops come from the selected items. Continue to Tracking and mark a drop-off to show how the same plan becomes trackable actions, all the way to a confirmed refund. Receipt extraction, prices, policies and drop-off locations are samples; tracking is updated manually.</p></section>
     <section data-scene="11"><h2>实验设置 · 约15–20秒</h2><p>我们只测规划层，把购买背景和政策证据固定在同样的 20 个案例里。四种策略分别是规则、基础提示、结构化提示，以及结构化提示加确定性验证和规则回退；两个模型接受相同输入。这样要回答的是 AI 在哪里真正增加价值。</p></section>
     <section data-scene="12"><h2>提示词变化 · 约25–30秒</h2><p>先看旧版提示词：定义较少，只有几个附加检查。一次点击后，右侧出现更清楚的字段语义、明确的六步决策流程和一个完整示例。再次点击，两条提升线显示两个模型在相同案例上的进步。关键是决策结构更明确，而不只是提示词变长。</p></section>
     <section data-scene="13"><h2>准确率与规则基线 · 约30–35秒</h2><p>图表先给出 B0、B1、C 在两个模型上的完整结果，规则基线为 20/20。第一步标出结构化提示和确定性验证各自带来的提升；C 是包含规则回退的最终系统正确率。第二步看规则基线达到 20/20 所需的显式检查、分支和例外覆盖。</p></section>
